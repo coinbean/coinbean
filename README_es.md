@@ -12,7 +12,7 @@ Un sistema integral de seguimiento de portafolio de criptomonedas basado en [Bea
 
 ---
 
-🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/coinbean_org](https://x.com/coinbean_org)
+🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/CoinbeanAI](https://x.com/CoinbeanAI)
 
 </div>
 
@@ -41,314 +41,199 @@ Abra http://localhost:5002 para ver su portafolio.
 
 ## ¿Qué es Coinbean?
 
-Coinbean es una plantilla de registro Beancount estructurada para rastrear portafolios de criptomonedas a través de:
+Rastree su portafolio cripto en exchanges, wallets, DeFi, staking y NFTs usando contabilidad por partida doble.
 
-- Múltiples exchanges centralizados (Coinbase, Binance, Kraken, etc.)
-- Billeteras de hardware y software (Ledger, Trezor, MetaMask, Phantom)
-- Protocolos DeFi (Aave, Compound, Uniswap, Raydium, Jupiter, etc.)
-- DEX perpetuos (Hyperliquid, dYdX, GMX)
-- Protocolos de staking líquido (Lido, Rocket Pool, Jito, Marinade)
-- Protocolos de restaking (EigenLayer, Solayer)
-- Colecciones NFT (BAYC, Azuki, DeGods, Bitcoin Ordinals, y más)
-- Actividades de staking y yield farming
-- Más de 110 criptomonedas a través de Layer-1, Layer-2, DeFi, stablecoins, NFTs, y más
+**Soporta:**
+- 10+ exchanges (Coinbase, Binance, Kraken, etc.)
+- Wallets de hardware/software (Ledger, MetaMask, Phantom)
+- Protocolos DeFi (Aave, Uniswap, Lido, Hyperliquid)
+- Staking y yield farming
+- NFT (Ethereum, Solana, Bitcoin Ordinals)
+- 110+ criptomonedas
 
 ## Características
 
-- **Cobertura integral de activos**: Soporte preconfigurado para más de 110 criptomonedas y colecciones NFT incluyendo BTC, ETH, SOL, y muchas más
-- **Soporte multi-exchange**: Rastrea activos en más de 10 exchanges principales (Coinbase, Binance, Kraken, Gemini, Crypto.com, etc.)
-- **Integración DeFi**: Contabilidad para préstamos, pools de liquidez y staking
-- **Seguimiento de NFT**: Soporte para colecciones NFT populares en Ethereum, Solana, Bitcoin Ordinals, Polygon y Base
-- **Bitcoin Ordinals & BRC-20**: Rastrea inscripciones Ordinals y tokens BRC-20 (ORDI, SATS, etc.)
-- **Manejo preciso de decimales**: Tolerancias configuradas para satoshis, gwei y otras unidades pequeñas
-- **Contabilidad por partida doble**: Rastro de auditoría completo con principios contables apropiados
-- **Listo para declaración de impuestos**: Rastrea ganancias de capital, comisiones e ingresos de diversas fuentes
-- **Interfaz web**: Hermosa visualización con Fava
-- **Configuración fácil**: Scripts de configuración y ejecución automatizados incluidos
-
-## ⚡ Referencia rápida
-
-| Script              | Comando       | Propósito                                    |
-| ------------------- | ------------- | -------------------------------------------- |
-| **Configuración**   | `./setup.sh`  | Instalar Beancount & Fava, validar registro |
-| **Ejecutar Fava**   | `./run.sh`    | Iniciar interfaz web en http://localhost:5002 |
-| **Obtener precios** | `./prices.sh` | Obtener precios actuales de criptomonedas (menú interactivo) |
-
-Ver la sección [Scripts auxiliares](#scripts-auxiliares) para documentación detallada.
+- ✅ Cuentas preconfiguradas para exchanges, wallets y DeFi
+- ✅ Soporte de 110+ criptomonedas con obtención automática de precios
+- ✅ Seguimiento de NFT y Bitcoin Ordinals
+- ✅ Reporte de impuestos con seguimiento de ganancias de capital
+- ✅ Hermosa interfaz web (Fava)
+- ✅ Soporte Docker para fácil despliegue
 
 ## Estructura de archivos
 
-Coinbean utiliza una **estructura modular** para mejor organización:
+```
+coinbean/
+├── crypto_main.beancount       # Libro mayor principal (110+ criptos definidas)
+├── exchanges.beancount         # Cuentas de exchange
+├── chains.beancount            # Wallets y staking
+├── defi.beancount              # Protocolos DeFi
+├── crypto_prices.beancount     # Datos de precios
+├── tx_2025.beancount           # Sus transacciones
+├── crypto_examples.beancount   # 20+ ejemplos de transacciones
+├── setup.sh / run.sh / prices.sh
+└── docker-compose.yml
+```
 
-```
-crypto/
-├── crypto_main.beancount       # Registro principal con commodities e imports
-├── exchanges.beancount         # Cuentas de exchanges centralizados
-├── chains.beancount            # Billeteras blockchain y staking nativo
-├── defi.beancount              # Protocolos DeFi, staking líquido, restaking
-├── crypto_prices.beancount     # Datos de precios para todos los activos
-├── tx_2024.beancount           # Transacciones 2024
-├── tx_2025.beancount           # Transacciones 2025
-├── crypto_examples.beancount   # Más de 20 ejemplos de transacciones (referencia)
-├── fetch_prices.py             # Obtención automática de precios desde CoinGecko
-├── prices.sh                   # Wrapper conveniente para fetch_prices.py
-├── setup.sh                    # Script de configuración e instalación automatizado
-├── run.sh                      # Iniciar interfaz web Fava
-└── README.md                   # Este archivo
-```
+**Edite estos archivos:**
+- `tx_2025.beancount` - Agregue sus transacciones
+- `exchanges.beancount` - Habilite solo los exchanges que usa
+- `chains.beancount` - Agregue sus wallets
+- `defi.beancount` - Agregue los protocolos DeFi que usa
 
 ## Estructura de cuentas
 
-Coinbean sigue los principios de **contabilidad por partida doble** de Beancount con una estructura de cuenta jerárquica:
-
 ```
 Assets:Crypto
-├── Exchange                    # Exchanges centralizados
-│   ├── Coinbase
-│   │   ├── Cash:USD           # Saldos fiat
-│   │   ├── BTC                # Saldo Bitcoin
-│   │   ├── ETH                # Saldo Ethereum
-│   │   └── Other              # Otros tokens
-│   ├── Binance
-│   ├── Kraken
-│   └── [Más de 10 exchanges...]
-│
-├── Wallet                      # Billeteras de autocustodia
-│   ├── Ledger                 # Billeteras de hardware
-│   │   ├── BTC
-│   │   └── ETH
-│   ├── MetaMask               # Billeteras de software
-│   ├── Phantom
-│   └── [Más billeteras...]
-│
-├── Staking                     # Staking nativo de blockchain
-│   ├── ETH
-│   │   ├── Delegated          # Cantidad en staking
-│   │   └── Rewards            # Recompensas ganadas
-│   ├── SOL
-│   ├── ADA
-│   └── [Más cadenas...]
-│
-├── DeFi                        # Protocolos DeFi
-│   ├── Aave                   # Préstamos
-│   │   ├── USDC
-│   │   └── ETH
-│   ├── Uniswap                # DEXs
-│   │   └── LPTokens
-│   ├── Hyperliquid            # DEX perpetuos
-│   ├── Lido                   # Staking líquido
-│   │   └── STETH
-│   └── [Más protocolos...]
-│
-└── NFT                         # Colecciones NFT
-    ├── Ethereum
-    │   ├── BAYC
-    │   ├── Azuki
-    │   └── [Más colecciones...]
-    ├── Solana
-    │   ├── DeGods
-    │   └── MadLads
-    └── Bitcoin
-        └── NodeMonkes
-
-Liabilities:Crypto
-└── DeFi                        # Préstamos DeFi
-    ├── Aave:Borrowed
-    └── Compound:Borrowed
+├── Exchange:{Exchange}:{Activo}      # Coinbase:BTC, Binance:ETH
+├── Wallet:{Wallet}:{Activo}          # Ledger:BTC, MetaMask:ETH
+├── Staking:{Cadena}:{Estado}         # ETH:Delegated, SOL:Rewards
+├── DeFi:{Protocolo}:{Activo}         # Aave:USDC, Uniswap:LPTokens
+└── NFT:{Cadena}:{Colección}          # Ethereum:BAYC, Solana:DeGods
 
 Income:Crypto
-├── Staking:Rewards             # Ingresos por staking
-├── Mining:Rewards              # Ingresos por minería
-├── Airdrops                    # Tokens de airdrop
-├── Referrals                   # Bonos de referidos
-└── Trading:CapitalGains        # Ganancias realizadas
+├── Staking:Rewards
+├── Trading:CapitalGains
+└── Airdrops
 
 Expenses:Crypto
-├── Trading:Fees                # Comisiones de exchange
-├── Withdrawal:Fees             # Comisiones de retiro
-├── Gas                         # Comisiones de transacción
-│   ├── Ethereum
-│   ├── Solana
-│   └── [Otras cadenas...]
-└── Trading:Losses              # Pérdidas realizadas
-
-Equity:Opening-Balances         # Saldos iniciales
+├── Trading:Fees
+├── Gas:{Cadena}                      # Ethereum, Solana, etc.
+└── Withdrawal:Fees
 ```
 
-### Convención de nomenclatura de cuentas
+## Registrar transacciones
 
-Coinbean utiliza una estructura de nomenclatura jerárquica consistente:
-
-```
-Assets:Crypto:{Tipo}:{Plataforma}:{Activo}
-             └──┬──┘ └────┬────┘ └──┬──┘
-              Tipo     Plataforma   Token
-                                   específico
-```
-
-**Ejemplos:**
-
-- `Assets:Crypto:Exchange:Coinbase:BTC` - Bitcoin en Coinbase
-- `Assets:Crypto:Wallet:Ledger:ETH` - Ethereum en Ledger
-- `Assets:Crypto:DeFi:Aave:USDC` - USDC depositado en Aave
-- `Assets:Crypto:Staking:SOL:Delegated` - Solana en staking
-- `Assets:Crypto:NFT:Ethereum:BAYC` - NFT Bored Ape Yacht Club
-
-**Consejos:**
-
-- Usa CamelCase para nombres de plataformas (ej: `MetaMask`, no `metamask`)
-- Mantén los tickers de activos en MAYÚSCULAS (ej: `BTC`, `ETH`)
-- Sé consistente en todas tus transacciones
-
-## Ejemplos de transacciones
-
-### Comprar cripto en un exchange
+Consulte `crypto_examples.beancount` para 20+ ejemplos. Formato básico:
 
 ```beancount
 2025-01-15 * "Coinbase" "Comprar Bitcoin"
-  Assets:Crypto:Exchange:Coinbase:BTC     0.5 BTC {50000.00 USD}
-  Assets:Crypto:Exchange:Coinbase:Cash:USD  -25000.00 USD
-  Expenses:Crypto:Trading:Fees                   50.00 USD
+  Assets:Crypto:Exchange:Coinbase:BTC      0.1 BTC {60000 USD}
+  Assets:Crypto:Exchange:Coinbase:Cash:USD -6000.00 USD
+  Expenses:Crypto:Trading:Fees             10.00 USD
 ```
 
-### Transferir a almacenamiento en frío
+## Personalización
+
+### Agregar nuevo exchange
+
+Edite `exchanges.beancount`:
 
 ```beancount
-2025-01-16 * "Transferencia a Ledger" "Mover BTC a billetera de hardware"
-  Assets:Crypto:Wallet:Ledger:BTC            0.5 BTC
-  Assets:Crypto:Exchange:Coinbase:BTC       -0.5 BTC
-  Expenses:Crypto:Withdrawal:Fees          0.0001 BTC
+2020-01-01 open Assets:Crypto:Exchange:TuExchange:Cash:USD
+2020-01-01 open Assets:Crypto:Exchange:TuExchange:BTC
+2020-01-01 open Assets:Crypto:Exchange:TuExchange:ETH
 ```
 
-### Recompensas de staking
+### Agregar nueva criptomoneda
+
+Edite `crypto_main.beancount`:
 
 ```beancount
-2025-01-20 * "Recompensas de staking" "Recompensas de staking ETH"
-  Assets:Crypto:Staking:ETH              0.05 ETH
-  Income:Crypto:Staking:Rewards         -0.05 ETH {2500.00 USD}
+2020-01-01 commodity TU
+  name: "Tu Moneda"
+  blockchain: "Ethereum"
+  category: "DeFi"
 ```
 
-### Préstamo DeFi
+Luego agregue a `fetch_prices.py`:
+
+```python
+Asset('TU', 'Your Coin', 'Ethereum', 'DeFi', 'your-coin-id'),
+```
+
+### Deshabilitar módulos no utilizados
+
+Comente en `crypto_main.beancount`:
 
 ```beancount
-2025-01-25 * "Aave" "Depositar USDC para préstamos"
-  Assets:Crypto:DeFi:Aave:USDC              5000 USDC
-  Assets:Crypto:Wallet:MetaMask:USDC       -5000 USDC
-  Expenses:Crypto:Gas:Ethereum                 15.00 USD
+include "exchanges.beancount"
+include "chains.beancount"
+; include "defi.beancount"  # No usando DeFi
 ```
 
-## Activos soportados
+## Comandos
 
-### Blockchains Layer-1
+| Comando | Propósito |
+|---------|-----------|
+| `./run.sh` | Iniciar Fava (menú interactivo) |
+| `./prices.sh` | Obtener precios actuales de criptos |
+| `bean-check crypto_main.beancount` | Validar libro mayor |
+| `bean-query crypto_main.beancount "SELECT..."` | Consultar datos |
+| `docker-compose up -d` | Iniciar con Docker |
+| `docker-compose logs -f` | Ver logs de Docker |
 
-BTC, ETH, SOL, ADA, DOT, AVAX, ATOM, ALGO, XRP, XLM, NEAR, FTM, TON, APT, SUI, LTC, BCH, ETC, y más
+## Reporte de impuestos
 
-### Soluciones Layer-2
+**Eventos imponibles rastreados automáticamente:**
+- Ganancias/pérdidas de capital (ventas de cripto, swaps)
+- Recompensas de staking (como ingreso)
+- Airdrops (como ingreso)
+- Rendimiento DeFi (como ingreso)
 
-MATIC, OP, ARB
+**Generar reportes:**
 
-### Stablecoins
+```bash
+# Ver todas las ganancias de capital
+bean-query crypto_main.beancount "
+  SELECT date, account, sum(position)
+  WHERE account ~ 'CapitalGains'
+  ORDER BY date"
 
-USDT, USDC, DAI, BUSD, TUSD
+# Ver ingresos de staking
+bean-query crypto_main.beancount "
+  SELECT date, sum(position)
+  WHERE account ~ 'Staking:Rewards'"
+```
 
-### Tokens DeFi
+## Seguridad
 
-UNI, AAVE, MKR, COMP, SNX, CRV, SUSHI
+⚠️ **Importante:** Nunca commitee datos financieros sin encriptar a repositorios públicos.
 
-### Tokens de exchange
+**Use git-crypt para encriptar archivos sensibles:**
 
-BNB, CRO, FTT
+```bash
+brew install git-crypt
+git-crypt init
+echo "*.beancount filter=git-crypt diff=git-crypt" >> .gitattributes
+echo "tx_*.beancount filter=git-crypt diff=git-crypt" >> .gitattributes
+```
 
-### DEX perpetuos
+## Solución de problemas
 
-HYPE (Hyperliquid), DYDX (dYdX), GMX
-
-### DEX de Solana
-
-RAY (Raydium), JUP (Jupiter), ORCA (Orca)
-
-### Staking líquido & Restaking
-
-- **Ethereum**: LDO (Lido), STETH, RPL (Rocket Pool), RETH, EIGEN (EigenLayer)
-- **Solana**: JTO (Jito), JITOSOL, MNDE (Marinade), MSOL
-
-### Tokens del ecosistema NFT
-
-APE (ApeCoin), LOOKS (LooksRare), X2Y2, SUDO (Sudoswap), BLUR (Blur), NFT (APENFT)
-
-### Bitcoin Ordinals & BRC-20
-
-ORDI (Ordinals), SATS, RATS, PUPS (Bitcoin Puppets), TRAC
-
-### Colecciones NFT soportadas
-
-- **Ethereum**: BAYC, MAYC, Azuki, CloneX, Doodles, Pudgy Penguins, Moonbirds, Cryptopunks, Meebits, Art Blocks, PROOF Collective
-- **Solana**: DeGods, y00ts, Mad Lads, Solana Monkey Business, Okay Bears, Tensorians
-- **Bitcoin Ordinals**: NodeMonkes, Bitcoin Puppets, Quantum Cats, Ordinal Inscriptions
-- **Polygon**: Reddit Collectible Avatars
-- **Base**: Based Fellas
+| Problema | Solución |
+|----------|----------|
+| Errores de `bean-check` | Verificar nombres de cuentas, asegurar que las transacciones estén balanceadas |
+| Los precios no se muestran | Ejecutar `./prices.sh`, verificar `crypto_prices.beancount` |
+| Desajuste de saldo | Revisar todas las transacciones, verificar comisiones faltantes |
+| Fava no inicia | Verificar si el puerto 5002 está en uso, intentar `./run.sh -p 5003` |
+| Problemas con Docker | Verificar logs con `docker-compose logs` |
 
 ## Recursos
 
-Visita [coinbean.org/docs](http://coinbean.org/docs) para aprender más sobre:
-
-- Patrones de transacciones avanzados
-- Estrategias de declaración de impuestos
-- Integración con otras herramientas
-- Mejores prácticas de la comunidad
-
-**Enlaces del proyecto:**
-
-- 📦 [Repositorio GitHub](https://github.com/qai-lab/coinbean) - Código fuente, problemas y contribuciones
-- 📋 [Notas de versión](https://github.com/qai-lab/coinbean/releases) - Historial de versiones y registro de cambios
-- 🌐 [Sitio web Coinbean](https://coinbean.org/) - Sitio web oficial y documentación
-- 🐦 [Coinbean en X/Twitter](https://x.com/coinbean_org) - Sigue para actualizaciones y noticias
-- 📚 [Documentación Beancount](https://beancount.github.io/docs/) - Aprende sobre Beancount
-- 🖥️ [Fava - Interfaz web](https://github.com/beancount/fava) - Interfaz web de Beancount
-- 💬 [Plain Text Accounting](https://plaintextaccounting.org/) - Comunidad y recursos
-
-## Contribuir
-
-¡Las contribuciones son bienvenidas! No dudes en enviar un Pull Request. Áreas de contribución:
-
-- Plantillas de exchanges adicionales
-- Más protocolos DeFi
-- Scripts de automatización para importar transacciones
-- Mejoras en la documentación
+- 📦 [Repositorio GitHub](https://github.com/qai-lab/coinbean)
+- 📋 [Notas de versión](https://github.com/qai-lab/coinbean/releases)
+- 🌐 [Sitio web Coinbean](https://coinbean.org/)
+- 🐦 [Seguir en X/Twitter](https://x.com/CoinbeanAI)
+- 📚 [Documentación Beancount](https://beancount.github.io/docs/)
+- 🖥️ [Documentación Fava](https://github.com/beancount/fava)
 
 ## Autor
 
-**Coinbean** es creado y mantenido por:
+**Creado por:**
+- **Boyuan Qian** - [@boyuanqian](https://github.com/boyuanqian) | [@boyuan_qian](https://x.com/boyuan_qian)
 
-- **Boyuan Qian**
-  - 🐙 GitHub: [@boyuanqian](https://github.com/boyuanqian)
-  - 🐦 X/Twitter: [@boyuan_qian](https://x.com/boyuan_qian)
-  - 🏢 Organización: [QAI Lab](https://github.com/qai-lab)
-
-**QAI Lab**
-
-- 🌐 Sitio web: [qai.io](https://qai.io)
-- 🐙 GitHub: [@qai-lab](https://github.com/qai-lab)
-- 🐦 X/Twitter: [@qai_lab](https://x.com/qai_lab)
+**Organización:**
+- **QAI Lab** - [qai.io](https://qai.io) | [@qai-lab](https://github.com/qai-lab) | [@qai_lab](https://x.com/qai_lab)
 
 ## Licencia
 
-Licencia MIT - Copyright (c) 2025 Boyuan Qian y QAI Lab
-
-Ver el archivo [LICENSE](LICENSE) para detalles.
-
-Esta plantilla se proporciona tal cual para uso personal. Personaliza según tus necesidades de seguimiento de portafolio.
+Licencia MIT - Copyright (c) 2025 Boyuan Qian y QAI Lab. Ver archivo [LICENSE](LICENSE).
 
 ## Descargo de responsabilidad
 
-Esta es una herramienta de seguimiento financiero personal. No proporciona:
-
-- Asesoramiento financiero
-- Asesoramiento fiscal
-- Recomendaciones de inversión
-
-Siempre consulta con profesionales calificados para asuntos financieros y fiscales. Las inversiones en criptomonedas son riesgosas y pueden resultar en pérdida de capital.
+Esta herramienta es solo para seguimiento de portafolio personal. No proporciona asesoramiento financiero, fiscal o de inversión. Las inversiones en criptomonedas conllevan riesgos. Consulte a profesionales calificados para asuntos financieros y fiscales.
 
 ---
 
-**¡Feliz seguimiento! 📊💰**
+**¡Feliz seguimiento! 📊**

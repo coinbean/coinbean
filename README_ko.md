@@ -12,7 +12,7 @@
 
 ---
 
-🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/coinbean_org](https://x.com/coinbean_org)
+🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/CoinbeanAI](https://x.com/CoinbeanAI)
 
 </div>
 
@@ -41,314 +41,199 @@
 
 ## Coinbean이란?
 
-Coinbean은 다음을 통해 암호화폐 포트폴리오를 추적하기 위한 구조화된 Beancount 원장 템플릿입니다:
+복식 부기를 사용하여 거래소, 지갑, DeFi, 스테이킹 및 NFT에서 암호화폐 포트폴리오를 추적합니다.
 
-- 다중 중앙화 거래소 (Coinbase, Binance, Kraken 등)
-- 하드웨어 및 소프트웨어 지갑 (Ledger, Trezor, MetaMask, Phantom)
-- DeFi 프로토콜 (Aave, Compound, Uniswap, Raydium, Jupiter 등)
-- 영구 선물 DEX (Hyperliquid, dYdX, GMX)
-- 리퀴드 스테이킹 프로토콜 (Lido, Rocket Pool, Jito, Marinade)
-- 리스테이킹 프로토콜 (EigenLayer, Solayer)
-- NFT 컬렉션 (BAYC, Azuki, DeGods, Bitcoin Ordinals 등)
-- 스테이킹 및 이자 농사 활동
-- Layer-1, Layer-2, DeFi, 스테이블코인, NFT 등에 걸쳐 110개 이상의 암호화폐
+**지원:**
+- 10+ 개 거래소 (Coinbase, Binance, Kraken 등)
+- 하드웨어/소프트웨어 지갑 (Ledger, MetaMask, Phantom)
+- DeFi 프로토콜 (Aave, Uniswap, Lido, Hyperliquid)
+- 스테이킹 & 이자 농사
+- NFT (Ethereum, Solana, Bitcoin Ordinals)
+- 110+ 개 암호화폐
 
 ## 기능
 
-- **포괄적인 자산 지원**: BTC, ETH, SOL 등을 포함한 110개 이상의 암호화폐 및 NFT 컬렉션을 사전 구성 지원
-- **다중 거래소 지원**: 10개 이상의 주요 거래소에서 자산 추적 (Coinbase, Binance, Kraken, Gemini, Crypto.com 등)
-- **DeFi 통합**: 대출, 유동성 풀 및 스테이킹 회계 처리
-- **NFT 추적**: Ethereum, Solana, Bitcoin Ordinals, Polygon, Base의 인기 NFT 컬렉션 지원
-- **Bitcoin Ordinals & BRC-20**: Ordinals 인스크립션 및 BRC-20 토큰 (ORDI, SATS 등) 추적
-- **정밀한 소수점 처리**: 사토시, gwei 및 기타 작은 단위에 대한 허용 오차 구성
-- **복식 부기**: 적절한 회계 원칙을 적용한 완전한 감사 추적
-- **세금 신고 준비**: 다양한 소스의 양도소득세, 수수료 및 수입 추적
-- **웹 인터페이스**: Fava를 통한 아름다운 시각화
-- **간편한 설정**: 자동화된 설정 및 실행 스크립트 포함
-
-## ⚡ 빠른 참조
-
-| 스크립트         | 명령어        | 목적                                         |
-| ---------------- | ------------- | -------------------------------------------- |
-| **설정**         | `./setup.sh`  | Beancount & Fava 설치, 원장 검증             |
-| **Fava 실행**    | `./run.sh`    | http://localhost:5002에서 웹 인터페이스 시작 |
-| **가격 가져오기** | `./prices.sh` | 현재 암호화폐 가격 가져오기 (대화형 메뉴)     |
-
-자세한 문서는 [도우미 스크립트](#도우미-스크립트) 섹션을 참조하세요.
+- ✅ 거래소, 지갑, DeFi를 위한 사전 구성된 계정
+- ✅ 자동 가격 가져오기를 지원하는 110+ 개 암호화폐
+- ✅ NFT 및 Bitcoin Ordinals 추적
+- ✅ 자본 이득 추적을 통한 세금 보고
+- ✅ 아름다운 웹 인터페이스 (Fava)
+- ✅ 쉬운 배포를 위한 Docker 지원
 
 ## 파일 구조
 
-Coinbean은 더 나은 구성을 위해 **모듈식 구조**를 사용합니다:
+```
+coinbean/
+├── crypto_main.beancount       # 메인 원장 (110+ 개 암호화폐 정의)
+├── exchanges.beancount         # 거래소 계정
+├── chains.beancount            # 지갑 & 스테이킹
+├── defi.beancount              # DeFi 프로토콜
+├── crypto_prices.beancount     # 가격 데이터
+├── tx_2025.beancount           # 귀하의 거래
+├── crypto_examples.beancount   # 20+ 개 예제 거래
+├── setup.sh / run.sh / prices.sh
+└── docker-compose.yml
+```
 
-```
-crypto/
-├── crypto_main.beancount       # 상품 및 가져오기가 포함된 기본 원장
-├── exchanges.beancount         # 중앙화 거래소 계정
-├── chains.beancount            # 블록체인 지갑 및 네이티브 스테이킹
-├── defi.beancount              # DeFi 프로토콜, 리퀴드 스테이킹, 리스테이킹
-├── crypto_prices.beancount     # 모든 자산의 가격 데이터
-├── tx_2024.beancount           # 2024년 거래
-├── tx_2025.beancount           # 2025년 거래
-├── crypto_examples.beancount   # 20개 이상의 거래 예제 (참조)
-├── fetch_prices.py             # CoinGecko에서 자동 가격 가져오기
-├── prices.sh                   # fetch_prices.py용 편리한 래퍼
-├── setup.sh                    # 자동 설정 및 설치 스크립트
-├── run.sh                      # Fava 웹 인터페이스 시작
-└── README.md                   # 이 파일
-```
+**이 파일들을 편집하세요:**
+- `tx_2025.beancount` - 거래 추가
+- `exchanges.beancount` - 사용하는 거래소만 활성화
+- `chains.beancount` - 지갑 추가
+- `defi.beancount` - 사용하는 DeFi 프로토콜 추가
 
 ## 계정 구조
 
-Coinbean은 계층적 계정 구조를 가진 Beancount의 **복식 부기** 원칙을 따릅니다:
-
 ```
 Assets:Crypto
-├── Exchange                    # 중앙화 거래소
-│   ├── Coinbase
-│   │   ├── Cash:USD           # 법정화폐 잔액
-│   │   ├── BTC                # Bitcoin 잔액
-│   │   ├── ETH                # Ethereum 잔액
-│   │   └── Other              # 기타 토큰
-│   ├── Binance
-│   ├── Kraken
-│   └── [10개 이상의 거래소...]
-│
-├── Wallet                      # 자기 관리 지갑
-│   ├── Ledger                 # 하드웨어 지갑
-│   │   ├── BTC
-│   │   └── ETH
-│   ├── MetaMask               # 소프트웨어 지갑
-│   ├── Phantom
-│   └── [더 많은 지갑...]
-│
-├── Staking                     # 네이티브 블록체인 스테이킹
-│   ├── ETH
-│   │   ├── Delegated          # 스테이킹된 금액
-│   │   └── Rewards            # 획득한 보상
-│   ├── SOL
-│   ├── ADA
-│   └── [더 많은 체인...]
-│
-├── DeFi                        # DeFi 프로토콜
-│   ├── Aave                   # 대출
-│   │   ├── USDC
-│   │   └── ETH
-│   ├── Uniswap                # DEX
-│   │   └── LPTokens
-│   ├── Hyperliquid            # 영구 선물 DEX
-│   ├── Lido                   # 리퀴드 스테이킹
-│   │   └── STETH
-│   └── [더 많은 프로토콜...]
-│
-└── NFT                         # NFT 컬렉션
-    ├── Ethereum
-    │   ├── BAYC
-    │   ├── Azuki
-    │   └── [더 많은 컬렉션...]
-    ├── Solana
-    │   ├── DeGods
-    │   └── MadLads
-    └── Bitcoin
-        └── NodeMonkes
-
-Liabilities:Crypto
-└── DeFi                        # DeFi 대출
-    ├── Aave:Borrowed
-    └── Compound:Borrowed
+├── Exchange:{거래소}:{자산}         # Coinbase:BTC, Binance:ETH
+├── Wallet:{지갑}:{자산}             # Ledger:BTC, MetaMask:ETH
+├── Staking:{체인}:{상태}            # ETH:Delegated, SOL:Rewards
+├── DeFi:{프로토콜}:{자산}           # Aave:USDC, Uniswap:LPTokens
+└── NFT:{체인}:{컬렉션}              # Ethereum:BAYC, Solana:DeGods
 
 Income:Crypto
-├── Staking:Rewards             # 스테이킹 수입
-├── Mining:Rewards              # 채굴 수입
-├── Airdrops                    # 에어드랍 토큰
-├── Referrals                   # 추천 보너스
-└── Trading:CapitalGains        # 실현 이익
+├── Staking:Rewards
+├── Trading:CapitalGains
+└── Airdrops
 
 Expenses:Crypto
-├── Trading:Fees                # 거래소 수수료
-├── Withdrawal:Fees             # 출금 수수료
-├── Gas                         # 거래 수수료
-│   ├── Ethereum
-│   ├── Solana
-│   └── [다른 체인...]
-└── Trading:Losses              # 실현 손실
-
-Equity:Opening-Balances         # 초기 잔액
+├── Trading:Fees
+├── Gas:{체인}                      # Ethereum, Solana 등
+└── Withdrawal:Fees
 ```
 
-### 계정 명명 규칙
+## 거래 기록
 
-Coinbean은 일관된 계층적 명명 구조를 사용합니다:
-
-```
-Assets:Crypto:{유형}:{플랫폼}:{자산}
-             └──┬──┘ └────┬────┘ └──┬──┘
-              유형     플랫폼     특정
-                                  토큰
-```
-
-**예:**
-
-- `Assets:Crypto:Exchange:Coinbase:BTC` - Coinbase의 Bitcoin
-- `Assets:Crypto:Wallet:Ledger:ETH` - Ledger의 Ethereum
-- `Assets:Crypto:DeFi:Aave:USDC` - Aave에 예치된 USDC
-- `Assets:Crypto:Staking:SOL:Delegated` - 스테이킹된 Solana
-- `Assets:Crypto:NFT:Ethereum:BAYC` - Bored Ape Yacht Club NFT
-
-**팁:**
-
-- 플랫폼 이름에는 CamelCase 사용 (예: `MetaMask`, `metamask` 아님)
-- 자산 티커는 대문자로 유지 (예: `BTC`, `ETH`)
-- 모든 거래에서 일관성 유지
-
-## 거래 예제
-
-### 거래소에서 암호화폐 구매
+20+ 개의 예제는 `crypto_examples.beancount`를 참조하세요. 기본 형식:
 
 ```beancount
-2025-01-15 * "Coinbase" "Bitcoin 구매"
-  Assets:Crypto:Exchange:Coinbase:BTC     0.5 BTC {50000.00 USD}
-  Assets:Crypto:Exchange:Coinbase:Cash:USD  -25000.00 USD
-  Expenses:Crypto:Trading:Fees                   50.00 USD
+2025-01-15 * "Coinbase" "비트코인 구매"
+  Assets:Crypto:Exchange:Coinbase:BTC      0.1 BTC {60000 USD}
+  Assets:Crypto:Exchange:Coinbase:Cash:USD -6000.00 USD
+  Expenses:Crypto:Trading:Fees             10.00 USD
 ```
 
-### 콜드 스토리지로 전송
+## 사용자 지정
+
+### 새 거래소 추가
+
+`exchanges.beancount` 편집:
 
 ```beancount
-2025-01-16 * "Ledger로 전송" "하드웨어 지갑으로 BTC 이동"
-  Assets:Crypto:Wallet:Ledger:BTC            0.5 BTC
-  Assets:Crypto:Exchange:Coinbase:BTC       -0.5 BTC
-  Expenses:Crypto:Withdrawal:Fees          0.0001 BTC
+2020-01-01 open Assets:Crypto:Exchange:YourExchange:Cash:USD
+2020-01-01 open Assets:Crypto:Exchange:YourExchange:BTC
+2020-01-01 open Assets:Crypto:Exchange:YourExchange:ETH
 ```
 
-### 스테이킹 보상
+### 새 암호화폐 추가
+
+`crypto_main.beancount` 편집:
 
 ```beancount
-2025-01-20 * "스테이킹 보상" "ETH 스테이킹 보상"
-  Assets:Crypto:Staking:ETH              0.05 ETH
-  Income:Crypto:Staking:Rewards         -0.05 ETH {2500.00 USD}
+2020-01-01 commodity YOUR
+  name: "귀하의 코인"
+  blockchain: "Ethereum"
+  category: "DeFi"
 ```
 
-### DeFi 대출
+그런 다음 `fetch_prices.py`에 추가:
+
+```python
+Asset('YOUR', 'Your Coin', 'Ethereum', 'DeFi', 'your-coin-id'),
+```
+
+### 사용하지 않는 모듈 비활성화
+
+`crypto_main.beancount`에서 주석 처리:
 
 ```beancount
-2025-01-25 * "Aave" "대출을 위한 USDC 예치"
-  Assets:Crypto:DeFi:Aave:USDC              5000 USDC
-  Assets:Crypto:Wallet:MetaMask:USDC       -5000 USDC
-  Expenses:Crypto:Gas:Ethereum                 15.00 USD
+include "exchanges.beancount"
+include "chains.beancount"
+; include "defi.beancount"  # DeFi 사용 안 함
 ```
 
-## 지원되는 자산
+## 명령어
 
-### Layer-1 블록체인
+| 명령어 | 목적 |
+|--------|------|
+| `./run.sh` | Fava 시작 (대화형 메뉴) |
+| `./prices.sh` | 현재 암호화폐 가격 가져오기 |
+| `bean-check crypto_main.beancount` | 원장 검증 |
+| `bean-query crypto_main.beancount "SELECT..."` | 데이터 쿼리 |
+| `docker-compose up -d` | Docker로 시작 |
+| `docker-compose logs -f` | Docker 로그 보기 |
 
-BTC, ETH, SOL, ADA, DOT, AVAX, ATOM, ALGO, XRP, XLM, NEAR, FTM, TON, APT, SUI, LTC, BCH, ETC 등
+## 세금 보고
 
-### Layer-2 솔루션
+**자동으로 추적되는 과세 대상 이벤트:**
+- 자본 이득/손실 (암호화폐 판매, 스왑)
+- 스테이킹 보상 (소득)
+- 에어드롭 (소득)
+- DeFi 수익 (소득)
 
-MATIC, OP, ARB
+**보고서 생성:**
 
-### 스테이블코인
+```bash
+# 모든 자본 이득 보기
+bean-query crypto_main.beancount "
+  SELECT date, account, sum(position)
+  WHERE account ~ 'CapitalGains'
+  ORDER BY date"
 
-USDT, USDC, DAI, BUSD, TUSD
+# 스테이킹 수입 보기
+bean-query crypto_main.beancount "
+  SELECT date, sum(position)
+  WHERE account ~ 'Staking:Rewards'"
+```
 
-### DeFi 토큰
+## 보안
 
-UNI, AAVE, MKR, COMP, SNX, CRV, SUSHI
+⚠️ **중요:** 암호화되지 않은 재무 데이터를 공개 저장소에 커밋하지 마세요.
 
-### 거래소 토큰
+**git-crypt를 사용하여 민감한 파일 암호화:**
 
-BNB, CRO, FTT
+```bash
+brew install git-crypt
+git-crypt init
+echo "*.beancount filter=git-crypt diff=git-crypt" >> .gitattributes
+echo "tx_*.beancount filter=git-crypt diff=git-crypt" >> .gitattributes
+```
 
-### 영구 선물 DEX
+## 문제 해결
 
-HYPE (Hyperliquid), DYDX (dYdX), GMX
-
-### Solana DEX
-
-RAY (Raydium), JUP (Jupiter), ORCA (Orca)
-
-### 리퀴드 스테이킹 & 리스테이킹
-
-- **Ethereum**: LDO (Lido), STETH, RPL (Rocket Pool), RETH, EIGEN (EigenLayer)
-- **Solana**: JTO (Jito), JITOSOL, MNDE (Marinade), MSOL
-
-### NFT 생태계 토큰
-
-APE (ApeCoin), LOOKS (LooksRare), X2Y2, SUDO (Sudoswap), BLUR (Blur), NFT (APENFT)
-
-### Bitcoin Ordinals & BRC-20
-
-ORDI (Ordinals), SATS, RATS, PUPS (Bitcoin Puppets), TRAC
-
-### 지원되는 NFT 컬렉션
-
-- **Ethereum**: BAYC, MAYC, Azuki, CloneX, Doodles, Pudgy Penguins, Moonbirds, Cryptopunks, Meebits, Art Blocks, PROOF Collective
-- **Solana**: DeGods, y00ts, Mad Lads, Solana Monkey Business, Okay Bears, Tensorians
-- **Bitcoin Ordinals**: NodeMonkes, Bitcoin Puppets, Quantum Cats, Ordinal Inscriptions
-- **Polygon**: Reddit Collectible Avatars
-- **Base**: Based Fellas
+| 문제 | 해결책 |
+|------|--------|
+| `bean-check` 오류 | 계정 이름 확인, 거래가 균형을 이루는지 확인 |
+| 가격이 표시되지 않음 | `./prices.sh` 실행, `crypto_prices.beancount` 확인 |
+| 잔액 불일치 | 모든 거래 검토, 누락된 수수료 확인 |
+| Fava가 시작되지 않음 | 포트 5002가 사용 중인지 확인, `./run.sh -p 5003` 시도 |
+| Docker 문제 | `docker-compose logs`로 로그 확인 |
 
 ## 리소스
 
-다음에 대해 자세히 알아보려면 [coinbean.org/docs](http://coinbean.org/docs)를 방문하세요:
-
-- 고급 거래 패턴
-- 세금 신고 전략
-- 다른 도구와의 통합
-- 커뮤니티 모범 사례
-
-**프로젝트 링크:**
-
-- 📦 [GitHub 저장소](https://github.com/qai-lab/coinbean) - 소스 코드, 이슈 및 기여
-- 📋 [릴리스 노트](https://github.com/qai-lab/coinbean/releases) - 버전 히스토리 및 체인지로그
-- 🌐 [Coinbean 웹사이트](https://coinbean.org/) - 공식 웹사이트 및 문서
-- 🐦 [Coinbean X/Twitter](https://x.com/coinbean_org) - 업데이트 및 뉴스 팔로우
-- 📚 [Beancount 문서](https://beancount.github.io/docs/) - Beancount 학습
-- 🖥️ [Fava - 웹 인터페이스](https://github.com/beancount/fava) - Beancount 웹 인터페이스
-- 💬 [Plain Text Accounting](https://plaintextaccounting.org/) - 커뮤니티 및 리소스
-
-## 기여
-
-기여를 환영합니다! Pull Request를 자유롭게 제출하세요. 기여 영역:
-
-- 추가 거래소 템플릿
-- 더 많은 DeFi 프로토콜
-- 거래 가져오기를 위한 자동화 스크립트
-- 문서 개선
+- 📦 [GitHub 저장소](https://github.com/qai-lab/coinbean)
+- 📋 [릴리스 노트](https://github.com/qai-lab/coinbean/releases)
+- 🌐 [Coinbean 웹사이트](https://coinbean.org/)
+- 🐦 [X/Twitter 팔로우](https://x.com/CoinbeanAI)
+- 📚 [Beancount 문서](https://beancount.github.io/docs/)
+- 🖥️ [Fava 문서](https://github.com/beancount/fava)
 
 ## 저자
 
-**Coinbean**은 다음에 의해 제작 및 유지 관리됩니다:
+**제작자:**
+- **Boyuan Qian** - [@boyuanqian](https://github.com/boyuanqian) | [@boyuan_qian](https://x.com/boyuan_qian)
 
-- **Boyuan Qian**
-  - 🐙 GitHub: [@boyuanqian](https://github.com/boyuanqian)
-  - 🐦 X/Twitter: [@boyuan_qian](https://x.com/boyuan_qian)
-  - 🏢 조직: [QAI Lab](https://github.com/qai-lab)
-
-**QAI Lab**
-
-- 🌐 웹사이트: [qai.io](https://qai.io)
-- 🐙 GitHub: [@qai-lab](https://github.com/qai-lab)
-- 🐦 X/Twitter: [@qai_lab](https://x.com/qai_lab)
+**조직:**
+- **QAI Lab** - [qai.io](https://qai.io) | [@qai-lab](https://github.com/qai-lab) | [@qai_lab](https://x.com/qai_lab)
 
 ## 라이선스
 
-MIT 라이선스 - Copyright (c) 2025 Boyuan Qian 및 QAI Lab
-
-자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
-
-이 템플릿은 개인 사용을 위해 있는 그대로 제공됩니다. 포트폴리오 추적 필요에 맞게 사용자 지정하세요.
+MIT 라이선스 - Copyright (c) 2025 Boyuan Qian 및 QAI Lab. [LICENSE](LICENSE) 파일 참조.
 
 ## 면책 조항
 
-이것은 개인 재무 추적 도구입니다. 다음을 제공하지 않습니다:
-
-- 재무 조언
-- 세금 조언
-- 투자 권장 사항
-
-재무 및 세금 문제에 대해서는 항상 자격을 갖춘 전문가와 상담하세요. 암호화폐 투자는 위험하며 자본 손실을 초래할 수 있습니다.
+이 도구는 개인 포트폴리오 추적 전용입니다. 재무, 세금 또는 투자 조언을 제공하지 않습니다. 암호화폐 투자는 위험을 수반합니다. 재무 및 세금 문제에 대해서는 자격을 갖춘 전문가와 상담하십시오.
 
 ---
 
-**즐거운 추적! 📊💰**
+**즐거운 추적되시길! 📊**
