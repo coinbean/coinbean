@@ -1246,6 +1246,7 @@ Asset 结构包括：
   - 🏢 组织：[QAI Lab](https://github.com/qai-lab)
 
 **QAI Lab**
+  - 🌐 网站：[qai.io](https://qai.io)
   - 🐙 GitHub: [@qai-lab](https://github.com/qai-lab)
   - 🐦 X/Twitter: [@qai_lab](https://x.com/qai_lab)
 

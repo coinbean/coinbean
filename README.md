@@ -1314,9 +1314,10 @@ Contributions are welcome! Please feel free to submit a Pull Request. Areas for 
   - 🏢 Organization: [QAI Lab](https://github.com/qai-lab)
 
 **QAI Lab**
-  - 🌐 Website: [qai.io](https://qai.io)
-  - 🐙 GitHub: [@qai-lab](https://github.com/qai-lab)
-  - 🐦 X/Twitter: [@qai_lab](https://x.com/qai_lab)
+
+- 🌐 Website: [qai.io](https://qai.io)
+- 🐙 GitHub: [@qai-lab](https://github.com/qai-lab)
+- 🐦 X/Twitter: [@qai_lab](https://x.com/qai_lab)
 
 ## License
 
