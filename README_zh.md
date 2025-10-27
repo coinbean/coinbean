@@ -8,7 +8,7 @@
 
 ---
 
-🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/coinbean_org](https://x.com/coinbean_org)
+🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/CoinbeanAI](https://x.com/CoinbeanAI)
 
 ---
 
@@ -41,11 +41,11 @@ Coinbean 是一个结构化的 Beancount 账本模板，用于跟踪以下平台
 
 ## ⚡ 快速参考
 
-| 脚本 | 命令 | 用途 |
-|--------|---------|---------|
-| **设置** | `./setup.sh` | 安装 Beancount 和 Fava，验证账本 |
-| **运行 Fava** | `./run.sh` | 在 http://localhost:5002 启动 Web 界面 |
-| **获取价格** | `./prices.sh` | 获取当前加密货币价格（交互式菜单） |
+| 脚本          | 命令          | 用途                                   |
+| ------------- | ------------- | -------------------------------------- |
+| **设置**      | `./setup.sh`  | 安装 Beancount 和 Fava，验证账本       |
+| **运行 Fava** | `./run.sh`    | 在 http://localhost:5002 启动 Web 界面 |
+| **获取价格**  | `./prices.sh` | 获取当前加密货币价格（交互式菜单）     |
 
 详细文档请参阅[辅助脚本](#辅助脚本)部分。
 
@@ -217,6 +217,7 @@ Assets:Crypto:{类型}:{平台}:{资产}
 ```
 
 **示例：**
+
 - `Assets:Crypto:Exchange:Coinbase:BTC` - Coinbase 上的比特币
 - `Assets:Crypto:Wallet:Ledger:ETH` - Ledger 上的以太坊
 - `Assets:Crypto:DeFi:Aave:USDC` - 存入 Aave 的 USDC
@@ -224,6 +225,7 @@ Assets:Crypto:{类型}:{平台}:{资产}
 - `Assets:Crypto:NFT:Ethereum:BAYC` - Bored Ape Yacht Club NFT
 
 **提示：**
+
 - 平台名称使用驼峰命名法（例如 `MetaMask` 而不是 `metamask`）
 - 资产代码保持大写（例如 `BTC`、`ETH`）
 - 在所有交易中保持一致
@@ -233,6 +235,7 @@ Assets:Crypto:{类型}:{平台}:{资产}
 **🎯 crypto_main.beancount** - 您账本的核心
 
 这是将所有内容联系在一起的主入口点。它包含：
+
 - **110+ 种加密货币商品定义**（BTC、ETH、SOL、NFT 代币、BRC-20 等）
 - **收入/支出/权益账户**（资本利得、质押奖励、Gas 费用等）
 - **模块导入**通过 `include` 语句
@@ -243,10 +246,12 @@ Assets:Crypto:{类型}:{平台}:{资产}
 **💱 exchanges.beancount** - 中心化交易所账户
 
 预配置了 10+ 个主要交易所的账户：
+
 - **一线**：Coinbase、Binance、Kraken、Gemini
 - **二线**：Crypto.com、KuCoin、Bybit、OKX、HTX、Gate.io
 
 每个交易所都有：
+
 - 法币账户（USD、EUR）
 - 主要加密货币账户（BTC、ETH、SOL、稳定币）
 - 通用"Other"账户用于山寨币
@@ -256,6 +261,7 @@ Assets:Crypto:{类型}:{平台}:{资产}
 **⛓️ chains.beancount** - 自托管和原生质押
 
 包含以下账户：
+
 - **硬件钱包**：Ledger、Trezor
 - **软件钱包**：MetaMask、Phantom、Sui Wallet、Trust Wallet 等
 - **原生质押**：ETH、SOL、ADA、DOT、ATOM、SUI、AVAX 的直接质押
@@ -266,6 +272,7 @@ Assets:Crypto:{类型}:{平台}:{资产}
 **🏦 defi.beancount** - DeFi 协议和流动性质押
 
 全面的 DeFi 覆盖：
+
 - **借贷**：Aave、Compound、MakerDAO
 - **DEX**：Uniswap、SushiSwap、Curve、PancakeSwap、Raydium、Jupiter、Orca
 - **永续合约 DEX**：Hyperliquid、dYdX、GMX
@@ -285,12 +292,14 @@ Assets:Crypto:{类型}:{平台}:{资产}
 用于准确投资组合估值的历史价格数据。
 
 **何时编辑：**
+
 - 通过 `./prices.sh --beancount >> crypto_prices.beancount` 自动更新
 - 为 CoinGecko 上没有的资产或历史价格手动更新
 
 **📚 crypto_examples.beancount** - 学习资源
 
 20+ 个示例交易，展示以下最佳实践：
+
 - 交易所交易、钱包转账、质押、DeFi 操作、NFT 交易等
 
 **何时使用：**当您不确定如何记录某种交易类型时参考
@@ -315,6 +324,7 @@ Coinbean 包含三个强大的辅助脚本，使管理加密货币投资组合�
 设置脚本自动处理所有安装和配置。
 
 **功能：**
+
 - 检查 Python 3 安装
 - 安装 Beancount 和 Fava 包
 - 验证账本文件语法
@@ -322,11 +332,13 @@ Coinbean 包含三个强大的辅助脚本，使管理加密货币投资组合�
 - 验证一切正常工作
 
 **使用方法：**
+
 ```bash
 ./setup.sh
 ```
 
 **首次设置：**
+
 ```bash
 cd /path/to/coinbean
 ./setup.sh
@@ -335,6 +347,7 @@ cd /path/to/coinbean
 脚本将通过清晰的提示和错误消息指导您完成安装过程。
 
 **预期内容：**
+
 1. Python 版本检查
 2. 包安装（可能需要 sudo/管理员权限）
 3. 使用 `bean-check` 验证账本
@@ -345,17 +358,20 @@ cd /path/to/coinbean
 运行脚本启动 Fava Web 界面以可视化您的投资组合。
 
 **功能：**
+
 - 检查 Fava 是否已安装
 - 在启动前验证您的账本文件
 - 在端口 5002 上启动 Fava
 - 自动打开默认浏览器（可选）
 
 **使用方法：**
+
 ```bash
 ./run.sh
 ```
 
 **然后在浏览器中打开：**
+
 ```
 http://localhost:5002
 ```
@@ -365,11 +381,13 @@ http://localhost:5002
 
 **自定义端口：**
 编辑 `run.sh` 并更改脚本中的端口号：
+
 ```bash
 fava -p 5002 crypto_main.beancount  # 将 5002 更改为您喜欢的端口
 ```
 
 **Fava 功能：**
+
 - 带账户余额的精美仪表板
 - 交互式图表和图形
 - 收入/支出报告
@@ -381,6 +399,7 @@ fava -p 5002 crypto_main.beancount  # 将 5002 更改为您喜欢的端口
 价格获取脚本从 CoinGecko API 获取当前加密货币价格。
 
 **功能：**
+
 - 获取 110+ 种加密货币的实时价格
 - 在带有链信息的格式化表格中显示价格
 - 支持按特定代码过滤
@@ -388,11 +407,13 @@ fava -p 5002 crypto_main.beancount  # 将 5002 更改为您喜欢的端口
 - 无需 API 密钥（使用 CoinGecko 免费层）
 
 **交互模式**（推荐）：
+
 ```bash
 ./prices.sh
 ```
 
 您将看到一个菜单：
+
 ```
 选择一个选项：
 1. 显示所有加密货币价格
@@ -402,6 +423,7 @@ fava -p 5002 crypto_main.beancount  # 将 5002 更改为您喜欢的端口
 ```
 
 **命令行模式**（用于脚本）：
+
 ```bash
 # 显示所有价格
 ./prices.sh
@@ -420,6 +442,7 @@ fava -p 5002 crypto_main.beancount  # 将 5002 更改为您喜欢的端口
 ```
 
 **高级选项：**
+
 ```bash
 # 使用特定日期
 ./prices.sh --date 2025-10-27
@@ -432,6 +455,7 @@ fava -p 5002 crypto_main.beancount  # 将 5002 更改为您喜欢的端口
 ```
 
 **自动化示例**（每日更新的 cron 作业）：
+
 ```bash
 # 编辑 crontab
 crontab -e
@@ -449,6 +473,7 @@ crontab -e
 ### 新功能
 
 ✨ **表格显示**：默认情况下，价格以格式化表格显示，显示：
+
 - 代码符号
 - 资产名称
 - 区块链/链（用于区分具有相同代码的资产）
@@ -464,6 +489,7 @@ crontab -e
 ### 支持的加密货币
 
 该脚本支持 110+ 种加密货币，包括：
+
 - **Layer 1**：BTC、ETH、SOL、ADA、DOT、AVAX、ATOM、ALGO、XRP、XLM、NEAR、FTM、TON、APT、SUI、TRX、XTZ、EOS、FLOW、SEI、INJ、KAVA、THETA、KAS
 - **Layer 2**：MATIC、OP、ARB、IMX、LRC、METIS
 - **稳定币**：USDT、USDC、DAI、BUSD、TUSD
@@ -645,19 +671,20 @@ Coinbean 的模块化结构使其易于根据您的特定需求进行自定义�
 
 Coinbean 将账户组织到单独的文件中以便更好地维护：
 
-| 文件 | 用途 | 何时编辑 |
-|------|---------|--------------|
+| 文件                    | 用途               | 何时编辑       |
+| ----------------------- | ------------------ | -------------- |
 | `crypto_main.beancount` | 商品定义、核心账户 | 添加新加密货币 |
-| `exchanges.beancount` | 中心化交易所账户 | 添加新交易所 |
-| `chains.beancount` | 钱包和原生质押 | 添加钱包或质押 |
-| `defi.beancount` | DeFi 协议 | 添加 DeFi 协议 |
-| `tx_2025.beancount` | 当前年度交易 | 记录您的交易 |
+| `exchanges.beancount`   | 中心化交易所账户   | 添加新交易所   |
+| `chains.beancount`      | 钱包和原生质押     | 添加钱包或质押 |
+| `defi.beancount`        | DeFi 协议          | 添加 DeFi 协议 |
+| `tx_2025.beancount`     | 当前年度交易       | 记录您的交易   |
 
 ### 添加新交易所
 
 **要编辑的文件：**`exchanges.beancount`
 
 **模板：**
+
 ```beancount
 ;; ========================================
 ;; 您的交易所名称
@@ -679,6 +706,7 @@ Coinbean 将账户组织到单独的文件中以便更好地维护：
 ```
 
 **示例 - 添加 Bitfinex：**
+
 ```beancount
 ;; ========================================
 ;; BITFINEX
@@ -691,6 +719,7 @@ Coinbean 将账户组织到单独的文件中以便更好地维护：
 ```
 
 **提示：**
+
 - 仅为您实际持有的资产创建账户
 - 使用一致的命名（交易所名称使用驼峰命名法）
 - 使用注释对相关账户进行分组
@@ -701,6 +730,7 @@ Coinbean 将账户组织到单独的文件中以便更好地维护：
 **要编辑的文件：**`chains.beancount`
 
 **硬件钱包示例：**
+
 ```beancount
 ;; ========================================
 ;; COLDCARD（比特币硬件钱包）
@@ -710,6 +740,7 @@ Coinbean 将账户组织到单独的文件中以便更好地维护：
 ```
 
 **软件钱包示例：**
+
 ```beancount
 ;; ========================================
 ;; RABBY WALLET（多链）
@@ -721,6 +752,7 @@ Coinbean 将账户组织到单独的文件中以便更好地维护：
 ```
 
 **移动钱包示例：**
+
 ```beancount
 ;; ========================================
 ;; COINBASE WALLET（移动应用）
@@ -731,6 +763,7 @@ Coinbean 将账户组织到单独的文件中以便更好地维护：
 ```
 
 **账户命名约定：**
+
 ```
 Assets:Crypto:Wallet:{钱包名称}:{资产}
                      └─────┬─────┘  └──┬──┘
@@ -742,6 +775,7 @@ Assets:Crypto:Wallet:{钱包名称}:{资产}
 **要编辑的文件：**`chains.beancount`
 
 **模板：**
+
 ```beancount
 ;; ========================================
 ;; 质押 - {区块链名称}
@@ -758,6 +792,7 @@ Assets:Crypto:Wallet:{钱包名称}:{资产}
 ```
 
 **示例 - Avalanche 质押：**
+
 ```beancount
 ;; ========================================
 ;; 质押 - AVALANCHE
@@ -768,6 +803,7 @@ Assets:Crypto:Wallet:{钱包名称}:{资产}
 ```
 
 **示例交易 - 质押 AVAX：**
+
 ```beancount
 2025-01-15 * "质押 AVAX" "委托给验证者"
   Assets:Crypto:Staking:AVAX:Delegated    100 AVAX
@@ -780,6 +816,7 @@ Assets:Crypto:Wallet:{钱包名称}:{资产}
 **要编辑的文件：**`defi.beancount`
 
 **借贷协议示例：**
+
 ```beancount
 ;; ========================================
 ;; VENUS PROTOCOL（BSC 借贷）
@@ -792,6 +829,7 @@ Assets:Crypto:Wallet:{钱包名称}:{资产}
 ```
 
 **DEX 流动性池示例：**
+
 ```beancount
 ;; ========================================
 ;; ORCA（Solana DEX）
@@ -806,6 +844,7 @@ Assets:Crypto:Wallet:{钱包名称}:{资产}
 ```
 
 **永续合约 DEX 示例：**
+
 ```beancount
 ;; ========================================
 ;; VERTEX PROTOCOL（Arbitrum 永续合约）
@@ -818,6 +857,7 @@ Assets:Crypto:Wallet:{钱包名称}:{资产}
 ```
 
 **流动性质押示例：**
+
 ```beancount
 ;; ========================================
 ;; BENQI（Avalanche 流动性质押）
@@ -834,6 +874,7 @@ Assets:Crypto:Wallet:{钱包名称}:{资产}
 **要编辑的文件：**`crypto_main.beancount`
 
 **模板：**
+
 ```beancount
 2020-01-01 commodity TICKER
   name: "全名"
@@ -844,6 +885,7 @@ Assets:Crypto:Wallet:{钱包名称}:{资产}
 ```
 
 **Layer-1 区块链示例：**
+
 ```beancount
 2020-01-01 commodity ALGO
   name: "Algorand"
@@ -854,6 +896,7 @@ Assets:Crypto:Wallet:{钱包名称}:{资产}
 ```
 
 **DeFi 代币示例：**
+
 ```beancount
 2020-01-01 commodity CAKE
   name: "PancakeSwap"
@@ -864,6 +907,7 @@ Assets:Crypto:Wallet:{钱包名称}:{资产}
 ```
 
 **流动性质押代币示例：**
+
 ```beancount
 2020-01-01 commodity CBETH
   name: "Coinbase Wrapped Staked ETH"
@@ -875,12 +919,14 @@ Assets:Crypto:Wallet:{钱包名称}:{资产}
 ```
 
 **重要规则：**
+
 - ✅ 代码必须全部大写
 - ✅ 不能以数字开头（使用 `INCH` 而不是 `1INCH`）
 - ✅ 不能包含小写字母或除下划线外的特殊字符
 - ✅ 使用描述性类别：Layer-1、Layer-2、DeFi、Stablecoin、NFT、Meme 等
 
 **常见类别：**
+
 - `Layer-1` - 基础区块链（BTC、ETH、SOL）
 - `Layer-2` - 扩容解决方案（MATIC、OP、ARB）
 - `DeFi` - 去中心化金融（UNI、AAVE、CRV）
@@ -899,6 +945,7 @@ Assets:Crypto:Wallet:{钱包名称}:{资产}
 **要编辑的文件：**`chains.beancount`（或创建 `nft.beancount`）
 
 **模板：**
+
 ```beancount
 ;; NFT 收藏品 - {区块链}
 2020-01-01 open Assets:Crypto:NFT:Blockchain:CollectionName
@@ -906,6 +953,7 @@ Assets:Crypto:Wallet:{钱包名称}:{资产}
 ```
 
 **示例：**
+
 ```beancount
 ;; NFT 收藏品 - 以太坊
 2020-01-01 open Assets:Crypto:NFT:Ethereum:Pudgy
@@ -935,11 +983,13 @@ ASSETS = [
 ```
 
 **示例：**
+
 ```python
 Asset('CAKE', 'PancakeSwap', 'BNB Chain', 'DEX', 'pancakeswap-token'),
 ```
 
 **结构：**
+
 - `ticker` - Beancount 中的符号（大写）
 - `name` - 资产的全名
 - `chain` - 区块链（帮助区分多链资产）
@@ -1002,6 +1052,7 @@ bean-check crypto_main.beancount
 ### 应税事件
 
 1. **资本利得/损失**
+
    - 出售加密货币换法币
    - 一种加密货币交易另一种
    - 使用加密货币购买商品/服务
@@ -1016,6 +1067,7 @@ bean-check crypto_main.beancount
 ### 税务目的记录
 
 始终跟踪：
+
 - **成本基础**：原始购买价格 `{价格 USD}`
 - **售价**：当前市场价格 `@ 价格 USD`
 - **资本利得**：记录在 `Income:Crypto:Trading:CapitalGains`
@@ -1100,12 +1152,14 @@ git-crypt add-gpg-user YOUR_GPG_KEY_ID
 ```
 
 **要加密的内容：**
+
 - ✅ 所有交易文件（`tx_*.beancount`）
 - ✅ 具有真实余额的账户文件（`exchanges.beancount`、`chains.beancount`、`defi.beancount`）
 - ✅ 包含您实际头寸的价格文件
 - ❌ 模板/示例文件可以保持未加密
 
 **其他安全措施：**
+
 - 为敏感数据与模板使用单独的分支
 - 切勿将未加密的财务数据推送到公共存储库
 - 在推送前查看所有提交以确保没有暴露敏感数据
@@ -1129,21 +1183,25 @@ git-crypt add-gpg-user YOUR_GPG_KEY_ID
 ### 常见问题
 
 **"bean-check 报告错误"**
+
 - 检查账户名称中的拼写错误
 - 确保所有交易平衡
 - 验证商品符号匹配
 
 **"Fava 中未显示价格"**
+
 - 更新 `crypto_prices.beancount`
 - 确保日期格式为 YYYY-MM-DD
 - 检查商品符号完全匹配
 
 **"余额与交易所不匹配"**
+
 - 按时间顺序查看所有交易
 - 检查遗漏的费用
 - 验证转账金额
 
 **"Fava 无法启动"**
+
 - 确保 Fava 已安装：`pip3 install fava`
 - 检查端口是否未被使用：尝试 `./run.sh -p 5003`
 - 验证账本：`bean-check crypto_main.beancount`
@@ -1195,6 +1253,7 @@ bean-query crypto_main.beancount "
 3. 将商品定义添加到 `crypto_main.beancount`
 
 示例：
+
 ```python
 # 在 fetch_prices.py 中 - 添加到 ASSETS 列表
 ASSETS = [
@@ -1204,6 +1263,7 @@ ASSETS = [
 ```
 
 Asset 结构包括：
+
 - `ticker`：Beancount 中使用的符号（大写）
 - `name`：资产的全名
 - `chain`：区块链/网络（帮助区分不同链上的相同代码）
@@ -1213,16 +1273,18 @@ Asset 结构包括：
 ## 资源
 
 访问 [coinbean.org/docs](http://coinbean.org/docs) 了解更多关于：
+
 - 高级交易模式
 - 税务报告策略
 - 与其他工具集成
 - 社区最佳实践
 
 **项目链接：**
+
 - 📦 [GitHub 存储库](https://github.com/qai-lab/coinbean) - 源代码、问题和贡献
 - 📋 [发布说明](https://github.com/qai-lab/coinbean/releases) - 版本历史和更新日志
 - 🌐 [Coinbean 网站](https://coinbean.org/) - 官方网站和文档
-- 🐦 [Coinbean X/Twitter](https://x.com/coinbean_org) - 关注获取更新和新闻
+- 🐦 [Coinbean X/Twitter](https://x.com/CoinbeanAI) - 关注获取更新和新闻
 - 📚 [Beancount 文档](https://beancount.github.io/docs/) - 了解 Beancount
 - 🖥️ [Fava - Web 界面](https://github.com/beancount/fava) - Beancount Web 界面
 - 💬 [纯文本记账](https://plaintextaccounting.org/) - 社区和资源
@@ -1246,9 +1308,10 @@ Asset 结构包括：
   - 🏢 组织：[QAI Lab](https://github.com/qai-lab)
 
 **QAI Lab**
-  - 🌐 网站：[qai.io](https://qai.io)
-  - 🐙 GitHub: [@qai-lab](https://github.com/qai-lab)
-  - 🐦 X/Twitter: [@qai_lab](https://x.com/qai_lab)
+
+- 🌐 网站：[qai.io](https://qai.io)
+- 🐙 GitHub: [@qai-lab](https://github.com/qai-lab)
+- 🐦 X/Twitter: [@qai_lab](https://x.com/qai_lab)
 
 ## 许可证
 
@@ -1261,6 +1324,7 @@ MIT 许可证 - 版权所有 (c) 2025 Boyuan Qian 和 QAI Lab
 ## 免责声明
 
 这是一个个人财务跟踪工具。它不提供：
+
 - 财务建议
 - 税务建议
 - 投资建议

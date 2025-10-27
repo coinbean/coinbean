@@ -12,7 +12,7 @@ English | [简体中文](README_zh.md)
 
 ---
 
-🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/coinbean_org](https://x.com/coinbean_org)
+🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/CoinbeanAI](https://x.com/CoinbeanAI)
 
 </div>
 
@@ -1290,7 +1290,7 @@ Visit [coinbean.org/docs](http://coinbean.org/docs) to learn more about:
 - 📦 [GitHub Repository](https://github.com/qai-lab/coinbean) - Source code, issues, and contributions
 - 📋 [Release Notes](https://github.com/qai-lab/coinbean/releases) - Version history and changelog
 - 🌐 [Coinbean Website](https://coinbean.org/) - Official website and documentation
-- 🐦 [Coinbean on X/Twitter](https://x.com/coinbean_org) - Follow for updates and news
+- 🐦 [Coinbean on X/Twitter](https://x.com/CoinbeanAI) - Follow for updates and news
 - 📚 [Beancount Documentation](https://beancount.github.io/docs/) - Learn about Beancount
 - 🖥️ [Fava - Web Interface](https://github.com/beancount/fava) - Beancount web interface
 - 💬 [Plain Text Accounting](https://plaintextaccounting.org/) - Community and resources

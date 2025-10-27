@@ -29,6 +29,7 @@ Visit http://localhost:5002 to view your portfolio!
 ## 🔮 What's Next?
 
 This is our initial release. We're planning to add:
+
 - 🔄 More exchange integrations
 - 📊 Enhanced reporting features
 - 🤖 Automated transaction imports from CSV
@@ -46,18 +47,20 @@ Your feedback is invaluable! Please share your thoughts and suggestions.
 ## 🌐 Links
 
 - 🌐 Website: [coinbean.org](https://coinbean.org/)
-- 🐦 Twitter/X: [@coinbean_org](https://x.com/coinbean_org)
+- 🐦 Twitter/X: [@CoinbeanAI](https://x.com/CoinbeanAI)
 - 📦 GitHub: [qai-lab/coinbean](https://github.com/qai-lab/coinbean)
 
 ## 👥 Team
 
 **Created by:**
+
 - [Boyuan Qian](https://github.com/boyuanqian) ([@boyuan_qian](https://x.com/boyuan_qian))
 - [QAI Lab](https://qai.io) ([@qai_lab](https://x.com/qai_lab))
 
 ## 🤝 Contributing
 
 We welcome contributions! Areas for improvement:
+
 - Additional exchange templates
 - More DeFi protocol integrations
 - Transaction import automation scripts
@@ -73,6 +76,7 @@ MIT License - Copyright (c) 2025 Boyuan Qian and QAI Lab
 ## 🎉 Thank You!
 
 If you find Coinbean useful, please:
+
 - ⭐ Star the repository
 - 🐦 Follow us on X/Twitter for updates
 - 📢 Share with others who might benefit
@@ -82,4 +86,4 @@ If you find Coinbean useful, please:
 
 ---
 
-*Built with ❤️ by [Boyuan Qian](https://github.com/boyuanqian) @ [QAI Lab](https://qai.io)*
+_Built with ❤️ by [Boyuan Qian](https://github.com/boyuanqian) @ [QAI Lab](https://qai.io)_

@@ -1,6 +1,7 @@
 # Coinbean v0.1.0 - Initial Release 🎉
 
 ## Release Title
+
 **Coinbean v0.1.0 - Comprehensive Cryptocurrency Portfolio Tracking on Beancount**
 
 ---
@@ -18,6 +19,7 @@ Coinbean is a structured Beancount ledger template designed for tracking cryptoc
 ## ✨ Key Features
 
 ### 📊 Comprehensive Asset Coverage
+
 - **110+ cryptocurrencies** pre-configured including:
   - Layer-1 blockchains: BTC, ETH, SOL, ADA, DOT, AVAX, ATOM, and more
   - Layer-2 solutions: MATIC, OP, ARB
@@ -30,6 +32,7 @@ Coinbean is a structured Beancount ledger template designed for tracking cryptoc
   - And many more!
 
 ### 🏦 Multi-Platform Support
+
 - **10+ major exchanges** with pre-configured account templates:
   - Tier 1: Coinbase, Binance, Kraken, Gemini
   - Tier 2: Crypto.com, KuCoin, Bybit, OKX, HTX, Gate.io
@@ -37,6 +40,7 @@ Coinbean is a structured Beancount ledger template designed for tracking cryptoc
 - **Software wallets**: MetaMask, Phantom, Sui Wallet, Trust Wallet, and more
 
 ### 🔄 DeFi Integration
+
 - **Lending protocols**: Aave, Compound, MakerDAO
 - **DEXs**: Uniswap, SushiSwap, Curve, PancakeSwap, Raydium, Jupiter, Orca
 - **Perpetual DEXs**: Hyperliquid, dYdX, GMX
@@ -44,6 +48,7 @@ Coinbean is a structured Beancount ledger template designed for tracking cryptoc
 - **Restaking**: EigenLayer, Solayer, Renzo, Ether.fi
 
 ### 🖼️ NFT Tracking
+
 - Support for popular NFT collections across multiple chains:
   - **Ethereum**: BAYC, MAYC, Azuki, CloneX, Doodles, Pudgy Penguins, CryptoPunks
   - **Solana**: DeGods, y00ts, Mad Lads, Okay Bears
@@ -52,6 +57,7 @@ Coinbean is a structured Beancount ledger template designed for tracking cryptoc
   - **Base**: Based Fellas
 
 ### 💰 Automated Price Fetching
+
 - **Interactive price fetcher** (`./prices.sh`) with:
   - Real-time prices from CoinGecko API (no API key required)
   - Support for 110+ cryptocurrencies
@@ -61,6 +67,7 @@ Coinbean is a structured Beancount ledger template designed for tracking cryptoc
   - Automation support via cron jobs
 
 ### 🧮 Tax Reporting Ready
+
 - Capital gains/loss tracking with cost basis
 - Staking rewards and income recording
 - Trading fees and gas costs tracking
@@ -68,6 +75,7 @@ Coinbean is a structured Beancount ledger template designed for tracking cryptoc
 - Support for FIFO, LIFO, and specific identification methods
 
 ### 🎨 Beautiful Web Interface
+
 - **Fava integration** for interactive visualization
 - Real-time portfolio valuation
 - Interactive charts and graphs
@@ -76,6 +84,7 @@ Coinbean is a structured Beancount ledger template designed for tracking cryptoc
 - Custom query editor
 
 ### 🔧 Easy Setup & Automation
+
 - **3 simple scripts** to get started:
   - `./setup.sh` - Automated installation and validation
   - `./run.sh` - Start Fava web interface instantly
@@ -84,6 +93,7 @@ Coinbean is a structured Beancount ledger template designed for tracking cryptoc
 - Pre-configured for immediate use
 
 ### 🏗️ Modular Architecture
+
 - **Clean file organization**:
   - `crypto_main.beancount` - Main ledger with commodity definitions
   - `exchanges.beancount` - Centralized exchange accounts
@@ -96,6 +106,7 @@ Coinbean is a structured Beancount ledger template designed for tracking cryptoc
 - Comment out unused modules to keep ledger focused
 
 ### 🔒 Security Features
+
 - **git-crypt configuration** for encrypting sensitive transaction data
 - `.gitattributes` template included and ready to use
 - Comprehensive security documentation
@@ -103,6 +114,7 @@ Coinbean is a structured Beancount ledger template designed for tracking cryptoc
 - Safe to use with version control when encrypted
 
 ### 📚 Comprehensive Documentation
+
 - **Bilingual documentation**: Full documentation in both English and Chinese (简体中文)
 - **20+ transaction examples** covering:
   - Exchange trading and deposits
@@ -121,6 +133,7 @@ Coinbean is a structured Beancount ledger template designed for tracking cryptoc
   - Troubleshooting common issues
 
 ### 🎯 Precision & Accuracy
+
 - Configured tolerances for satoshis, gwei, and small units
 - Support for assets with many decimal places
 - Proper handling of crypto-specific rounding
@@ -131,12 +144,14 @@ Coinbean is a structured Beancount ledger template designed for tracking cryptoc
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Python 3.7+
 - pip (Python package manager)
 
 ### Three Simple Steps
 
 **Step 1: Clone and Setup**
+
 ```bash
 git clone https://github.com/qai-lab/coinbean.git
 cd coinbean
@@ -144,15 +159,19 @@ cd coinbean
 ```
 
 **Step 2: Start Fava Web Interface**
+
 ```bash
 ./run.sh
 ```
+
 Opens at http://localhost:5002
 
 **Step 3: Fetch Current Prices**
+
 ```bash
 ./prices.sh
 ```
+
 Interactive menu to get real-time cryptocurrency prices
 
 ---
@@ -160,6 +179,7 @@ Interactive menu to get real-time cryptocurrency prices
 ## 📦 What's Included
 
 ### Core Files
+
 - ✅ Main ledger with 110+ cryptocurrency definitions
 - ✅ Pre-configured account templates for 10+ exchanges
 - ✅ DeFi protocol templates for 20+ platforms
@@ -167,18 +187,21 @@ Interactive menu to get real-time cryptocurrency prices
 - ✅ NFT tracking templates
 
 ### Helper Scripts
+
 - ✅ `setup.sh` - Automated installation
 - ✅ `run.sh` - Fava web interface launcher
 - ✅ `prices.sh` - Price fetching wrapper
 - ✅ `fetch_prices.py` - CoinGecko API integration
 
 ### Documentation
+
 - ✅ `README.md` - Comprehensive English documentation
 - ✅ `README_zh.md` - Complete Chinese documentation (简体中文)
 - ✅ `crypto_examples.beancount` - 20+ transaction examples
 - ✅ `.gitattributes` - git-crypt configuration template
 
 ### Example Files
+
 - ✅ Sample transaction files by year
 - ✅ Example price data
 - ✅ Transaction templates for all common operations
@@ -188,24 +211,28 @@ Interactive menu to get real-time cryptocurrency prices
 ## 🎓 Example Use Cases
 
 ### For Individual Investors
+
 - Track holdings across multiple exchanges and wallets
 - Monitor DeFi positions and yields
 - Calculate capital gains for tax reporting
 - Analyze portfolio performance over time
 
 ### For Active Traders
+
 - Record all trades with precise cost basis
 - Track trading fees and profitability
 - Generate reports for tax filing
 - Maintain complete audit trail
 
 ### For DeFi Users
+
 - Track lending and borrowing positions
 - Monitor liquidity pool performance
 - Record staking rewards and airdrops
 - Calculate impermanent loss
 
 ### For NFT Collectors
+
 - Track NFT acquisitions and sales
 - Record marketplace fees
 - Calculate capital gains on NFT trades
@@ -216,12 +243,14 @@ Interactive menu to get real-time cryptocurrency prices
 ## 🔐 Security & Privacy
 
 ### Built-in Protection
+
 - **git-crypt support**: Encrypt sensitive transaction data before committing
 - **Privacy-first design**: Template files safe to share publicly
 - **Separation of concerns**: Real data kept separate from examples
 - **Detailed security documentation**: Step-by-step encryption setup guide
 
 ### Recommended Practice
+
 1. Use git-crypt to encrypt `.beancount` files with real transactions
 2. Keep examples and templates unencrypted for reference
 3. Never commit unencrypted financial data to public repositories
@@ -232,10 +261,12 @@ Interactive menu to get real-time cryptocurrency prices
 ## 🌐 Language Support
 
 This release includes full documentation in:
+
 - 🇺🇸 **English** (README.md)
 - 🇨🇳 **简体中文** (README_zh.md)
 
 Both versions include:
+
 - Complete feature documentation
 - Setup and installation guides
 - Transaction examples
@@ -247,18 +278,21 @@ Both versions include:
 ## 🛠️ Technical Details
 
 ### Built With
+
 - **Beancount** - Double-entry accounting system
 - **Fava** - Web interface for Beancount
 - **Python 3.7+** - Scripting and automation
 - **CoinGecko API** - Real-time price data (free tier)
 
 ### Requirements
+
 - Python 3.7 or higher
 - pip for package management
 - Git for version control (optional)
 - git-crypt for encryption (optional but recommended)
 
 ### Compatibility
+
 - ✅ macOS (tested)
 - ✅ Linux (Ubuntu, Debian, Fedora, Arch)
 - ✅ Windows (via WSL)
@@ -268,13 +302,15 @@ Both versions include:
 ## 📖 Documentation Resources
 
 ### Quick Links
+
 - 📦 [GitHub Repository](https://github.com/qai-lab/coinbean)
 - 🌐 [Official Website](https://coinbean.org/)
-- 🐦 [Follow on X/Twitter](https://x.com/coinbean_org)
+- 🐦 [Follow on X/Twitter](https://x.com/CoinbeanAI)
 - 📚 [Beancount Documentation](https://beancount.github.io/docs/)
 - 🖥️ [Fava Documentation](https://beancount.github.io/fava/)
 
 ### Learning Resources
+
 - **README.md**: Complete English documentation
 - **README_zh.md**: 完整中文文档
 - **crypto_examples.beancount**: 20+ annotated transaction examples
@@ -285,12 +321,15 @@ Both versions include:
 ## 👥 Community & Support
 
 ### Connect With Us
+
 - **Coinbean**
+
   - 🌐 Website: [coinbean.org](https://coinbean.org/)
-  - 🐦 X/Twitter: [@coinbean_org](https://x.com/coinbean_org)
+  - 🐦 X/Twitter: [@CoinbeanAI](https://x.com/CoinbeanAI)
   - 📦 GitHub: [qai-lab/coinbean](https://github.com/qai-lab/coinbean)
 
 - **Boyuan Qian** (Creator)
+
   - 🐙 GitHub: [@boyuanqian](https://github.com/boyuanqian)
   - 🐦 X/Twitter: [@boyuan_qian](https://x.com/boyuan_qian)
 
@@ -299,15 +338,17 @@ Both versions include:
   - 🐦 X/Twitter: [@qai_lab](https://x.com/qai_lab)
 
 ### Get Help
+
 - Report issues on [GitHub Issues](https://github.com/qai-lab/coinbean/issues)
 - Ask questions in [Discussions](https://github.com/qai-lab/coinbean/discussions)
-- Follow for updates on [X/Twitter](https://x.com/coinbean_org)
+- Follow for updates on [X/Twitter](https://x.com/CoinbeanAI)
 
 ---
 
 ## 🤝 Contributing
 
 We welcome contributions! Areas for improvement:
+
 - Additional exchange templates
 - More DeFi protocol integrations
 - Transaction import automation scripts
@@ -321,6 +362,7 @@ See our [Contributing Guidelines](https://github.com/qai-lab/coinbean#contributi
 ## 🔮 What's Next?
 
 This is our initial release (v0.1.0). We're planning to add:
+
 - 🔄 More exchange integrations
 - 📊 Enhanced reporting features
 - 🤖 Automated transaction import from CSV
@@ -342,6 +384,7 @@ This template is provided as-is for personal use. Customize as needed for your p
 ## ⚠️ Disclaimer
 
 Coinbean is a personal finance tracking tool. It does **not** provide:
+
 - Financial advice
 - Tax advice
 - Investment recommendations
@@ -355,6 +398,7 @@ Always consult with qualified professionals for financial and tax matters. Crypt
 Thank you for trying Coinbean! This is our first release, and we're excited to hear your feedback and improve the tool together.
 
 If you find Coinbean useful, please:
+
 - ⭐ Star the repository on GitHub
 - 🐦 Follow us on X/Twitter for updates
 - 📢 Share with others who might benefit
@@ -365,4 +409,4 @@ If you find Coinbean useful, please:
 
 ---
 
-*Built with ❤️ by [Boyuan Qian](https://github.com/boyuanqian) @ [QAI Lab](https://github.com/qai-lab)*
+_Built with ❤️ by [Boyuan Qian](https://github.com/boyuanqian) @ [QAI Lab](https://github.com/qai-lab)_
