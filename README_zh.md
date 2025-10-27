@@ -6,6 +6,12 @@
 
 [English](README.md) | 简体中文
 
+---
+
+🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/coinbean_org](https://x.com/coinbean_org)
+
+---
+
 ## Coinbean 是什么？
 
 Coinbean 是一个结构化的 Beancount 账本模板，用于跟踪以下平台的加密货币投资组合：
@@ -1214,6 +1220,7 @@ Asset 结构包括：
 
 **项目链接：**
 - 📦 [GitHub 存储库](https://github.com/qai-lab/coinbean) - 源代码、问题和贡献
+- 📋 [发布说明](https://github.com/qai-lab/coinbean/releases) - 版本历史和更新日志
 - 🌐 [Coinbean 网站](https://coinbean.org/) - 官方网站和文档
 - 🐦 [Coinbean X/Twitter](https://x.com/coinbean_org) - 关注获取更新和新闻
 - 📚 [Beancount 文档](https://beancount.github.io/docs/) - 了解 Beancount

@@ -10,6 +10,10 @@ A comprehensive cryptocurrency portfolio tracking system built on [Beancount](ht
 
 English | [简体中文](README_zh.md)
 
+---
+
+🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/coinbean_org](https://x.com/coinbean_org)
+
 </div>
 
 ## What is Coinbean?
@@ -1284,6 +1288,7 @@ Visit [coinbean.org/docs](http://coinbean.org/docs) to learn more about:
 **Project Links:**
 
 - 📦 [GitHub Repository](https://github.com/qai-lab/coinbean) - Source code, issues, and contributions
+- 📋 [Release Notes](https://github.com/qai-lab/coinbean/releases) - Version history and changelog
 - 🌐 [Coinbean Website](https://coinbean.org/) - Official website and documentation
 - 🐦 [Coinbean on X/Twitter](https://x.com/coinbean_org) - Follow for updates and news
 - 📚 [Beancount Documentation](https://beancount.github.io/docs/) - Learn about Beancount
@@ -1309,6 +1314,7 @@ Contributions are welcome! Please feel free to submit a Pull Request. Areas for 
   - 🏢 Organization: [QAI Lab](https://github.com/qai-lab)
 
 **QAI Lab**
+  - 🌐 Website: [qai.io](https://qai.io)
   - 🐙 GitHub: [@qai-lab](https://github.com/qai-lab)
   - 🐦 X/Twitter: [@qai_lab](https://x.com/qai_lab)
 
