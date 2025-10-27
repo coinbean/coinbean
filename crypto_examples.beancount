@@ -198,6 +198,46 @@
   Income:Crypto:Trading:CapitalGains    -0.40 USD
 
 ;; ================================================================================
+;; EXAMPLE: PRICE ENTRIES
+;; ================================================================================
+;; Price entries are used to value your portfolio at market rates.
+;; Beancount uses the most recent price for each currency.
+
+;; Format: YYYY-MM-DD price SYMBOL AMOUNT CURRENCY
+
+;; Example: Recording Bitcoin price over time
+2024-01-01 price BTC 42000.00 USD
+2024-02-01 price BTC 48500.00 USD
+2024-03-01 price BTC 52000.00 USD
+
+;; Example: Recording Ethereum price
+2024-01-01 price ETH 2200.00 USD
+2024-02-01 price ETH 2650.00 USD
+2024-03-01 price ETH 3100.00 USD
+
+;; Example: Stablecoin prices (should always be close to 1.00)
+2024-03-01 price USDC 1.00 USD
+2024-03-01 price USDT 0.9998 USD
+2024-03-01 price DAI 1.0001 USD
+
+;; Example: Other cryptocurrencies
+2024-03-01 price SOL 145.50 USD
+2024-03-01 price MATIC 0.85 USD
+2024-03-01 price LINK 18.75 USD
+2024-03-01 price UNI 12.30 USD
+
+;; Example: Fiat exchange rates
+2024-03-01 price EUR 1.08 USD
+2024-03-01 price GBP 1.26 USD
+
+;; NOTES ON PRICES:
+;; - Update prices regularly for accurate portfolio valuation
+;; - Use ./prices.sh to automatically fetch current prices from CoinGecko
+;; - Historical prices are stored in crypto_prices.beancount
+;; - Beancount will interpolate prices between dates if needed
+;; - Keep at least weekly price updates for assets you hold
+
+;; ================================================================================
 ;; NOTES ON TRANSACTION RECORDING
 ;; ================================================================================
 

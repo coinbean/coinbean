@@ -18,250 +18,250 @@ option "inferred_tolerance_default" "*:0.0001"        ;; Default for other crypt
 plugin "beancount.plugins.implicit_prices"
 
 ;; ================================================================================
-;; FIAT CURRENCIES
+;; Example FIAT CURRENCIES
 ;; ================================================================================
 
-2020-01-01 commodity USD
-  name: "US Dollar"
-  asset-class: "fiat"
+; 2020-01-01 commodity USD
+;   name: "US Dollar"
+;   asset-class: "fiat"
 
-2020-01-01 commodity EUR
-  name: "Euro"
-  asset-class: "fiat"
+; 2020-01-01 commodity EUR
+;   name: "Euro"
+;   asset-class: "fiat"
 
-2020-01-01 commodity GBP
-  name: "British Pound"
-  asset-class: "fiat"
+; 2020-01-01 commodity GBP
+;   name: "British Pound"
+;   asset-class: "fiat"
 
-2020-01-01 commodity CNY
-  name: "Chinese Yuan"
-  asset-class: "fiat"
+; 2020-01-01 commodity CNY
+;   name: "Chinese Yuan"
+;   asset-class: "fiat"
 
 ;; ================================================================================
-;; LAYER 1 BLOCKCHAINS - Major Cryptocurrencies
+;; Example LAYER 1 BLOCKCHAINS - Major Cryptocurrencies
 ;; ================================================================================
 
-2020-01-01 commodity BTC
-  name: "Bitcoin"
-  asset-class: "cryptocurrency"
-  blockchain: "Bitcoin"
-  category: "Layer-1"
-  export: "CASH"
+; 2020-01-01 commodity BTC
+;   name: "Bitcoin"
+;   asset-class: "cryptocurrency"
+;   blockchain: "Bitcoin"
+;   category: "Layer-1"
+;   export: "CASH"
 
-2020-01-01 commodity ETH
-  name: "Ethereum"
-  asset-class: "cryptocurrency"
-  blockchain: "Ethereum"
-  category: "Layer-1"
-  export: "CASH"
+; 2020-01-01 commodity ETH
+;   name: "Ethereum"
+;   asset-class: "cryptocurrency"
+;   blockchain: "Ethereum"
+;   category: "Layer-1"
+;   export: "CASH"
 
-2020-01-01 commodity SOL
-  name: "Solana"
-  asset-class: "cryptocurrency"
-  blockchain: "Solana"
-  category: "Layer-1"
-  export: "CASH"
+; 2020-01-01 commodity SOL
+;   name: "Solana"
+;   asset-class: "cryptocurrency"
+;   blockchain: "Solana"
+;   category: "Layer-1"
+;   export: "CASH"
 
-2020-01-01 commodity ADA
-  name: "Cardano"
-  asset-class: "cryptocurrency"
-  blockchain: "Cardano"
-  category: "Layer-1"
-  export: "CASH"
+; 2020-01-01 commodity ADA
+;   name: "Cardano"
+;   asset-class: "cryptocurrency"
+;   blockchain: "Cardano"
+;   category: "Layer-1"
+;   export: "CASH"
 
-2020-01-01 commodity DOT
-  name: "Polkadot"
-  asset-class: "cryptocurrency"
-  blockchain: "Polkadot"
-  category: "Layer-1"
-  export: "CASH"
+; 2020-01-01 commodity DOT
+;   name: "Polkadot"
+;   asset-class: "cryptocurrency"
+;   blockchain: "Polkadot"
+;   category: "Layer-1"
+;   export: "CASH"
 
-2020-01-01 commodity AVAX
-  name: "Avalanche"
-  asset-class: "cryptocurrency"
-  blockchain: "Avalanche"
-  category: "Layer-1"
-  export: "CASH"
+; 2020-01-01 commodity AVAX
+;   name: "Avalanche"
+;   asset-class: "cryptocurrency"
+;   blockchain: "Avalanche"
+;   category: "Layer-1"
+;   export: "CASH"
 
-2020-01-01 commodity ATOM
-  name: "Cosmos"
-  asset-class: "cryptocurrency"
-  blockchain: "Cosmos"
-  category: "Layer-1"
-  export: "CASH"
+; 2020-01-01 commodity ATOM
+;   name: "Cosmos"
+;   asset-class: "cryptocurrency"
+;   blockchain: "Cosmos"
+;   category: "Layer-1"
+;   export: "CASH"
 
-2020-01-01 commodity ALGO
-  name: "Algorand"
-  asset-class: "cryptocurrency"
-  blockchain: "Algorand"
-  category: "Layer-1"
-  export: "CASH"
+; 2020-01-01 commodity ALGO
+;   name: "Algorand"
+;   asset-class: "cryptocurrency"
+;   blockchain: "Algorand"
+;   category: "Layer-1"
+;   export: "CASH"
 
-2020-01-01 commodity XRP
-  name: "Ripple"
-  asset-class: "cryptocurrency"
-  blockchain: "XRP Ledger"
-  category: "Layer-1"
-  export: "CASH"
+; 2020-01-01 commodity XRP
+;   name: "Ripple"
+;   asset-class: "cryptocurrency"
+;   blockchain: "XRP Ledger"
+;   category: "Layer-1"
+;   export: "CASH"
 
-2020-01-01 commodity XLM
-  name: "Stellar"
-  asset-class: "cryptocurrency"
-  blockchain: "Stellar"
-  category: "Layer-1"
-  export: "CASH"
+; 2020-01-01 commodity XLM
+;   name: "Stellar"
+;   asset-class: "cryptocurrency"
+;   blockchain: "Stellar"
+;   category: "Layer-1"
+;   export: "CASH"
 
-2020-01-01 commodity NEAR
-  name: "NEAR Protocol"
-  asset-class: "cryptocurrency"
-  blockchain: "NEAR"
-  category: "Layer-1"
-  export: "CASH"
+; 2020-01-01 commodity NEAR
+;   name: "NEAR Protocol"
+;   asset-class: "cryptocurrency"
+;   blockchain: "NEAR"
+;   category: "Layer-1"
+;   export: "CASH"
 
-2020-01-01 commodity FTM
-  name: "Fantom"
-  asset-class: "cryptocurrency"
-  blockchain: "Fantom"
-  category: "Layer-1"
-  export: "CASH"
+; 2020-01-01 commodity FTM
+;   name: "Fantom"
+;   asset-class: "cryptocurrency"
+;   blockchain: "Fantom"
+;   category: "Layer-1"
+;   export: "CASH"
 
-2020-01-01 commodity TON
-  name: "Toncoin"
-  asset-class: "cryptocurrency"
-  blockchain: "TON"
-  category: "Layer-1"
-  export: "CASH"
+; 2020-01-01 commodity TON
+;   name: "Toncoin"
+;   asset-class: "cryptocurrency"
+;   blockchain: "TON"
+;   category: "Layer-1"
+;   export: "CASH"
 
-2020-01-01 commodity APT
-  name: "Aptos"
-  asset-class: "cryptocurrency"
-  blockchain: "Aptos"
-  category: "Layer-1"
-  export: "CASH"
+; 2020-01-01 commodity APT
+;   name: "Aptos"
+;   asset-class: "cryptocurrency"
+;   blockchain: "Aptos"
+;   category: "Layer-1"
+;   export: "CASH"
 
-2020-01-01 commodity SUI
-  name: "Sui"
-  asset-class: "cryptocurrency"
-  blockchain: "Sui"
-  category: "Layer-1"
-  export: "CASH"
+; 2020-01-01 commodity SUI
+;   name: "Sui"
+;   asset-class: "cryptocurrency"
+;   blockchain: "Sui"
+;   category: "Layer-1"
+;   export: "CASH"
 
 ;; ================================================================================
 ;; LAYER 2 SOLUTIONS
 ;; ================================================================================
 
-2020-01-01 commodity MATIC
-  name: "Polygon"
-  asset-class: "cryptocurrency"
-  blockchain: "Polygon"
-  category: "Layer-2"
-  export: "CASH"
+; 2020-01-01 commodity MATIC
+;   name: "Polygon"
+;   asset-class: "cryptocurrency"
+;   blockchain: "Polygon"
+;   category: "Layer-2"
+;   export: "CASH"
 
-2020-01-01 commodity OP
-  name: "Optimism"
-  asset-class: "cryptocurrency"
-  blockchain: "Optimism"
-  category: "Layer-2"
-  export: "CASH"
+; 2020-01-01 commodity OP
+;   name: "Optimism"
+;   asset-class: "cryptocurrency"
+;   blockchain: "Optimism"
+;   category: "Layer-2"
+;   export: "CASH"
 
-2020-01-01 commodity ARB
-  name: "Arbitrum"
-  asset-class: "cryptocurrency"
-  blockchain: "Arbitrum"
-  category: "Layer-2"
-  export: "CASH"
+; 2020-01-01 commodity ARB
+;   name: "Arbitrum"
+;   asset-class: "cryptocurrency"
+;   blockchain: "Arbitrum"
+;   category: "Layer-2"
+;   export: "CASH"
 
 ;; ================================================================================
 ;; STABLECOINS
 ;; ================================================================================
 
-2020-01-01 commodity USDT
-  name: "Tether USD"
-  asset-class: "cryptocurrency"
-  category: "Stablecoin"
-  pegged-to: "USD"
-  export: "CASH"
+; 2020-01-01 commodity USDT
+;   name: "Tether USD"
+;   asset-class: "cryptocurrency"
+;   category: "Stablecoin"
+;   pegged-to: "USD"
+;   export: "CASH"
 
-2020-01-01 commodity USDC
-  name: "USD Coin"
-  asset-class: "cryptocurrency"
-  category: "Stablecoin"
-  pegged-to: "USD"
-  export: "CASH"
+; 2020-01-01 commodity USDC
+;   name: "USD Coin"
+;   asset-class: "cryptocurrency"
+;   category: "Stablecoin"
+;   pegged-to: "USD"
+;   export: "CASH"
 
-2020-01-01 commodity DAI
-  name: "Dai"
-  asset-class: "cryptocurrency"
-  category: "Stablecoin"
-  pegged-to: "USD"
-  export: "CASH"
+; 2020-01-01 commodity DAI
+;   name: "Dai"
+;   asset-class: "cryptocurrency"
+;   category: "Stablecoin"
+;   pegged-to: "USD"
+;   export: "CASH"
 
-2020-01-01 commodity BUSD
-  name: "Binance USD"
-  asset-class: "cryptocurrency"
-  category: "Stablecoin"
-  pegged-to: "USD"
-  export: "CASH"
+; 2020-01-01 commodity BUSD
+;   name: "Binance USD"
+;   asset-class: "cryptocurrency"
+;   category: "Stablecoin"
+;   pegged-to: "USD"
+;   export: "CASH"
 
-2020-01-01 commodity TUSD
-  name: "TrueUSD"
-  asset-class: "cryptocurrency"
-  category: "Stablecoin"
-  pegged-to: "USD"
-  export: "CASH"
+; 2020-01-01 commodity TUSD
+;   name: "TrueUSD"
+;   asset-class: "cryptocurrency"
+;   category: "Stablecoin"
+;   pegged-to: "USD"
+;   export: "CASH"
 
 ;; ================================================================================
 ;; DEFI TOKENS
 ;; ================================================================================
 
-2020-01-01 commodity UNI
-  name: "Uniswap"
-  asset-class: "cryptocurrency"
-  category: "DeFi"
-  blockchain: "Ethereum"
-  export: "CASH"
+; 2020-01-01 commodity UNI
+;   name: "Uniswap"
+;   asset-class: "cryptocurrency"
+;   category: "DeFi"
+;   blockchain: "Ethereum"
+;   export: "CASH"
 
-2020-01-01 commodity AAVE
-  name: "Aave"
-  asset-class: "cryptocurrency"
-  category: "DeFi"
-  blockchain: "Ethereum"
-  export: "CASH"
+; 2020-01-01 commodity AAVE
+;   name: "Aave"
+;   asset-class: "cryptocurrency"
+;   category: "DeFi"
+;   blockchain: "Ethereum"
+;   export: "CASH"
 
-2020-01-01 commodity MKR
-  name: "Maker"
-  asset-class: "cryptocurrency"
-  category: "DeFi"
-  blockchain: "Ethereum"
-  export: "CASH"
+; 2020-01-01 commodity MKR
+;   name: "Maker"
+;   asset-class: "cryptocurrency"
+;   category: "DeFi"
+;   blockchain: "Ethereum"
+;   export: "CASH"
 
-2020-01-01 commodity COMP
-  name: "Compound"
-  asset-class: "cryptocurrency"
-  category: "DeFi"
-  blockchain: "Ethereum"
-  export: "CASH"
+; 2020-01-01 commodity COMP
+;   name: "Compound"
+;   asset-class: "cryptocurrency"
+;   category: "DeFi"
+;   blockchain: "Ethereum"
+;   export: "CASH"
 
-2020-01-01 commodity SNX
-  name: "Synthetix"
-  asset-class: "cryptocurrency"
-  category: "DeFi"
-  blockchain: "Ethereum"
-  export: "CASH"
+; 2020-01-01 commodity SNX
+;   name: "Synthetix"
+;   asset-class: "cryptocurrency"
+;   category: "DeFi"
+;   blockchain: "Ethereum"
+;   export: "CASH"
 
-2020-01-01 commodity CRV
-  name: "Curve DAO"
-  asset-class: "cryptocurrency"
-  category: "DeFi"
-  blockchain: "Ethereum"
-  export: "CASH"
+; 2020-01-01 commodity CRV
+;   name: "Curve DAO"
+;   asset-class: "cryptocurrency"
+;   category: "DeFi"
+;   blockchain: "Ethereum"
+;   export: "CASH"
 
-2020-01-01 commodity SUSHI
-  name: "SushiSwap"
-  asset-class: "cryptocurrency"
-  category: "DeFi"
-  blockchain: "Ethereum"
-  export: "CASH"
+; 2020-01-01 commodity SUSHI
+;   name: "SushiSwap"
+;   asset-class: "cryptocurrency"
+;   category: "DeFi"
+;   blockchain: "Ethereum"
+;   export: "CASH"
 
 ;; ================================================================================
 ;; EXCHANGE TOKENS
