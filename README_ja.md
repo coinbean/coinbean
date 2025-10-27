@@ -76,64 +76,6 @@ Coinbeanは、以下の暗号通貨ポートフォリオを追跡するための
 
 詳細なドキュメントについては、[ヘルパースクリプト](#ヘルパースクリプト)セクションを参照してください。
 
-## クイックスタート
-
-### 前提条件
-
-- Python 3.7+
-- pip（Pythonパッケージマネージャー）
-
-### 3つの簡単なステップ
-
-**ステップ1: セットアップ**
-
-```bash
-cd /path/to/coinbean
-./setup.sh
-```
-
-Beancount、Favaをインストールし、レジャーファイルを検証します。
-
-**ステップ2: Fava起動**
-
-```bash
-./run.sh
-```
-
-http://localhost:5002でWebインターフェースを起動します。
-
-**ステップ3: 価格取得**
-
-```bash
-./prices.sh
-```
-
-現在の暗号通貨価格を取得するための対話型メニューです。
-
-> 📚 各スクリプトの詳細なドキュメントについては、[ヘルパースクリプト](#ヘルパースクリプト)セクションを参照してください。
-
-### 手動インストール（代替）
-
-手動インストールを希望する場合：
-
-```bash
-pip install beancount fava
-
-# インストール確認
-bean-check crypto_main.beancount
-
-# Fava起動
-fava -p 5002 crypto_main.beancount
-```
-
-### 最初のステップ
-
-1. **例を確認**: `crypto_examples.beancount`を開いて20以上の取引例を確認
-2. **価格を更新**: `./prices.sh`を実行して現在の市場価格を取得
-3. **取引を追加**: `tx_2025.beancount`で記録を開始
-4. **アカウントをカスタマイズ**: モジュラーファイル（`exchanges.beancount`、`chains.beancount`、`defi.beancount`）を設定に合わせて変更
-5. **Favaを探索**: http://localhost:5002を開いてポートフォリオを視覚化
-
 ## ファイル構造
 
 Coinbeanはより良い組織のために**モジュラー構造**を使用します：

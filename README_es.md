@@ -76,64 +76,6 @@ Coinbean es una plantilla de registro Beancount estructurada para rastrear porta
 
 Ver la sección [Scripts auxiliares](#scripts-auxiliares) para documentación detallada.
 
-## Inicio rápido
-
-### Requisitos previos
-
-- Python 3.7+
-- pip (gestor de paquetes Python)
-
-### Tres pasos simples
-
-**Paso 1: Configuración**
-
-```bash
-cd /ruta/a/coinbean
-./setup.sh
-```
-
-Instala Beancount, Fava y valida tus archivos de registro.
-
-**Paso 2: Iniciar Fava**
-
-```bash
-./run.sh
-```
-
-Lanza la interfaz web en http://localhost:5002
-
-**Paso 3: Obtener precios**
-
-```bash
-./prices.sh
-```
-
-Menú interactivo para obtener precios actuales de criptomonedas.
-
-> 📚 Ver la sección [Scripts auxiliares](#scripts-auxiliares) para documentación detallada de cada script.
-
-### Instalación manual (Alternativa)
-
-Si prefieres la instalación manual:
-
-```bash
-pip install beancount fava
-
-# Verificar instalación
-bean-check crypto_main.beancount
-
-# Iniciar Fava
-fava -p 5002 crypto_main.beancount
-```
-
-### Primeros pasos
-
-1. **Revisa los ejemplos**: Abre `crypto_examples.beancount` para ver más de 20 ejemplos de transacciones
-2. **Actualiza precios**: Ejecuta `./prices.sh` para obtener precios de mercado actuales
-3. **Agrega tus transacciones**: Comienza a registrar en `tx_2025.beancount`
-4. **Personaliza cuentas**: Modifica los archivos modulares (`exchanges.beancount`, `chains.beancount`, `defi.beancount`) según tu configuración
-5. **Explora Fava**: Abre http://localhost:5002 para visualizar tu portafolio
-
 ## Estructura de archivos
 
 Coinbean utiliza una **estructura modular** para mejor organización:
