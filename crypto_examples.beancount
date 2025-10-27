@@ -1,0 +1,228 @@
+;;; -*- mode: beancount -*-
+;;; Cryptocurrency Transaction Examples
+;;; This file demonstrates various types of crypto transactions
+
+;; ================================================================================
+;; EXAMPLE 1: BUYING CRYPTO WITH FIAT (MARKET BUY)
+;; ================================================================================
+
+2024-01-15 * "Coinbase" "Bought Bitcoin"
+  Assets:Crypto:Exchange:Coinbase:BTC     0.1 BTC {60000 USD}
+  Assets:Crypto:Exchange:Coinbase:Cash:USD  -6000.00 USD
+
+2024-01-20 * "Binance" "Bought Ethereum"
+  Assets:Crypto:Exchange:Binance:ETH      2.0 ETH {3000 USD}
+  Assets:Crypto:Exchange:Binance:Cash:USD   -6000.00 USD
+
+;; ================================================================================
+;; EXAMPLE 2: SELLING CRYPTO FOR FIAT
+;; ================================================================================
+
+2024-02-10 * "Coinbase" "Sold Bitcoin for profit"
+  Assets:Crypto:Exchange:Coinbase:BTC     -0.05 BTC {60000 USD} @ 65000 USD
+  Assets:Crypto:Exchange:Coinbase:Cash:USD  3250.00 USD
+  Income:Crypto:Trading:CapitalGains        -250.00 USD
+
+;; ================================================================================
+;; EXAMPLE 3: CRYPTO-TO-CRYPTO TRADES
+;; ================================================================================
+
+2024-03-05 * "Binance" "Swapped ETH for SOL"
+  Assets:Crypto:Exchange:Binance:ETH   -1.0 ETH {3000 USD} @ 3100 USD
+  Assets:Crypto:Exchange:Binance:SOL    20.0 SOL {155 USD}
+  Income:Crypto:Trading:CapitalGains    -100.00 USD
+
+;; ================================================================================
+;; EXAMPLE 4: DEPOSITING FIAT TO EXCHANGE
+;; ================================================================================
+
+2024-04-01 * "Bank Transfer" "Deposited USD to Coinbase"
+  Assets:Crypto:Exchange:Coinbase:Cash:USD   5000.00 USD
+  Assets:Bank:Checking:USD                  -5000.00 USD
+
+;; ================================================================================
+;; EXAMPLE 5: WITHDRAWING CRYPTO TO COLD WALLET
+;; ================================================================================
+
+2024-04-10 * "Coinbase to Ledger" "Withdrew BTC to hardware wallet"
+  Assets:Crypto:Wallet:Ledger:BTC          0.5 BTC {60000 USD}
+  Assets:Crypto:Exchange:Coinbase:BTC     -0.5 BTC {60000 USD}
+  Expenses:Crypto:Withdrawal:Fees           0.0002 BTC {60000 USD}
+  Assets:Crypto:Exchange:Coinbase:BTC      -0.0002 BTC {60000 USD}
+
+;; ================================================================================
+;; EXAMPLE 6: DEPOSITING CRYPTO FROM COLD WALLET TO EXCHANGE
+;; ================================================================================
+
+2024-05-15 * "Ledger to Kraken" "Deposited ETH to exchange"
+  Assets:Crypto:Exchange:Kraken:ETH        10.0 ETH {3000 USD}
+  Assets:Crypto:Wallet:Ledger:ETH         -10.0 ETH {3000 USD}
+
+;; ================================================================================
+;; EXAMPLE 7: STAKING REWARDS
+;; ================================================================================
+
+2024-06-01 * "Coinbase" "Received ETH staking rewards"
+  Assets:Crypto:Exchange:Coinbase:ETH      0.05 ETH {3200 USD}
+  Income:Crypto:Staking:Rewards           -160.00 USD
+
+2024-06-15 * "Solana Network" "SOL staking rewards"
+  Assets:Crypto:Staking:SOL                5.0 SOL {150 USD}
+  Income:Crypto:Staking:Rewards           -750.00 USD
+
+;; ================================================================================
+;; EXAMPLE 8: TRADING FEES
+;; ================================================================================
+
+2024-07-01 * "Binance" "Trading fee for BTC purchase"
+  Expenses:Crypto:Trading:Fees     15.00 USD
+  Assets:Crypto:Exchange:Binance:Cash:USD  -15.00 USD
+
+;; ================================================================================
+;; EXAMPLE 9: GAS FEES (ETHEREUM)
+;; ================================================================================
+
+2024-07-10 * "Ethereum Network" "Gas fee for token swap"
+  Expenses:Crypto:Gas:Ethereum      0.015 ETH {3200 USD}
+  Assets:Crypto:Wallet:MetaMask:ETH  -0.015 ETH {3200 USD}
+
+;; ================================================================================
+;; EXAMPLE 10: DEFI - SUPPLYING LIQUIDITY
+;; ================================================================================
+
+2024-08-01 * "Uniswap" "Added liquidity to ETH/USDC pool"
+  Assets:Crypto:DeFi:Uniswap:LP-Tokens     100.0 UNI-V2-ETH-USDC {50 USD}
+  Assets:Crypto:Wallet:MetaMask:ETH       -1.0 ETH {3200 USD}
+  Assets:Crypto:Wallet:MetaMask:Tokens    -3200.00 USDC {1 USD}
+
+;; ================================================================================
+;; EXAMPLE 11: DEFI - EARNING YIELD
+;; ================================================================================
+
+2024-08-15 * "Aave" "Received lending interest"
+  Assets:Crypto:DeFi:Aave:USDC      50.00 USDC {1 USD}
+  Income:Crypto:DeFi:Interest      -50.00 USD
+
+;; ================================================================================
+;; EXAMPLE 12: AIRDROPS
+;; ================================================================================
+
+2024-09-01 * "Arbitrum" "Received ARB token airdrop"
+  Assets:Crypto:Wallet:MetaMask:Tokens  500.0 ARB {1.20 USD}
+  Income:Crypto:Airdrops               -600.00 USD
+
+;; ================================================================================
+;; EXAMPLE 13: BUYING STABLECOINS
+;; ================================================================================
+
+2024-09-10 * "Kraken" "Bought USDC stablecoin"
+  Assets:Crypto:Exchange:Kraken:USDC      5000.00 USDC {1 USD}
+  Assets:Crypto:Exchange:Kraken:Cash:USD  -5000.00 USD
+
+;; ================================================================================
+;; EXAMPLE 14: CROSS-EXCHANGE TRANSFER
+;; ================================================================================
+
+2024-09-20 * "Coinbase to Binance" "Transferred BTC between exchanges"
+  Assets:Crypto:Exchange:Binance:BTC      0.1 BTC {60000 USD}
+  Assets:Crypto:Exchange:Coinbase:BTC    -0.1 BTC {60000 USD}
+  Expenses:Crypto:Withdrawal:Fees         0.0001 BTC {60000 USD}
+  Assets:Crypto:Exchange:Coinbase:BTC    -0.0001 BTC {60000 USD}
+
+;; ================================================================================
+;; EXAMPLE 15: DOLLAR-COST AVERAGING (DCA) - AUTOMATED BUYS
+;; ================================================================================
+
+2024-10-01 * "Coinbase" "DCA - Weekly BTC buy"
+  Assets:Crypto:Exchange:Coinbase:BTC     0.0015 BTC {65000 USD}
+  Assets:Crypto:Exchange:Coinbase:Cash:USD  -97.50 USD
+
+2024-10-08 * "Coinbase" "DCA - Weekly BTC buy"
+  Assets:Crypto:Exchange:Coinbase:BTC     0.0016 BTC {62500 USD}
+  Assets:Crypto:Exchange:Coinbase:Cash:USD  -100.00 USD
+
+2024-10-15 * "Coinbase" "DCA - Weekly BTC buy"
+  Assets:Crypto:Exchange:Coinbase:BTC     0.0014 BTC {67857 USD}
+  Assets:Crypto:Exchange:Coinbase:Cash:USD  -95.00 USD
+
+;; ================================================================================
+;; EXAMPLE 16: MINING REWARDS
+;; ================================================================================
+
+2024-10-20 * "Mining Pool" "Received mining rewards"
+  Assets:Crypto:Wallet:Electrum:BTC    0.025 BTC {66000 USD}
+  Income:Crypto:Mining                -1650.00 USD
+
+;; ================================================================================
+;; EXAMPLE 17: DEFI BORROWING
+;; ================================================================================
+
+2024-11-01 * "Aave" "Borrowed USDC against ETH collateral"
+  Assets:Crypto:DeFi:Aave:USDC          5000.00 USDC {1 USD}
+  Liabilities:Crypto:DeFi:Aave:Borrowed  -5000.00 USDC {1 USD}
+
+;; ================================================================================
+;; EXAMPLE 18: PAYING BACK DEFI LOAN
+;; ================================================================================
+
+2024-11-15 * "Aave" "Repaid USDC loan plus interest"
+  Liabilities:Crypto:DeFi:Aave:Borrowed  5000.00 USDC {1 USD}
+  Expenses:Crypto:DeFi:Interest          50.00 USDC {1 USD}
+  Assets:Crypto:DeFi:Aave:USDC          -5050.00 USDC {1 USD}
+
+;; ================================================================================
+;; EXAMPLE 19: NFT PURCHASE (TRACKED AS EXPENSE)
+;; ================================================================================
+
+2024-12-01 * "OpenSea" "Bought NFT artwork"
+  Expenses:Crypto:NFT                2.0 ETH {3200 USD}
+  Assets:Crypto:Wallet:MetaMask:ETH  -2.0 ETH {3200 USD}
+
+;; ================================================================================
+;; EXAMPLE 20: EXCHANGE TOKEN REWARDS/CASHBACK
+;; ================================================================================
+
+2024-12-10 * "Crypto.com" "CRO cashback from card purchase"
+  Assets:Crypto:Exchange:CryptoCom:CRO  10.0 CRO {0.15 USD}
+  Income:Crypto:Referrals              -1.50 USD
+
+;; ================================================================================
+;; EXAMPLE 21: CONVERTING DUST TO BNB (BINANCE)
+;; ================================================================================
+
+2024-12-15 * "Binance" "Converted small balances to BNB"
+  Assets:Crypto:Exchange:Binance:BNB    0.005 BNB {600 USD}
+  Assets:Crypto:Exchange:Binance:USDT   -0.50 USDT {1 USD}
+  Assets:Crypto:Exchange:Binance:SOL    -0.01 SOL {150 USD}
+  Assets:Crypto:Exchange:Binance:ADA    -0.20 ADA {0.45 USD}
+  Income:Crypto:Trading:CapitalGains    -0.40 USD
+
+;; ================================================================================
+;; NOTES ON TRANSACTION RECORDING
+;; ================================================================================
+
+;; GENERAL PRINCIPLES:
+;; 1. Use {COST} for the original purchase price (cost basis)
+;; 2. Use @ PRICE for the current market price during sale
+;; 3. Record capital gains/losses in Income:Crypto:Trading:CapitalGains
+;; 4. Track all fees separately for tax purposes
+;; 5. For staking/airdrops, record as income at fair market value
+
+;; TAX CONSIDERATIONS:
+;; - Capital gains are taxable events (crypto -> fiat or crypto -> crypto)
+;; - Staking rewards are taxable as income
+;; - Airdrops are taxable as income
+;; - DeFi interest/yield is taxable as income
+;; - Keep detailed records of all transactions for tax reporting
+
+;; COST BASIS METHODS:
+;; - FIFO (First In, First Out) - default in most jurisdictions
+;; - LIFO (Last In, First Out) - allowed in some jurisdictions
+;; - Specific Identification - manually specify which lot to sell
+;; - Average Cost - average of all purchases
+
+;; HELPFUL BEANCOUNT COMMANDS:
+;; - bean-check: Validate your ledger file
+;; - bean-report: Generate reports
+;; - bean-web or fava: Start web interface
+;; - bean-query: Query your data with SQL-like syntax

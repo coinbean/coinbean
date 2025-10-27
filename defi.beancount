@@ -1,0 +1,212 @@
+;;; -*- mode: beancount -*-
+;;; Coinbean - DeFi Protocols & Liquid Staking Module
+;;; Track your DeFi positions, liquidity pools, and liquid staking
+
+;; ================================================================================
+;; ETHEREUM LENDING PROTOCOLS
+;; ================================================================================
+
+;; Aave - Leading lending protocol
+2020-01-01 open Assets:Crypto:DeFi:Aave:ETH
+2020-01-01 open Assets:Crypto:DeFi:Aave:USDC
+2020-01-01 open Assets:Crypto:DeFi:Aave:USDT
+2020-01-01 open Assets:Crypto:DeFi:Aave:Other
+2020-01-01 open Liabilities:Crypto:DeFi:Aave:Borrowed
+
+;; Compound - Algorithmic money market
+2020-01-01 open Assets:Crypto:DeFi:Compound:ETH
+2020-01-01 open Assets:Crypto:DeFi:Compound:USDC
+2020-01-01 open Assets:Crypto:DeFi:Compound:Other
+2020-01-01 open Liabilities:Crypto:DeFi:Compound:Borrowed
+
+;; MakerDAO - DAI stablecoin issuer
+2020-01-01 open Assets:Crypto:DeFi:MakerDAO:Vault
+2020-01-01 open Liabilities:Crypto:DeFi:MakerDAO:Borrowed
+
+;; ================================================================================
+;; ETHEREUM DEXs & LIQUIDITY POOLS
+;; ================================================================================
+
+;; Uniswap - Leading Ethereum DEX
+2020-01-01 open Assets:Crypto:DeFi:Uniswap:LPTokens
+2020-01-01 open Assets:Crypto:DeFi:Uniswap:UNI
+
+;; SushiSwap - Community-driven DEX
+2020-01-01 open Assets:Crypto:DeFi:SushiSwap:LPTokens
+2020-01-01 open Assets:Crypto:DeFi:SushiSwap:SUSHI
+
+;; Curve - Stablecoin DEX
+2020-01-01 open Assets:Crypto:DeFi:Curve:LPTokens
+2020-01-01 open Assets:Crypto:DeFi:Curve:CRV
+
+;; Balancer - Programmable liquidity
+2020-01-01 open Assets:Crypto:DeFi:Balancer:LPTokens
+2020-01-01 open Assets:Crypto:DeFi:Balancer:BAL
+
+;; ================================================================================
+;; BINANCE SMART CHAIN (BSC) DEXs
+;; ================================================================================
+
+;; PancakeSwap - Leading BSC DEX
+2020-01-01 open Assets:Crypto:DeFi:PancakeSwap:LPTokens
+2020-01-01 open Assets:Crypto:DeFi:PancakeSwap:CAKE
+
+;; ================================================================================
+;; SOLANA DEXs & LIQUIDITY POOLS
+;; ================================================================================
+
+;; Raydium - Solana AMM
+2020-01-01 open Assets:Crypto:DeFi:Raydium:LPTokens
+2020-01-01 open Assets:Crypto:DeFi:Raydium:RAY
+
+;; Jupiter - Solana aggregator
+2020-01-01 open Assets:Crypto:DeFi:Jupiter:JUP
+
+;; Orca - Solana user-friendly DEX
+2020-01-01 open Assets:Crypto:DeFi:Orca:LPTokens
+2020-01-01 open Assets:Crypto:DeFi:Orca:ORCA
+
+;; ================================================================================
+;; PERPETUAL DEXs - Derivatives Trading
+;; ================================================================================
+
+;; Hyperliquid - High-performance perps DEX
+2020-01-01 open Assets:Crypto:DeFi:Hyperliquid:USDC
+2020-01-01 open Assets:Crypto:DeFi:Hyperliquid:HYPE
+2020-01-01 open Assets:Crypto:DeFi:Hyperliquid:UnrealizedPNL  ;; Track unrealized PNL
+
+;; dYdX - Decentralized derivatives
+2020-01-01 open Assets:Crypto:DeFi:DYDX:USDC
+2020-01-01 open Assets:Crypto:DeFi:DYDX:DYDX
+2020-01-01 open Assets:Crypto:DeFi:DYDX:UnrealizedPNL
+
+;; GMX - Arbitrum perps DEX
+2020-01-01 open Assets:Crypto:DeFi:GMX:USDC
+2020-01-01 open Assets:Crypto:DeFi:GMX:GMX
+2020-01-01 open Assets:Crypto:DeFi:GMX:GLPTokens  ;; GMX liquidity provider token
+2020-01-01 open Assets:Crypto:DeFi:GMX:UnrealizedPNL
+
+;; ================================================================================
+;; LIQUID STAKING - ETHEREUM
+;; ================================================================================
+
+;; Lido - Largest liquid staking protocol
+2020-01-01 open Assets:Crypto:DeFi:Lido:STETH
+2020-01-01 open Assets:Crypto:DeFi:Lido:LDO
+
+;; Rocket Pool - Decentralized liquid staking
+2020-01-01 open Assets:Crypto:DeFi:RocketPool:RETH
+2020-01-01 open Assets:Crypto:DeFi:RocketPool:RPL
+
+;; Frax - Fractional staking
+2020-01-01 open Assets:Crypto:DeFi:Frax:FRXETH
+2020-01-01 open Assets:Crypto:DeFi:Frax:SFRXETH
+
+;; ================================================================================
+;; LIQUID STAKING - SOLANA
+;; ================================================================================
+
+;; Jito - MEV-enhanced liquid staking
+2020-01-01 open Assets:Crypto:DeFi:Jito:JITOSOL
+2020-01-01 open Assets:Crypto:DeFi:Jito:JTO
+
+;; Marinade - Community-driven liquid staking
+2020-01-01 open Assets:Crypto:DeFi:Marinade:MSOL
+2020-01-01 open Assets:Crypto:DeFi:Marinade:MNDE
+
+;; Sanctum - Liquid staking infrastructure
+2020-01-01 open Assets:Crypto:DeFi:Sanctum:LST  ;; Various LSTs
+
+;; ================================================================================
+;; LIQUID STAKING - OTHER CHAINS
+;; ================================================================================
+
+;; Stride - Multi-chain liquid staking (Cosmos)
+2020-01-01 open Assets:Crypto:DeFi:Stride:STATOM
+2020-01-01 open Assets:Crypto:DeFi:Stride:STOSMO
+2020-01-01 open Assets:Crypto:DeFi:Stride:STRD
+
+;; ================================================================================
+;; RESTAKING PROTOCOLS - ETHEREUM
+;; ================================================================================
+
+;; EigenLayer - Restaking infrastructure
+2020-01-01 open Assets:Crypto:DeFi:EigenLayer:Restaked
+2020-01-01 open Assets:Crypto:DeFi:EigenLayer:EIGEN
+2020-01-01 open Assets:Crypto:DeFi:EigenLayer:Points
+
+;; Renzo - Liquid restaking
+2020-01-01 open Assets:Crypto:DeFi:Renzo:EZETH
+2020-01-01 open Assets:Crypto:DeFi:Renzo:Points
+
+;; Ether.fi - Liquid restaking
+2020-01-01 open Assets:Crypto:DeFi:EtherFi:EETH
+2020-01-01 open Assets:Crypto:DeFi:EtherFi:Points
+
+;; ================================================================================
+;; RESTAKING PROTOCOLS - SOLANA
+;; ================================================================================
+
+;; Solayer - Solana restaking
+2020-01-01 open Assets:Crypto:DeFi:Solayer:Restaked
+2020-01-01 open Assets:Crypto:DeFi:Solayer:Points
+;; Note: LAYER token not yet launched
+
+;; Fragmetric - Solana restaking
+2020-01-01 open Assets:Crypto:DeFi:Fragmetric:Restaked
+2020-01-01 open Assets:Crypto:DeFi:Fragmetric:Points
+
+;; ================================================================================
+;; YIELD AGGREGATORS
+;; ================================================================================
+
+;; Yearn Finance - Ethereum yield optimizer
+2020-01-01 open Assets:Crypto:DeFi:Yearn:Vaults
+2020-01-01 open Assets:Crypto:DeFi:Yearn:YFI
+
+;; Beefy Finance - Multi-chain yield optimizer
+2020-01-01 open Assets:Crypto:DeFi:Beefy:Vaults
+2020-01-01 open Assets:Crypto:DeFi:Beefy:BIFI
+
+;; ================================================================================
+;; NOTES ON USING DEFI ACCOUNTS
+;; ================================================================================
+
+;; TRACKING LIQUID STAKING:
+;; When you stake ETH for stETH, you're exchanging one asset for another:
+;; 2025-10-27 * "Lido" "Staked ETH for stETH"
+;;   Assets:Crypto:DeFi:Lido:STETH      10.0 STETH {3200 USD}
+;;   Assets:Crypto:Wallet:MetaMask:ETH -10.0 ETH {3200 USD}
+;;
+;; TRACKING LIQUIDITY POOLS:
+;; 2025-10-27 * "Uniswap" "Added liquidity to ETH/USDC pool"
+;;   Assets:Crypto:DeFi:Uniswap:LPTokens   100.0 UNI-V2-ETH-USDC {50 USD}
+;;   Assets:Crypto:Wallet:MetaMask:ETH    -1.0 ETH {3200 USD}
+;;   Assets:Crypto:Wallet:MetaMask:Tokens -3200.00 USDC {1 USD}
+;;
+;; TRACKING PERPETUAL POSITIONS:
+;; 2025-10-27 * "Hyperliquid" "Deposited collateral"
+;;   Assets:Crypto:DeFi:Hyperliquid:USDC  10000.00 USDC
+;;   Assets:Crypto:Exchange:Binance:USDC -10000.00 USDC
+;;
+;; 2025-10-28 * "Hyperliquid" "Realized profit from long BTC"
+;;   Assets:Crypto:DeFi:Hyperliquid:USDC    500.00 USDC
+;;   Income:Crypto:Trading:CapitalGains    -500.00 USD
+;;
+;; TRACKING RESTAKING:
+;; 2025-10-27 * "EigenLayer" "Restaked stETH"
+;;   Assets:Crypto:DeFi:EigenLayer:Restaked  5.0 STETH
+;;   Assets:Crypto:DeFi:Lido:STETH          -5.0 STETH
+;;
+;; 2025-11-01 * "EigenLayer" "Received points"
+;;   Assets:Crypto:DeFi:EigenLayer:Points  1000.0 POINTS
+;;   Income:Crypto:DeFi:Points              ;; Track for future airdrops
+;;
+;; TRACKING LENDING:
+;; 2025-10-27 * "Aave" "Supplied USDC for lending"
+;;   Assets:Crypto:DeFi:Aave:USDC          5000.00 USDC
+;;   Assets:Crypto:Wallet:MetaMask:Tokens -5000.00 USDC
+;;
+;; 2025-11-01 * "Aave" "Received lending interest"
+;;   Assets:Crypto:DeFi:Aave:USDC      50.00 USDC {1 USD}
+;;   Income:Crypto:DeFi:Interest      -50.00 USD

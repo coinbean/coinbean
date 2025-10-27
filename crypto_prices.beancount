@@ -1,0 +1,151 @@
+;;; -*- mode: beancount -*-
+;;; Cryptocurrency Price Data
+;;; Updated: 2025-10-27
+
+;; ================================================================================
+;; CRYPTOCURRENCY PRICES - October 2025
+;; ================================================================================
+;; Note: These are example prices. Update with real market data regularly.
+;; You can use APIs or services like CoinGecko, CoinMarketCap to fetch prices.
+
+;; Major Layer 1 Cryptocurrencies
+2025-10-27 price BTC 67500.00 USD
+2025-10-27 price ETH 3250.00 USD
+2025-10-27 price SOL 175.00 USD
+2025-10-27 price ADA 0.45 USD
+2025-10-27 price DOT 6.50 USD
+2025-10-27 price AVAX 35.00 USD
+2025-10-27 price ATOM 8.50 USD
+2025-10-27 price ALGO 0.18 USD
+2025-10-27 price XRP 0.55 USD
+2025-10-27 price XLM 0.12 USD
+2025-10-27 price NEAR 5.50 USD
+2025-10-27 price FTM 0.65 USD
+2025-10-27 price TON 5.20 USD
+2025-10-27 price APT 9.50 USD
+2025-10-27 price SUI 2.10 USD
+
+;; Layer 2 Solutions
+2025-10-27 price MATIC 0.75 USD
+2025-10-27 price OP 2.10 USD
+2025-10-27 price ARB 1.05 USD
+
+;; Stablecoins (should always be close to 1.00 USD)
+2025-10-27 price USDT 1.00 USD
+2025-10-27 price USDC 1.00 USD
+2025-10-27 price DAI 1.00 USD
+2025-10-27 price BUSD 1.00 USD
+2025-10-27 price TUSD 1.00 USD
+
+;; DeFi Tokens
+2025-10-27 price UNI 8.50 USD
+2025-10-27 price AAVE 175.00 USD
+2025-10-27 price MKR 1500.00 USD
+2025-10-27 price COMP 55.00 USD
+2025-10-27 price SNX 3.20 USD
+2025-10-27 price CRV 0.75 USD
+2025-10-27 price SUSHI 1.10 USD
+
+;; Exchange Tokens
+2025-10-27 price BNB 620.00 USD
+2025-10-27 price CRO 0.15 USD
+2025-10-27 price FTT 2.50 USD
+
+;; Meme Coins
+2025-10-27 price DOGE 0.08 USD
+2025-10-27 price SHIB 0.000025 USD
+2025-10-27 price PEPE 0.0000015 USD
+
+;; Privacy Coins
+2025-10-27 price XMR 165.00 USD
+2025-10-27 price ZEC 35.00 USD
+
+;; Other Notable Tokens
+2025-10-27 price LINK 15.50 USD
+2025-10-27 price LTC 85.00 USD
+2025-10-27 price BCH 420.00 USD
+2025-10-27 price ETC 25.00 USD
+2025-10-27 price VET 0.032 USD
+2025-10-27 price HBAR 0.075 USD
+2025-10-27 price ICP 9.50 USD
+
+;; ================================================================================
+;; FIAT EXCHANGE RATES
+;; ================================================================================
+
+2025-10-27 price EUR 1.08 USD
+2025-10-27 price GBP 1.26 USD
+2025-10-27 price CNY 0.14 USD
+
+;; ================================================================================
+;; NOTES ON UPDATING PRICES
+;; ================================================================================
+
+;; MANUAL UPDATE:
+;; Update prices daily or weekly by adding new price entries with current dates.
+;; Beancount will use the most recent price for calculations.
+
+;; AUTOMATED UPDATE OPTIONS:
+;;
+;; 1. Using bean-price with price sources:
+;;    bean-price crypto_main.beancount
+;;
+;; 2. Using CoinGecko API (Python script):
+;;    python fetch_crypto_prices.py >> crypto_prices.beancount
+;;
+;; 3. Using CoinMarketCap API:
+;;    Similar to CoinGecko, requires API key
+;;
+;; 4. Using cryptocurrency price plugins:
+;;    Install beancount-price-sources for additional sources
+
+;; PRICE DATA FORMAT:
+;; YYYY-MM-DD price CRYPTO PRICE USD
+;;
+;; Example:
+;; 2025-10-27 price BTC 67500.00 USD
+;; This means: 1 BTC = 67,500.00 USD on October 27, 2025
+
+;; IMPORTANT NOTES:
+;; - For stablecoins, prices should always be close to 1.00 USD
+;; - Update prices before generating reports for accurate portfolio valuation
+;; - Historical prices are useful for tracking gains/losses over time
+;; - Keep at least one price entry per week for each crypto you hold
+
+;; ================================================================================
+;; HISTORICAL PRICES (EXAMPLE)
+;; ================================================================================
+;; Keep historical prices for tax reporting and performance tracking
+
+; 2025-10-20 price BTC 66000.00 USD
+; 2025-10-13 price BTC 64500.00 USD
+; 2025-10-06 price BTC 63000.00 USD
+
+; 2025-10-20 price ETH 3100.00 USD
+; 2025-10-13 price ETH 3050.00 USD
+; 2025-10-06 price ETH 2950.00 USD
+
+;;; Cryptocurrency Prices
+;;; Fetched on: 2025-10-27
+;;; Source: CoinGecko API
+
+;; Layer 1 Blockchains
+2025-10-27 price BTC 115569.00 USD
+2025-10-27 price ETH 4242.21 USD
+2025-10-27 price SOL 204.49 USD
+
+;; Layer 2 Solutions
+
+;; Stablecoins
+2025-10-27 price USDC 0.999894 USD
+
+;; DeFi Tokens
+
+;; Exchange Tokens
+
+;; Meme Coins
+
+;; Privacy Coins
+
+;; Other Tokens
+

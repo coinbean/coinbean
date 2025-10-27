@@ -1,0 +1,77 @@
+# Personal transaction data - DO NOT COMMIT YOUR REAL TRANSACTIONS
+# Uncomment these if you want to keep your actual data private:
+# crypto_2024.beancount
+# crypto_2025.beancount
+# crypto_prices.beancount
+
+# Beancount cache files
+.beancount-cache/
+*.bean-cache
+*.pyc
+__pycache__/
+
+# Python
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Fava
+.fava-cache/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Claude Code
+.claude/
+
+# Sensitive data
+*.backup
+*.bak
+*_backup.beancount
+*_private.beancount
+secrets/
+private/
+
+# Reports and exports
+reports/
+exports/
+*.pdf
+*.csv
+*.xlsx
+!examples/*.csv
+
+# Logs
+*.log
+logs/
+
+# Local configuration
+.env
+.env.local
+config.local.json
+settings.local.json
+!.claude/settings.local.json

@@ -1,0 +1,14 @@
+;;; -*- mode: beancount -*-
+;;; Cryptocurrency Transactions - 2024
+
+;; ================================================================================
+;; 2024 CRYPTO TRANSACTIONS
+;; ================================================================================
+
+;; Add your 2024 cryptocurrency transactions here
+;; See crypto_examples.beancount for transaction examples
+
+;; Example transaction format:
+;; 2024-01-15 * "Coinbase" "Bought Bitcoin"
+;;   Assets:Crypto:Exchange:Coinbase:BTC     0.1 BTC {60000 USD}
+;;   Assets:Crypto:Exchange:Coinbase:Cash:USD  -6000.00 USD

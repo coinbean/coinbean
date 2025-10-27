@@ -1,0 +1,14 @@
+;;; -*- mode: beancount -*-
+;;; Cryptocurrency Transactions - 2025
+
+;; ================================================================================
+;; 2025 CRYPTO TRANSACTIONS
+;; ================================================================================
+
+;; Add your 2025 cryptocurrency transactions here
+;; See crypto_examples.beancount for transaction examples
+
+;; Example transaction format:
+;; 2025-01-15 * "Coinbase" "Bought Ethereum"
+;;   Assets:Crypto:Exchange:Coinbase:ETH     1.0 ETH {3000 USD}
+;;   Assets:Crypto:Exchange:Coinbase:Cash:USD  -3000.00 USD

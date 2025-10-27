@@ -1,0 +1,129 @@
+;;; -*- mode: beancount -*-
+;;; Coinbean - Centralized Exchanges Module
+;;; Track your crypto assets across major centralized exchanges
+
+;; ================================================================================
+;; COINBASE - US-based, beginner-friendly
+;; ================================================================================
+
+2020-01-01 open Assets:Crypto:Exchange:Coinbase:Cash:USD
+2020-01-01 open Assets:Crypto:Exchange:Coinbase:BTC
+2020-01-01 open Assets:Crypto:Exchange:Coinbase:ETH
+2020-01-01 open Assets:Crypto:Exchange:Coinbase:SOL
+2020-01-01 open Assets:Crypto:Exchange:Coinbase:USDC
+2020-01-01 open Assets:Crypto:Exchange:Coinbase:Other  ;; For other tokens
+
+;; ================================================================================
+;; BINANCE - Largest global exchange
+;; ================================================================================
+
+2020-01-01 open Assets:Crypto:Exchange:Binance:Cash:USD
+2020-01-01 open Assets:Crypto:Exchange:Binance:Cash:EUR
+2020-01-01 open Assets:Crypto:Exchange:Binance:BTC
+2020-01-01 open Assets:Crypto:Exchange:Binance:ETH
+2020-01-01 open Assets:Crypto:Exchange:Binance:BNB
+2020-01-01 open Assets:Crypto:Exchange:Binance:SOL
+2020-01-01 open Assets:Crypto:Exchange:Binance:USDT
+2020-01-01 open Assets:Crypto:Exchange:Binance:USDC
+2020-01-01 open Assets:Crypto:Exchange:Binance:Other  ;; For other tokens
+
+;; ================================================================================
+;; KRAKEN - Security-focused
+;; ================================================================================
+
+2020-01-01 open Assets:Crypto:Exchange:Kraken:Cash:USD
+2020-01-01 open Assets:Crypto:Exchange:Kraken:Cash:EUR
+2020-01-01 open Assets:Crypto:Exchange:Kraken:BTC
+2020-01-01 open Assets:Crypto:Exchange:Kraken:ETH
+2020-01-01 open Assets:Crypto:Exchange:Kraken:SOL
+2020-01-01 open Assets:Crypto:Exchange:Kraken:USDT
+2020-01-01 open Assets:Crypto:Exchange:Kraken:Other  ;; For other tokens
+
+;; ================================================================================
+;; GEMINI - Regulated US exchange
+;; ================================================================================
+
+2020-01-01 open Assets:Crypto:Exchange:Gemini:Cash:USD
+2020-01-01 open Assets:Crypto:Exchange:Gemini:BTC
+2020-01-01 open Assets:Crypto:Exchange:Gemini:ETH
+2020-01-01 open Assets:Crypto:Exchange:Gemini:Other  ;; For other tokens
+
+;; ================================================================================
+;; CRYPTO.COM - Card rewards
+;; ================================================================================
+
+2020-01-01 open Assets:Crypto:Exchange:CryptoCom:Cash:USD
+2020-01-01 open Assets:Crypto:Exchange:CryptoCom:BTC
+2020-01-01 open Assets:Crypto:Exchange:CryptoCom:ETH
+2020-01-01 open Assets:Crypto:Exchange:CryptoCom:CRO
+2020-01-01 open Assets:Crypto:Exchange:CryptoCom:Other  ;; For other tokens
+
+;; ================================================================================
+;; KUCOIN - Wide token selection
+;; ================================================================================
+
+2020-01-01 open Assets:Crypto:Exchange:KuCoin:Cash:USD
+2020-01-01 open Assets:Crypto:Exchange:KuCoin:BTC
+2020-01-01 open Assets:Crypto:Exchange:KuCoin:ETH
+2020-01-01 open Assets:Crypto:Exchange:KuCoin:USDT
+2020-01-01 open Assets:Crypto:Exchange:KuCoin:Other  ;; For other tokens
+
+;; ================================================================================
+;; BYBIT - Derivatives trading
+;; ================================================================================
+
+2020-01-01 open Assets:Crypto:Exchange:Bybit:Cash:USD
+2020-01-01 open Assets:Crypto:Exchange:Bybit:BTC
+2020-01-01 open Assets:Crypto:Exchange:Bybit:ETH
+2020-01-01 open Assets:Crypto:Exchange:Bybit:USDT
+2020-01-01 open Assets:Crypto:Exchange:Bybit:Other  ;; For other tokens
+
+;; ================================================================================
+;; OKX - Global exchange
+;; ================================================================================
+
+2020-01-01 open Assets:Crypto:Exchange:OKX:Cash:USD
+2020-01-01 open Assets:Crypto:Exchange:OKX:BTC
+2020-01-01 open Assets:Crypto:Exchange:OKX:ETH
+2020-01-01 open Assets:Crypto:Exchange:OKX:USDT
+2020-01-01 open Assets:Crypto:Exchange:OKX:Other  ;; For other tokens
+
+;; ================================================================================
+;; HTX (HUOBI) - Asian markets
+;; ================================================================================
+
+2020-01-01 open Assets:Crypto:Exchange:HTX:Cash:USD
+2020-01-01 open Assets:Crypto:Exchange:HTX:BTC
+2020-01-01 open Assets:Crypto:Exchange:HTX:ETH
+2020-01-01 open Assets:Crypto:Exchange:HTX:USDT
+2020-01-01 open Assets:Crypto:Exchange:HTX:Other  ;; For other tokens
+
+;; ================================================================================
+;; GATE.IO - Altcoin trading
+;; ================================================================================
+
+2020-01-01 open Assets:Crypto:Exchange:Gate:Cash:USD
+2020-01-01 open Assets:Crypto:Exchange:Gate:BTC
+2020-01-01 open Assets:Crypto:Exchange:Gate:ETH
+2020-01-01 open Assets:Crypto:Exchange:Gate:USDT
+2020-01-01 open Assets:Crypto:Exchange:Gate:Other  ;; For other tokens
+
+;; ================================================================================
+;; NOTES ON USING EXCHANGE ACCOUNTS
+;; ================================================================================
+
+;; RECOMMENDED PATTERN:
+;; - Use specific accounts for major holdings (BTC, ETH, SOL, USDC, USDT)
+;; - Use "Other" account for smaller altcoin positions
+;; - Create specific accounts as needed for tokens you trade frequently
+;;
+;; EXAMPLE:
+;; 2025-10-27 * "Binance" "Bought AVAX"
+;;   Assets:Crypto:Exchange:Binance:Other   10.0 AVAX {35.00 USD}
+;;   Assets:Crypto:Exchange:Binance:Cash:USD  -350.00 USD
+;;
+;; Or create a dedicated account:
+;; 2020-01-01 open Assets:Crypto:Exchange:Binance:AVAX
+;; 2025-10-27 * "Binance" "Bought AVAX"
+;;   Assets:Crypto:Exchange:Binance:AVAX    10.0 AVAX {35.00 USD}
+;;   Assets:Crypto:Exchange:Binance:Cash:USD  -350.00 USD

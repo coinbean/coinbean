@@ -1,0 +1,20 @@
+# Git-crypt Configuration
+# Uncomment these lines when you want to enable encryption for your real transaction data
+# You must run `git-crypt init` first before uncommenting
+
+# Encrypt all transaction files
+# tx_*.beancount filter=git-crypt diff=git-crypt
+
+# Encrypt account files with real balances (optional - comment out for templates)
+# exchanges.beancount filter=git-crypt diff=git-crypt
+# chains.beancount filter=git-crypt diff=git-crypt
+# defi.beancount filter=git-crypt diff=git-crypt
+
+# Encrypt price files with your actual positions (optional)
+# crypto_prices.beancount filter=git-crypt diff=git-crypt
+
+# Do NOT encrypt these files (keep as examples/templates)
+# crypto_examples.beancount -filter
+# crypto_main.beancount -filter
+# README.md -filter
+# LICENSE -filter

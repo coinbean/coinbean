@@ -1,0 +1,969 @@
+;;; -*- mode: beancount -*-
+;;; Coinbean - Cryptocurrency Finance Ledger
+;;; Track your crypto assets across multiple exchanges and blockchains
+
+;; Options and plugins
+option "title" "Coinbean - Crypto Portfolio Tracker"
+option "operating_currency" "USD"
+
+;; Tolerance for rounding errors
+;; Crypto can have many decimal places, so we set higher precision
+option "inferred_tolerance_default" "USD:0.01"
+option "inferred_tolerance_default" "BTC:0.00000001"  ;; 1 satoshi
+option "inferred_tolerance_default" "ETH:0.000001"    ;; 1 gwei
+option "inferred_tolerance_default" "SOL:0.000001"
+option "inferred_tolerance_default" "*:0.0001"        ;; Default for other cryptos
+
+;; Plugins
+plugin "beancount.plugins.implicit_prices"
+
+;; ================================================================================
+;; FIAT CURRENCIES
+;; ================================================================================
+
+2020-01-01 commodity USD
+  name: "US Dollar"
+  asset-class: "fiat"
+
+2020-01-01 commodity EUR
+  name: "Euro"
+  asset-class: "fiat"
+
+2020-01-01 commodity GBP
+  name: "British Pound"
+  asset-class: "fiat"
+
+2020-01-01 commodity CNY
+  name: "Chinese Yuan"
+  asset-class: "fiat"
+
+;; ================================================================================
+;; LAYER 1 BLOCKCHAINS - Major Cryptocurrencies
+;; ================================================================================
+
+2020-01-01 commodity BTC
+  name: "Bitcoin"
+  asset-class: "cryptocurrency"
+  blockchain: "Bitcoin"
+  category: "Layer-1"
+  export: "CASH"
+
+2020-01-01 commodity ETH
+  name: "Ethereum"
+  asset-class: "cryptocurrency"
+  blockchain: "Ethereum"
+  category: "Layer-1"
+  export: "CASH"
+
+2020-01-01 commodity SOL
+  name: "Solana"
+  asset-class: "cryptocurrency"
+  blockchain: "Solana"
+  category: "Layer-1"
+  export: "CASH"
+
+2020-01-01 commodity ADA
+  name: "Cardano"
+  asset-class: "cryptocurrency"
+  blockchain: "Cardano"
+  category: "Layer-1"
+  export: "CASH"
+
+2020-01-01 commodity DOT
+  name: "Polkadot"
+  asset-class: "cryptocurrency"
+  blockchain: "Polkadot"
+  category: "Layer-1"
+  export: "CASH"
+
+2020-01-01 commodity AVAX
+  name: "Avalanche"
+  asset-class: "cryptocurrency"
+  blockchain: "Avalanche"
+  category: "Layer-1"
+  export: "CASH"
+
+2020-01-01 commodity ATOM
+  name: "Cosmos"
+  asset-class: "cryptocurrency"
+  blockchain: "Cosmos"
+  category: "Layer-1"
+  export: "CASH"
+
+2020-01-01 commodity ALGO
+  name: "Algorand"
+  asset-class: "cryptocurrency"
+  blockchain: "Algorand"
+  category: "Layer-1"
+  export: "CASH"
+
+2020-01-01 commodity XRP
+  name: "Ripple"
+  asset-class: "cryptocurrency"
+  blockchain: "XRP Ledger"
+  category: "Layer-1"
+  export: "CASH"
+
+2020-01-01 commodity XLM
+  name: "Stellar"
+  asset-class: "cryptocurrency"
+  blockchain: "Stellar"
+  category: "Layer-1"
+  export: "CASH"
+
+2020-01-01 commodity NEAR
+  name: "NEAR Protocol"
+  asset-class: "cryptocurrency"
+  blockchain: "NEAR"
+  category: "Layer-1"
+  export: "CASH"
+
+2020-01-01 commodity FTM
+  name: "Fantom"
+  asset-class: "cryptocurrency"
+  blockchain: "Fantom"
+  category: "Layer-1"
+  export: "CASH"
+
+2020-01-01 commodity TON
+  name: "Toncoin"
+  asset-class: "cryptocurrency"
+  blockchain: "TON"
+  category: "Layer-1"
+  export: "CASH"
+
+2020-01-01 commodity APT
+  name: "Aptos"
+  asset-class: "cryptocurrency"
+  blockchain: "Aptos"
+  category: "Layer-1"
+  export: "CASH"
+
+2020-01-01 commodity SUI
+  name: "Sui"
+  asset-class: "cryptocurrency"
+  blockchain: "Sui"
+  category: "Layer-1"
+  export: "CASH"
+
+;; ================================================================================
+;; LAYER 2 SOLUTIONS
+;; ================================================================================
+
+2020-01-01 commodity MATIC
+  name: "Polygon"
+  asset-class: "cryptocurrency"
+  blockchain: "Polygon"
+  category: "Layer-2"
+  export: "CASH"
+
+2020-01-01 commodity OP
+  name: "Optimism"
+  asset-class: "cryptocurrency"
+  blockchain: "Optimism"
+  category: "Layer-2"
+  export: "CASH"
+
+2020-01-01 commodity ARB
+  name: "Arbitrum"
+  asset-class: "cryptocurrency"
+  blockchain: "Arbitrum"
+  category: "Layer-2"
+  export: "CASH"
+
+;; ================================================================================
+;; STABLECOINS
+;; ================================================================================
+
+2020-01-01 commodity USDT
+  name: "Tether USD"
+  asset-class: "cryptocurrency"
+  category: "Stablecoin"
+  pegged-to: "USD"
+  export: "CASH"
+
+2020-01-01 commodity USDC
+  name: "USD Coin"
+  asset-class: "cryptocurrency"
+  category: "Stablecoin"
+  pegged-to: "USD"
+  export: "CASH"
+
+2020-01-01 commodity DAI
+  name: "Dai"
+  asset-class: "cryptocurrency"
+  category: "Stablecoin"
+  pegged-to: "USD"
+  export: "CASH"
+
+2020-01-01 commodity BUSD
+  name: "Binance USD"
+  asset-class: "cryptocurrency"
+  category: "Stablecoin"
+  pegged-to: "USD"
+  export: "CASH"
+
+2020-01-01 commodity TUSD
+  name: "TrueUSD"
+  asset-class: "cryptocurrency"
+  category: "Stablecoin"
+  pegged-to: "USD"
+  export: "CASH"
+
+;; ================================================================================
+;; DEFI TOKENS
+;; ================================================================================
+
+2020-01-01 commodity UNI
+  name: "Uniswap"
+  asset-class: "cryptocurrency"
+  category: "DeFi"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity AAVE
+  name: "Aave"
+  asset-class: "cryptocurrency"
+  category: "DeFi"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity MKR
+  name: "Maker"
+  asset-class: "cryptocurrency"
+  category: "DeFi"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity COMP
+  name: "Compound"
+  asset-class: "cryptocurrency"
+  category: "DeFi"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity SNX
+  name: "Synthetix"
+  asset-class: "cryptocurrency"
+  category: "DeFi"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity CRV
+  name: "Curve DAO"
+  asset-class: "cryptocurrency"
+  category: "DeFi"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity SUSHI
+  name: "SushiSwap"
+  asset-class: "cryptocurrency"
+  category: "DeFi"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+;; ================================================================================
+;; EXCHANGE TOKENS
+;; ================================================================================
+
+2020-01-01 commodity BNB
+  name: "Binance Coin"
+  asset-class: "cryptocurrency"
+  category: "Exchange Token"
+  blockchain: "BNB Chain"
+  export: "CASH"
+
+2020-01-01 commodity CRO
+  name: "Cronos"
+  asset-class: "cryptocurrency"
+  category: "Exchange Token"
+  blockchain: "Cronos"
+  export: "CASH"
+
+2020-01-01 commodity FTT
+  name: "FTX Token"
+  asset-class: "cryptocurrency"
+  category: "Exchange Token"
+  export: "CASH"
+
+;; ================================================================================
+;; MEME COINS & COMMUNITY TOKENS
+;; ================================================================================
+
+2020-01-01 commodity DOGE
+  name: "Dogecoin"
+  asset-class: "cryptocurrency"
+  category: "Meme"
+  blockchain: "Dogecoin"
+  export: "CASH"
+
+2020-01-01 commodity SHIB
+  name: "Shiba Inu"
+  asset-class: "cryptocurrency"
+  category: "Meme"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity PEPE
+  name: "Pepe"
+  asset-class: "cryptocurrency"
+  category: "Meme"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+;; ================================================================================
+;; PRIVACY COINS
+;; ================================================================================
+
+2020-01-01 commodity XMR
+  name: "Monero"
+  asset-class: "cryptocurrency"
+  category: "Privacy"
+  blockchain: "Monero"
+  export: "CASH"
+
+2020-01-01 commodity ZEC
+  name: "Zcash"
+  asset-class: "cryptocurrency"
+  category: "Privacy"
+  blockchain: "Zcash"
+  export: "CASH"
+
+;; ================================================================================
+;; OTHER NOTABLE TOKENS
+;; ================================================================================
+
+2020-01-01 commodity LINK
+  name: "Chainlink"
+  asset-class: "cryptocurrency"
+  category: "Oracle"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity LTC
+  name: "Litecoin"
+  asset-class: "cryptocurrency"
+  category: "Layer-1"
+  blockchain: "Litecoin"
+  export: "CASH"
+
+2020-01-01 commodity BCH
+  name: "Bitcoin Cash"
+  asset-class: "cryptocurrency"
+  category: "Layer-1"
+  blockchain: "Bitcoin Cash"
+  export: "CASH"
+
+2020-01-01 commodity ETC
+  name: "Ethereum Classic"
+  asset-class: "cryptocurrency"
+  category: "Layer-1"
+  blockchain: "Ethereum Classic"
+  export: "CASH"
+
+2020-01-01 commodity VET
+  name: "VeChain"
+  asset-class: "cryptocurrency"
+  category: "Supply Chain"
+  blockchain: "VeChain"
+  export: "CASH"
+
+2020-01-01 commodity HBAR
+  name: "Hedera"
+  asset-class: "cryptocurrency"
+  category: "Layer-1"
+  blockchain: "Hedera"
+  export: "CASH"
+
+2020-01-01 commodity ICP
+  name: "Internet Computer"
+  asset-class: "cryptocurrency"
+  category: "Layer-1"
+  blockchain: "Internet Computer"
+  export: "CASH"
+
+;; ================================================================================
+;; PERPETUAL DEX TOKENS
+;; ================================================================================
+
+2020-01-01 commodity HYPE
+  name: "Hyperliquid"
+  asset-class: "cryptocurrency"
+  category: "Perpetual DEX"
+  blockchain: "Hyperliquid L1"
+  export: "CASH"
+
+2020-01-01 commodity DYDX
+  name: "dYdX"
+  asset-class: "cryptocurrency"
+  category: "Perpetual DEX"
+  blockchain: "dYdX Chain"
+  export: "CASH"
+
+2020-01-01 commodity GMX
+  name: "GMX"
+  asset-class: "cryptocurrency"
+  category: "Perpetual DEX"
+  blockchain: "Arbitrum"
+  export: "CASH"
+
+;; ================================================================================
+;; SOLANA DEX TOKENS
+;; ================================================================================
+
+2020-01-01 commodity RAY
+  name: "Raydium"
+  asset-class: "cryptocurrency"
+  category: "DEX"
+  blockchain: "Solana"
+  export: "CASH"
+
+2020-01-01 commodity JUP
+  name: "Jupiter"
+  asset-class: "cryptocurrency"
+  category: "DEX"
+  blockchain: "Solana"
+  export: "CASH"
+
+2020-01-01 commodity ORCA
+  name: "Orca"
+  asset-class: "cryptocurrency"
+  category: "DEX"
+  blockchain: "Solana"
+  export: "CASH"
+
+;; ================================================================================
+;; LIQUID STAKING & RESTAKING TOKENS
+;; ================================================================================
+
+2020-01-01 commodity LDO
+  name: "Lido DAO"
+  asset-class: "cryptocurrency"
+  category: "Liquid Staking"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity STETH
+  name: "Lido Staked ETH"
+  asset-class: "cryptocurrency"
+  category: "Liquid Staking"
+  blockchain: "Ethereum"
+  pegged-to: "ETH"
+  export: "CASH"
+
+2020-01-01 commodity RPL
+  name: "Rocket Pool"
+  asset-class: "cryptocurrency"
+  category: "Liquid Staking"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity RETH
+  name: "Rocket Pool ETH"
+  asset-class: "cryptocurrency"
+  category: "Liquid Staking"
+  blockchain: "Ethereum"
+  pegged-to: "ETH"
+  export: "CASH"
+
+2020-01-01 commodity EIGEN
+  name: "EigenLayer"
+  asset-class: "cryptocurrency"
+  category: "Restaking"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity JTO
+  name: "Jito"
+  asset-class: "cryptocurrency"
+  category: "Liquid Staking"
+  blockchain: "Solana"
+  export: "CASH"
+
+2020-01-01 commodity JITOSOL
+  name: "Jito Staked SOL"
+  asset-class: "cryptocurrency"
+  category: "Liquid Staking"
+  blockchain: "Solana"
+  pegged-to: "SOL"
+  export: "CASH"
+
+2020-01-01 commodity MNDE
+  name: "Marinade"
+  asset-class: "cryptocurrency"
+  category: "Liquid Staking"
+  blockchain: "Solana"
+  export: "CASH"
+
+2020-01-01 commodity MSOL
+  name: "Marinade Staked SOL"
+  asset-class: "cryptocurrency"
+  category: "Liquid Staking"
+  blockchain: "Solana"
+  pegged-to: "SOL"
+  export: "CASH"
+
+;; Note: Solayer is a newer protocol - add LAYER token when available
+;; 2020-01-01 commodity LAYER
+;;   name: "Solayer"
+;;   asset-class: "cryptocurrency"
+;;   category: "Restaking"
+;;   blockchain: "Solana"
+;;   export: "CASH"
+
+;; ================================================================================
+;; AI & MACHINE LEARNING
+;; ================================================================================
+
+2020-01-01 commodity FET
+  name: "Fetch.ai"
+  asset-class: "cryptocurrency"
+  category: "AI"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity AGIX
+  name: "SingularityNET"
+  asset-class: "cryptocurrency"
+  category: "AI"
+  blockchain: "Cardano"
+  export: "CASH"
+
+2020-01-01 commodity OCEAN
+  name: "Ocean Protocol"
+  asset-class: "cryptocurrency"
+  category: "AI/Data"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity TAO
+  name: "Bittensor"
+  asset-class: "cryptocurrency"
+  category: "AI"
+  blockchain: "Bittensor"
+  export: "CASH"
+
+2020-01-01 commodity RNDR
+  name: "Render"
+  asset-class: "cryptocurrency"
+  category: "AI/Rendering"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+;; ================================================================================
+;; GAMING & METAVERSE
+;; ================================================================================
+
+2020-01-01 commodity SAND
+  name: "The Sandbox"
+  asset-class: "cryptocurrency"
+  category: "Metaverse"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity MANA
+  name: "Decentraland"
+  asset-class: "cryptocurrency"
+  category: "Metaverse"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity AXS
+  name: "Axie Infinity"
+  asset-class: "cryptocurrency"
+  category: "Gaming"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity IMX
+  name: "Immutable X"
+  asset-class: "cryptocurrency"
+  category: "Gaming/NFT"
+  blockchain: "Immutable X"
+  export: "CASH"
+
+2020-01-01 commodity ENJ
+  name: "Enjin"
+  asset-class: "cryptocurrency"
+  category: "Gaming/NFT"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity GALA
+  name: "Gala"
+  asset-class: "cryptocurrency"
+  category: "Gaming"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity BLUR
+  name: "Blur"
+  asset-class: "cryptocurrency"
+  category: "NFT Marketplace"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity MAGIC
+  name: "Magic"
+  asset-class: "cryptocurrency"
+  category: "Gaming/Metaverse"
+  blockchain: "Arbitrum"
+  export: "CASH"
+
+;; ================================================================================
+;; NFT ECOSYSTEM TOKENS
+;; ================================================================================
+
+2020-01-01 commodity APE
+  name: "ApeCoin"
+  asset-class: "cryptocurrency"
+  category: "NFT/DAO"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity LOOKS
+  name: "LooksRare"
+  asset-class: "cryptocurrency"
+  category: "NFT Marketplace"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity X2Y2
+  name: "X2Y2"
+  asset-class: "cryptocurrency"
+  category: "NFT Marketplace"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity SUDO
+  name: "Sudoswap"
+  asset-class: "cryptocurrency"
+  category: "NFT AMM"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity NFT
+  name: "APENFT"
+  asset-class: "cryptocurrency"
+  category: "NFT Platform"
+  blockchain: "Tron"
+  export: "CASH"
+
+;; ================================================================================
+;; BITCOIN ORDINALS & BRC-20
+;; ================================================================================
+
+2020-01-01 commodity ORDI
+  name: "Ordinals"
+  asset-class: "cryptocurrency"
+  category: "BRC-20"
+  blockchain: "Bitcoin"
+  export: "CASH"
+
+2020-01-01 commodity SATS
+  name: "Sats (Ordinals)"
+  asset-class: "cryptocurrency"
+  category: "BRC-20"
+  blockchain: "Bitcoin"
+  export: "CASH"
+
+2020-01-01 commodity RATS
+  name: "Rats (Ordinals)"
+  asset-class: "cryptocurrency"
+  category: "BRC-20"
+  blockchain: "Bitcoin"
+  export: "CASH"
+
+2020-01-01 commodity PUPS
+  name: "Bitcoin Puppets"
+  asset-class: "cryptocurrency"
+  category: "BRC-20"
+  blockchain: "Bitcoin"
+  export: "CASH"
+
+2020-01-01 commodity TRAC
+  name: "Ordinals TRAC"
+  asset-class: "cryptocurrency"
+  category: "BRC-20"
+  blockchain: "Bitcoin"
+  export: "CASH"
+
+;; ================================================================================
+;; STORAGE & INFRASTRUCTURE
+;; ================================================================================
+
+2020-01-01 commodity FIL
+  name: "Filecoin"
+  asset-class: "cryptocurrency"
+  category: "Storage"
+  blockchain: "Filecoin"
+  export: "CASH"
+
+2020-01-01 commodity AR
+  name: "Arweave"
+  asset-class: "cryptocurrency"
+  category: "Storage"
+  blockchain: "Arweave"
+  export: "CASH"
+
+2020-01-01 commodity GRT
+  name: "The Graph"
+  asset-class: "cryptocurrency"
+  category: "Indexing"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+;; ================================================================================
+;; REAL WORLD ASSETS (RWA) & EMERGING
+;; ================================================================================
+
+2020-01-01 commodity ONDO
+  name: "Ondo Finance"
+  asset-class: "cryptocurrency"
+  category: "RWA"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity WLD
+  name: "Worldcoin"
+  asset-class: "cryptocurrency"
+  category: "Identity"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity PYTH
+  name: "Pyth Network"
+  asset-class: "cryptocurrency"
+  category: "Oracle"
+  blockchain: "Solana"
+  export: "CASH"
+
+;; ================================================================================
+;; ADDITIONAL LAYER 1 BLOCKCHAINS
+;; ================================================================================
+
+2020-01-01 commodity TRX
+  name: "Tron"
+  asset-class: "cryptocurrency"
+  category: "Layer-1"
+  blockchain: "Tron"
+  export: "CASH"
+
+2020-01-01 commodity XTZ
+  name: "Tezos"
+  asset-class: "cryptocurrency"
+  category: "Layer-1"
+  blockchain: "Tezos"
+  export: "CASH"
+
+2020-01-01 commodity EOS
+  name: "EOS"
+  asset-class: "cryptocurrency"
+  category: "Layer-1"
+  blockchain: "EOS"
+  export: "CASH"
+
+2020-01-01 commodity FLOW
+  name: "Flow"
+  asset-class: "cryptocurrency"
+  category: "Layer-1"
+  blockchain: "Flow"
+  export: "CASH"
+
+2020-01-01 commodity SEI
+  name: "Sei"
+  asset-class: "cryptocurrency"
+  category: "Layer-1"
+  blockchain: "Sei"
+  export: "CASH"
+
+2020-01-01 commodity INJ
+  name: "Injective"
+  asset-class: "cryptocurrency"
+  category: "Layer-1"
+  blockchain: "Injective"
+  export: "CASH"
+
+2020-01-01 commodity KAVA
+  name: "Kava"
+  asset-class: "cryptocurrency"
+  category: "Layer-1"
+  blockchain: "Kava"
+  export: "CASH"
+
+2020-01-01 commodity THETA
+  name: "Theta Network"
+  asset-class: "cryptocurrency"
+  category: "Layer-1"
+  blockchain: "Theta"
+  export: "CASH"
+
+2020-01-01 commodity KAS
+  name: "Kaspa"
+  asset-class: "cryptocurrency"
+  category: "Layer-1"
+  blockchain: "Kaspa"
+  export: "CASH"
+
+;; ================================================================================
+;; ADDITIONAL LAYER 2 SOLUTIONS
+;; ================================================================================
+
+2020-01-01 commodity LRC
+  name: "Loopring"
+  asset-class: "cryptocurrency"
+  category: "Layer-2"
+  blockchain: "Loopring"
+  export: "CASH"
+
+2020-01-01 commodity METIS
+  name: "Metis"
+  asset-class: "cryptocurrency"
+  category: "Layer-2"
+  blockchain: "Metis"
+  export: "CASH"
+
+;; ================================================================================
+;; ADDITIONAL DEFI PROTOCOLS
+;; ================================================================================
+
+2020-01-01 commodity RUNE
+  name: "THORChain"
+  asset-class: "cryptocurrency"
+  category: "DeFi"
+  blockchain: "THORChain"
+  export: "CASH"
+
+2020-01-01 commodity INCH
+  name: "1inch"
+  asset-class: "cryptocurrency"
+  category: "DeFi"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity PENDLE
+  name: "Pendle"
+  asset-class: "cryptocurrency"
+  category: "DeFi"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+;; ================================================================================
+;; ADDITIONAL MEME COINS
+;; ================================================================================
+
+2020-01-01 commodity FLOKI
+  name: "Floki"
+  asset-class: "cryptocurrency"
+  category: "Meme"
+  blockchain: "Ethereum"
+  export: "CASH"
+
+2020-01-01 commodity BONK
+  name: "Bonk"
+  asset-class: "cryptocurrency"
+  category: "Meme"
+  blockchain: "Solana"
+  export: "CASH"
+
+2020-01-01 commodity WIF
+  name: "Dogwifhat"
+  asset-class: "cryptocurrency"
+  category: "Meme"
+  blockchain: "Solana"
+  export: "CASH"
+
+
+;; ================================================================================
+;; ACCOUNT MODULES - Modular Organization
+;; ================================================================================
+
+;; This ledger uses a modular structure for better organization:
+;; - exchanges.beancount: Centralized exchange accounts (Coinbase, Binance, etc.)
+;; - chains.beancount: Blockchain wallets and native staking
+;; - defi.beancount: DeFi protocols, liquid staking, and restaking
+;;
+;; You can customize which modules to include based on your needs.
+;; Comment out any modules you don't use to keep your ledger clean.
+
+;; Centralized Exchanges
+include "exchanges.beancount"
+
+;; Blockchain Wallets & Native Staking
+include "chains.beancount"
+
+;; DeFi Protocols & Liquid Staking
+include "defi.beancount"
+
+;; ================================================================================
+;; INCOME ACCOUNTS
+;; ================================================================================
+
+2020-01-01 open Income:Crypto:Trading:CapitalGains
+2020-01-01 open Income:Crypto:Staking:Rewards
+2020-01-01 open Income:Crypto:DeFi:Interest
+2020-01-01 open Income:Crypto:DeFi:Yield
+2020-01-01 open Income:Crypto:DeFi:LiquidityMining
+2020-01-01 open Income:Crypto:Airdrops
+2020-01-01 open Income:Crypto:Mining
+2020-01-01 open Income:Crypto:Referrals
+2020-01-01 open Income:Crypto:Other
+
+;; ================================================================================
+;; EXPENSE ACCOUNTS
+;; ================================================================================
+
+2020-01-01 open Expenses:Crypto:Trading:Fees
+2020-01-01 open Expenses:Crypto:Trading:Losses
+2020-01-01 open Expenses:Crypto:Gas:Ethereum
+2020-01-01 open Expenses:Crypto:Gas:Solana
+2020-01-01 open Expenses:Crypto:Gas:Polygon
+2020-01-01 open Expenses:Crypto:Gas:Other
+2020-01-01 open Expenses:Crypto:Withdrawal:Fees
+2020-01-01 open Expenses:Crypto:Deposit:Fees
+2020-01-01 open Expenses:Crypto:DeFi:Liquidation
+2020-01-01 open Expenses:Crypto:Hardware:Wallet
+2020-01-01 open Expenses:Crypto:Subscriptions
+
+;; ================================================================================
+;; EQUITY ACCOUNTS
+;; ================================================================================
+
+2020-01-01 open Equity:Opening:Crypto
+2020-01-01 open Equity:Conversions:Crypto
+
+;; ================================================================================
+;; PRICE FETCHING
+;; ================================================================================
+
+;; To fetch current cryptocurrency prices, use the included fetch_prices.py script:
+;;
+;; Method 1: Print prices to stdout
+;;   python3 fetch_prices.py
+;;
+;; Method 2: Append to price file
+;;   python3 fetch_prices.py >> crypto_prices.beancount
+;;
+;; Method 3: List supported coins
+;;   python3 fetch_prices.py --list
+;;
+;; Method 4: Fetch specific coins only
+;;   python3 fetch_prices.py --coins BTC ETH SOL
+;;
+;; The script uses CoinGecko API (free, no API key required)
+;; and outputs prices in proper Beancount format.
+
+;; ================================================================================
+;; INCLUDE FILES
+;; ================================================================================
+
+;; Include price data
+include "crypto_prices.beancount"
+
+;; Include transaction files by year
+include "tx_2024.beancount"
+include "tx_2025.beancount"
+
+;; Include examples (uncomment to view)
+; include "crypto_examples.beancount"

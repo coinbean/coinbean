@@ -1,0 +1,158 @@
+;;; -*- mode: beancount -*-
+;;; Coinbean - Blockchain Wallets & Native Staking Module
+;;; Track your self-custody assets across different blockchains
+
+;; ================================================================================
+;; HARDWARE WALLETS - Cold Storage (Most Secure)
+;; ================================================================================
+
+;; Ledger - Supports 5500+ coins
+2020-01-01 open Assets:Crypto:Wallet:Ledger:BTC
+2020-01-01 open Assets:Crypto:Wallet:Ledger:ETH
+2020-01-01 open Assets:Crypto:Wallet:Ledger:SOL
+2020-01-01 open Assets:Crypto:Wallet:Ledger:Other  ;; For other chains
+
+;; Trezor - Open-source hardware wallet
+2020-01-01 open Assets:Crypto:Wallet:Trezor:BTC
+2020-01-01 open Assets:Crypto:Wallet:Trezor:ETH
+2020-01-01 open Assets:Crypto:Wallet:Trezor:Other  ;; For other chains
+
+;; ================================================================================
+;; ETHEREUM ECOSYSTEM - Hot Wallets
+;; ================================================================================
+
+;; MetaMask - Most popular Ethereum wallet
+2020-01-01 open Assets:Crypto:Wallet:MetaMask:ETH
+2020-01-01 open Assets:Crypto:Wallet:MetaMask:MATIC  ;; Polygon
+2020-01-01 open Assets:Crypto:Wallet:MetaMask:ARB    ;; Arbitrum
+2020-01-01 open Assets:Crypto:Wallet:MetaMask:OP     ;; Optimism
+2020-01-01 open Assets:Crypto:Wallet:MetaMask:Tokens ;; ERC-20 tokens
+
+;; ================================================================================
+;; SOLANA ECOSYSTEM - Hot Wallets
+;; ================================================================================
+
+;; Phantom - Premier Solana wallet
+2020-01-01 open Assets:Crypto:Wallet:Phantom:SOL
+2020-01-01 open Assets:Crypto:Wallet:Phantom:Tokens  ;; SPL tokens
+
+;; Solflare - Alternative Solana wallet
+2020-01-01 open Assets:Crypto:Wallet:Solflare:SOL
+2020-01-01 open Assets:Crypto:Wallet:Solflare:Tokens
+
+;; ================================================================================
+;; SUI ECOSYSTEM - Hot Wallets
+;; ================================================================================
+
+;; Sui Wallet - Official Sui wallet
+2020-01-01 open Assets:Crypto:Wallet:SuiWallet:SUI
+2020-01-01 open Assets:Crypto:Wallet:SuiWallet:Tokens
+
+;; Suiet - Popular Sui wallet
+2020-01-01 open Assets:Crypto:Wallet:Suiet:SUI
+2020-01-01 open Assets:Crypto:Wallet:Suiet:Tokens
+
+;; ================================================================================
+;; BITCOIN ECOSYSTEM - Wallets
+;; ================================================================================
+
+;; Electrum - Popular Bitcoin wallet
+2020-01-01 open Assets:Crypto:Wallet:Electrum:BTC
+
+;; BlueWallet - Mobile Bitcoin wallet
+2020-01-01 open Assets:Crypto:Wallet:BlueWallet:BTC
+
+;; ================================================================================
+;; MULTI-CHAIN WALLETS
+;; ================================================================================
+
+;; Trust Wallet - Multi-chain mobile wallet
+2020-01-01 open Assets:Crypto:Wallet:TrustWallet:BTC
+2020-01-01 open Assets:Crypto:Wallet:TrustWallet:ETH
+2020-01-01 open Assets:Crypto:Wallet:TrustWallet:BNB
+2020-01-01 open Assets:Crypto:Wallet:TrustWallet:SOL
+2020-01-01 open Assets:Crypto:Wallet:TrustWallet:Tokens
+
+;; Coinbase Wallet - Self-custody wallet
+2020-01-01 open Assets:Crypto:Wallet:CoinbaseWallet:ETH
+2020-01-01 open Assets:Crypto:Wallet:CoinbaseWallet:SOL
+2020-01-01 open Assets:Crypto:Wallet:CoinbaseWallet:Tokens
+
+;; ================================================================================
+;; COSMOS ECOSYSTEM - Wallets
+;; ================================================================================
+
+;; Keplr - Cosmos ecosystem wallet
+2020-01-01 open Assets:Crypto:Wallet:Keplr:ATOM
+2020-01-01 open Assets:Crypto:Wallet:Keplr:OSMO  ;; Osmosis
+2020-01-01 open Assets:Crypto:Wallet:Keplr:Tokens
+
+;; ================================================================================
+;; POLKADOT ECOSYSTEM - Wallets
+;; ================================================================================
+
+;; Polkadot.js - Official Polkadot wallet
+2020-01-01 open Assets:Crypto:Wallet:PolkadotJS:DOT
+2020-01-01 open Assets:Crypto:Wallet:PolkadotJS:Parachains
+
+;; ================================================================================
+;; NATIVE STAKING - Blockchain Level
+;; ================================================================================
+
+;; Ethereum Native Staking (32 ETH validators)
+2020-01-01 open Assets:Crypto:Staking:ETH:Validator
+2020-01-01 open Assets:Crypto:Staking:ETH:Rewards
+
+;; Solana Native Staking
+2020-01-01 open Assets:Crypto:Staking:SOL:Delegated
+2020-01-01 open Assets:Crypto:Staking:SOL:Rewards
+
+;; Cardano Native Staking
+2020-01-01 open Assets:Crypto:Staking:ADA:Delegated
+2020-01-01 open Assets:Crypto:Staking:ADA:Rewards
+
+;; Polkadot Native Staking
+2020-01-01 open Assets:Crypto:Staking:DOT:Nominated
+2020-01-01 open Assets:Crypto:Staking:DOT:Rewards
+
+;; Cosmos Native Staking
+2020-01-01 open Assets:Crypto:Staking:ATOM:Delegated
+2020-01-01 open Assets:Crypto:Staking:ATOM:Rewards
+
+;; Sui Native Staking
+2020-01-01 open Assets:Crypto:Staking:SUI:Delegated
+2020-01-01 open Assets:Crypto:Staking:SUI:Rewards
+
+;; Avalanche Native Staking
+2020-01-01 open Assets:Crypto:Staking:AVAX:Delegated
+2020-01-01 open Assets:Crypto:Staking:AVAX:Rewards
+
+;; ================================================================================
+;; NOTES ON USING CHAIN ACCOUNTS
+;; ================================================================================
+
+;; SECURITY TIERS:
+;; 1. Hardware Wallets (Ledger, Trezor) - Highest security, for large holdings
+;; 2. Software Wallets - Medium security, for active trading/DeFi
+;; 3. Exchange Wallets - Lowest security, only for trading
+;;
+;; NATIVE STAKING:
+;; - Track staked positions separately from liquid tokens
+;; - Record staking rewards as income
+;; - Account for unstaking periods
+;;
+;; EXAMPLE - Native Staking:
+;; 2025-10-27 * "Solana" "Delegated SOL to validator"
+;;   Assets:Crypto:Staking:SOL:Delegated  100.0 SOL
+;;   Assets:Crypto:Wallet:Phantom:SOL    -100.0 SOL
+;;
+;; 2025-11-01 * "Solana" "Received staking rewards"
+;;   Assets:Crypto:Staking:SOL:Rewards    0.5 SOL {200 USD}
+;;   Income:Crypto:Staking:Rewards       -100.00 USD
+;;
+;; EXAMPLE - Wallet Transfer:
+;; 2025-10-27 * "Coinbase to Ledger" "Moved BTC to cold storage"
+;;   Assets:Crypto:Wallet:Ledger:BTC      1.0 BTC
+;;   Assets:Crypto:Exchange:Coinbase:BTC -1.0 BTC
+;;   Expenses:Crypto:Withdrawal:Fees      0.0001 BTC
+;;   Assets:Crypto:Exchange:Coinbase:BTC -0.0001 BTC
