@@ -20,7 +20,24 @@
 
 [![Coinbean 데모](https://img.youtube.com/vi/2TaJvP5Ysfc/maxresdefault.jpg)](https://youtu.be/2TaJvP5Ysfc)
 
-*YouTube에서 Coinbean 데모를 보려면 위 이미지를 클릭하세요*
+## ⚡ 빠른 시작
+
+### 옵션 1: Docker (권장)
+
+```bash
+./run.sh  # Docker용 옵션 1 선택
+# 또는: docker-compose up -d
+```
+
+### 옵션 2: 네이티브 설치
+
+```bash
+./setup.sh              # 종속성 설치
+./run.sh                # Fava 웹 인터페이스 시작
+./prices.sh             # 현재 가격 가져오기
+```
+
+브라우저에서 http://localhost:5002 를 열어 포트폴리오를 확인하세요.
 
 ## Coinbean이란?
 

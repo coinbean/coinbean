@@ -20,7 +20,24 @@ Un sistema integral de seguimiento de portafolio de criptomonedas basado en [Bea
 
 [![Demo de Coinbean](https://img.youtube.com/vi/2TaJvP5Ysfc/maxresdefault.jpg)](https://youtu.be/2TaJvP5Ysfc)
 
-*Haz clic en la imagen de arriba para ver la demostración de Coinbean en YouTube*
+## ⚡ Inicio rápido
+
+### Opción 1: Docker (Recomendado)
+
+```bash
+./run.sh  # Seleccione la opción 1 para Docker
+# O: docker-compose up -d
+```
+
+### Opción 2: Instalación nativa
+
+```bash
+./setup.sh              # Instalar dependencias
+./run.sh                # Iniciar interfaz web Fava
+./prices.sh             # Obtener precios actuales
+```
+
+Abra http://localhost:5002 para ver su portafolio.
 
 ## ¿Qué es Coinbean?
 
