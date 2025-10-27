@@ -8,13 +8,19 @@ A comprehensive cryptocurrency portfolio tracking system built on [Beancount](ht
 
 **Created by [Boyuan Qian](https://github.com/boyuanqian) @ [QAI Lab](https://github.com/qai-lab)**
 
-English | [简体中文](README_zh.md)
+English | [简体中文](README_zh.md) | [Français](README_fr.md) | [한국어](README_ko.md) | [日本語](README_ja.md) | [Español](README_es.md)
 
 ---
 
 🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/CoinbeanAI](https://x.com/CoinbeanAI)
 
 </div>
+
+## 🎥 Demo Video
+
+[![Coinbean Demo](https://img.youtube.com/vi/2TaJvP5Ysfc/maxresdefault.jpg)](https://youtu.be/2TaJvP5Ysfc)
+
+*Click the image above to watch the Coinbean demo on YouTube*
 
 ## What is Coinbean?
 
@@ -45,11 +51,12 @@ Coinbean is a structured Beancount ledger template for tracking cryptocurrency p
 
 ## ⚡ Quick Reference
 
-| Script           | Command       | Purpose                                      |
-| ---------------- | ------------- | -------------------------------------------- |
-| **Setup**        | `./setup.sh`  | Install Beancount & Fava, validate ledger    |
-| **Run Fava**     | `./run.sh`    | Start web interface at http://localhost:5002 |
-| **Fetch Prices** | `./prices.sh` | Get current crypto prices (interactive menu) |
+| Method           | Command                  | Purpose                                      |
+| ---------------- | ------------------------ | -------------------------------------------- |
+| **Docker**       | `docker-compose up -d`   | Start with Docker (recommended)              |
+| **Setup**        | `./setup.sh`             | Install Beancount & Fava, validate ledger    |
+| **Run Fava**     | `./run.sh`               | Start web interface at http://localhost:5002 |
+| **Fetch Prices** | `./prices.sh`            | Get current crypto prices (interactive menu) |
 
 See [Helper Scripts](#helper-scripts) section for detailed documentation.
 
@@ -88,6 +95,27 @@ Launches the web interface at http://localhost:5002
 Interactive menu to fetch current cryptocurrency prices.
 
 > 📚 See [Helper Scripts](#helper-scripts) section for detailed documentation of each script.
+
+### Docker Installation (Recommended Alternative)
+
+If you prefer using Docker:
+
+```bash
+# Using Docker Compose (easiest)
+docker-compose up -d
+
+# Or using Docker directly
+docker build -t coinbean .
+docker run -p 5002:5002 -v $(pwd):/app coinbean
+```
+
+Visit http://localhost:5002 to view your portfolio!
+
+**Benefits:**
+- ✅ No Python installation required
+- ✅ Consistent environment across all systems
+- ✅ Easy to update and manage
+- ✅ Automatic validation on startup
 
 ### Manual Installation (Alternative)
 

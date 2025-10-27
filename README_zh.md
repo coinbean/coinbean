@@ -4,13 +4,19 @@
 
 **由 [Boyuan Qian](https://github.com/boyuanqian) @ [QAI Lab](https://github.com/qai-lab) 创建**
 
-[English](README.md) | 简体中文
+[English](README.md) | 简体中文 | [Français](README_fr.md) | [한국어](README_ko.md) | [日本語](README_ja.md) | [Español](README_es.md)
 
 ---
 
 🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/CoinbeanAI](https://x.com/CoinbeanAI)
 
 ---
+
+## 🎥 演示视频
+
+[![Coinbean 演示](https://img.youtube.com/vi/2TaJvP5Ysfc/maxresdefault.jpg)](https://youtu.be/2TaJvP5Ysfc)
+
+*点击上图在 YouTube 上观看 Coinbean 演示视频*
 
 ## Coinbean 是什么？
 
@@ -41,11 +47,12 @@ Coinbean 是一个结构化的 Beancount 账本模板，用于跟踪以下平台
 
 ## ⚡ 快速参考
 
-| 脚本          | 命令          | 用途                                   |
-| ------------- | ------------- | -------------------------------------- |
-| **设置**      | `./setup.sh`  | 安装 Beancount 和 Fava，验证账本       |
-| **运行 Fava** | `./run.sh`    | 在 http://localhost:5002 启动 Web 界面 |
-| **获取价格**  | `./prices.sh` | 获取当前加密货币价格（交互式菜单）     |
+| 方法          | 命令                     | 用途                                   |
+| ------------- | ------------------------ | -------------------------------------- |
+| **Docker**    | `docker-compose up -d`   | 使用 Docker 启动（推荐）               |
+| **设置**      | `./setup.sh`             | 安装 Beancount 和 Fava，验证账本       |
+| **运行 Fava** | `./run.sh`               | 在 http://localhost:5002 启动 Web 界面 |
+| **获取价格**  | `./prices.sh`            | 获取当前加密货币价格（交互式菜单）     |
 
 详细文档请参阅[辅助脚本](#辅助脚本)部分。
 
@@ -71,6 +78,8 @@ cd /path/to/coinbean
 
 ```bash
 ./run.sh
+# 或使用 Docker：
+./run.sh --docker
 ```
 
 在 http://localhost:5002 启动 Web 界面。
@@ -84,6 +93,27 @@ cd /path/to/coinbean
 交互式菜单获取当前加密货币价格。
 
 > 📚 详细文档请参阅[辅助脚本](#辅助脚本)部分。
+
+### Docker 安装（推荐的替代方案）
+
+如果您喜欢使用 Docker：
+
+```bash
+# 使用 Docker Compose（最简单）
+docker-compose up -d
+
+# 或直接使用 Docker
+docker build -t coinbean .
+docker run -p 5002:5002 -v $(pwd):/app coinbean
+```
+
+访问 http://localhost:5002 查看您的投资组合！
+
+**优势：**
+- ✅ 无需安装 Python
+- ✅ 所有系统上的一致环境
+- ✅ 易于更新和管理
+- ✅ 启动时自动验证
 
 ### 手动安装（替代方案）
 
@@ -359,15 +389,28 @@ cd /path/to/coinbean
 
 **功能：**
 
-- 检查 Fava 是否已安装
+- 检查 Fava 是否已安装（或检查 Docker，如果使用 --docker 模式）
 - 在启动前验证您的账本文件
 - 在端口 5002 上启动 Fava
-- 自动打开默认浏览器（可选）
+- 支持原生和 Docker 两种模式
 
 **使用方法：**
 
+**原生模式（默认）：**
 ```bash
 ./run.sh
+```
+
+**Docker 模式：**
+```bash
+./run.sh --docker
+# 或
+./run.sh -d
+```
+
+**自定义端口：**
+```bash
+./run.sh -p 5003
 ```
 
 **然后在浏览器中打开：**
@@ -377,14 +420,15 @@ http://localhost:5002
 ```
 
 **停止服务器：**
-在运行 run.sh 的终端中按 `Ctrl+C`。
 
-**自定义端口：**
-编辑 `run.sh` 并更改脚本中的端口号：
+*原生模式：* 在运行 run.sh 的终端中按 `Ctrl+C`。
 
-```bash
-fava -p 5002 crypto_main.beancount  # 将 5002 更改为您喜欢的端口
-```
+*Docker 模式：* 运行 `docker-compose down`
+
+**可用选项：**
+- `-d, --docker` - 使用 Docker (docker-compose) 运行
+- `-p, --port PORT` - 指定自定义端口（默认：5002）
+- `-h, --help` - 显示帮助信息
 
 **Fava 功能：**
 

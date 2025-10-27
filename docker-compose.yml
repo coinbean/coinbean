@@ -1,0 +1,32 @@
+# Coinbean - Docker Compose Configuration
+# Quick start: docker-compose up
+
+version: '3.8'
+
+services:
+  coinbean:
+    build: .
+    container_name: coinbean
+    ports:
+      - "5002:5002"
+    volumes:
+      # Mount local files for live editing
+      - ./crypto_main.beancount:/app/crypto_main.beancount
+      - ./exchanges.beancount:/app/exchanges.beancount
+      - ./chains.beancount:/app/chains.beancount
+      - ./defi.beancount:/app/defi.beancount
+      - ./crypto_prices.beancount:/app/crypto_prices.beancount
+      - ./crypto_examples.beancount:/app/crypto_examples.beancount
+      - ./tx_2024.beancount:/app/tx_2024.beancount
+      - ./tx_2025.beancount:/app/tx_2025.beancount
+      - ./fetch_prices.py:/app/fetch_prices.py
+      - ./prices.sh:/app/prices.sh
+    environment:
+      - TZ=UTC
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5002/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s

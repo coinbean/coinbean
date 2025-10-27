@@ -1,0 +1,68 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+README_zh.md
+LICENSE
+RELEASE_NOTES_*.md
+SOCIAL_MEDIA_*.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+venv/
+env/
+ENV/
+
+# Beancount cache
+.beancount-cache/
+*.bean-cache
+
+# Fava cache
+.fava-cache/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Claude Code
+.claude/
+
+# Backup files
+*.backup
+*.bak
+*.old
+
+# Reports and exports
+reports/
+exports/
+*.pdf
+*.csv
+*.xlsx
+
+# Logs
+*.log
+logs/
+
+# Local config
+.env
+.env.local
+config.local.json
+settings.local.json
+
+# Images (not needed in container)
+images/
+
+# Release notes (not needed in container)
+releases/
