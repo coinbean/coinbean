@@ -6,7 +6,7 @@
 
 Un sistema integral de seguimiento de portafolio de criptomonedas basado en [Beancount](https://github.com/beancount/beancount), el sistema de contabilidad por partida doble.
 
-**Creado por [Boyuan Qian](https://github.com/boyuanqian) @ [QAI Lab](https://github.com/qai-lab)**
+**Creado por [Boyuan Qian](https://github.com/boyuanqian) @[QAI Lab](https://github.com/qai-lab)**
 
 [English](README.md) | [简体中文](README_zh.md) | [Français](README_fr.md) | [한국어](README_ko.md) | [日本語](README_ja.md) | Español
 
@@ -44,6 +44,7 @@ Abra http://localhost:5002 para ver su portafolio.
 Rastree su portafolio cripto en exchanges, wallets, DeFi, staking y NFTs usando contabilidad por partida doble.
 
 **Soporta:**
+
 - 10+ exchanges (Coinbase, Binance, Kraken, etc.)
 - Wallets de hardware/software (Ledger, MetaMask, Phantom)
 - Protocolos DeFi (Aave, Uniswap, Lido, Hyperliquid)
@@ -76,6 +77,7 @@ coinbean/
 ```
 
 **Edite estos archivos:**
+
 - `tx_2025.beancount` - Agregue sus transacciones
 - `exchanges.beancount` - Habilite solo los exchanges que usa
 - `chains.beancount` - Agregue sus wallets
@@ -154,18 +156,19 @@ include "chains.beancount"
 
 ## Comandos
 
-| Comando | Propósito |
-|---------|-----------|
-| `./run.sh` | Iniciar Fava (menú interactivo) |
-| `./prices.sh` | Obtener precios actuales de criptos |
-| `bean-check crypto_main.beancount` | Validar libro mayor |
-| `bean-query crypto_main.beancount "SELECT..."` | Consultar datos |
-| `docker-compose up -d` | Iniciar con Docker |
-| `docker-compose logs -f` | Ver logs de Docker |
+| Comando                                        | Propósito                           |
+| ---------------------------------------------- | ----------------------------------- |
+| `./run.sh`                                     | Iniciar Fava (menú interactivo)     |
+| `./prices.sh`                                  | Obtener precios actuales de criptos |
+| `bean-check crypto_main.beancount`             | Validar libro mayor                 |
+| `bean-query crypto_main.beancount "SELECT..."` | Consultar datos                     |
+| `docker-compose up -d`                         | Iniciar con Docker                  |
+| `docker-compose logs -f`                       | Ver logs de Docker                  |
 
 ## Reporte de impuestos
 
 **Eventos imponibles rastreados automáticamente:**
+
 - Ganancias/pérdidas de capital (ventas de cripto, swaps)
 - Recompensas de staking (como ingreso)
 - Airdrops (como ingreso)
@@ -201,18 +204,18 @@ echo "tx_*.beancount filter=git-crypt diff=git-crypt" >> .gitattributes
 
 ## Solución de problemas
 
-| Problema | Solución |
-|----------|----------|
-| Errores de `bean-check` | Verificar nombres de cuentas, asegurar que las transacciones estén balanceadas |
-| Los precios no se muestran | Ejecutar `./prices.sh`, verificar `crypto_prices.beancount` |
-| Desajuste de saldo | Revisar todas las transacciones, verificar comisiones faltantes |
-| Fava no inicia | Verificar si el puerto 5002 está en uso, intentar `./run.sh -p 5003` |
-| Problemas con Docker | Verificar logs con `docker-compose logs` |
+| Problema                   | Solución                                                                       |
+| -------------------------- | ------------------------------------------------------------------------------ |
+| Errores de `bean-check`    | Verificar nombres de cuentas, asegurar que las transacciones estén balanceadas |
+| Los precios no se muestran | Ejecutar `./prices.sh`, verificar `crypto_prices.beancount`                    |
+| Desajuste de saldo         | Revisar todas las transacciones, verificar comisiones faltantes                |
+| Fava no inicia             | Verificar si el puerto 5002 está en uso, intentar `./run.sh -p 5003`           |
+| Problemas con Docker       | Verificar logs con `docker-compose logs`                                       |
 
 ## Recursos
 
-- 📦 [Repositorio GitHub](https://github.com/qai-lab/coinbean)
-- 📋 [Notas de versión](https://github.com/qai-lab/coinbean/releases)
+- 📦 [Repositorio GitHub](https://github.com/coinbean/coinbean)
+- 📋 [Notas de versión](https://github.com/coinbean/coinbean/releases)
 - 🌐 [Sitio web Coinbean](https://coinbean.org/)
 - 🐦 [Seguir en X/Twitter](https://x.com/CoinbeanAI)
 - 📚 [Documentación Beancount](https://beancount.github.io/docs/)
@@ -221,9 +224,11 @@ echo "tx_*.beancount filter=git-crypt diff=git-crypt" >> .gitattributes
 ## Autor
 
 **Creado por:**
+
 - **Boyuan Qian** - [@boyuanqian](https://github.com/boyuanqian) | [@boyuan_qian](https://x.com/boyuan_qian)
 
 **Organización:**
+
 - **QAI Lab** - [qai.io](https://qai.io) | [@qai-lab](https://github.com/qai-lab) | [@qai_lab](https://x.com/qai_lab)
 
 ## Licencia

@@ -2,7 +2,7 @@
 
 基于 [Beancount](https://github.com/beancount/beancount) 复式记账系统构建的综合加密货币投资组合跟踪系统。
 
-**由 [Boyuan Qian](https://github.com/boyuanqian) @ [QAI Lab](https://github.com/qai-lab) 创建**
+**由 [Boyuan Qian](https://github.com/boyuanqian) @[QAI Lab](https://github.com/qai-lab) 创建**
 
 [English](README.md) | 简体中文 | [Français](README_fr.md) | [한국어](README_ko.md) | [日本語](README_ja.md) | [Español](README_es.md)
 
@@ -40,6 +40,7 @@
 使用复式记账跟踪您在交易所、钱包、DeFi、质押和 NFT 上的加密货币投资组合。
 
 **支持：**
+
 - 10+ 个交易所（Coinbase、Binance、Kraken 等）
 - 硬件/软件钱包（Ledger、MetaMask、Phantom）
 - DeFi 协议（Aave、Uniswap、Lido、Hyperliquid）
@@ -72,6 +73,7 @@ coinbean/
 ```
 
 **编辑这些文件：**
+
 - `tx_2025.beancount` - 添加您的交易
 - `exchanges.beancount` - 仅启用您使用的交易所
 - `chains.beancount` - 添加您的钱包
@@ -150,18 +152,19 @@ include "chains.beancount"
 
 ## 常用命令
 
-| 命令 | 用途 |
-|------|------|
-| `./run.sh` | 启动 Fava（交互式菜单）|
-| `./prices.sh` | 获取当前加密货币价格 |
-| `bean-check crypto_main.beancount` | 验证账本 |
-| `bean-query crypto_main.beancount "SELECT..."` | 查询数据 |
-| `docker-compose up -d` | 使用 Docker 启动 |
-| `docker-compose logs -f` | 查看 Docker 日志 |
+| 命令                                           | 用途                    |
+| ---------------------------------------------- | ----------------------- |
+| `./run.sh`                                     | 启动 Fava（交互式菜单） |
+| `./prices.sh`                                  | 获取当前加密货币价格    |
+| `bean-check crypto_main.beancount`             | 验证账本                |
+| `bean-query crypto_main.beancount "SELECT..."` | 查询数据                |
+| `docker-compose up -d`                         | 使用 Docker 启动        |
+| `docker-compose logs -f`                       | 查看 Docker 日志        |
 
 ## 税务报告
 
 **自动跟踪应税事件：**
+
 - 资本利得/损失（加密货币销售、交换）
 - 质押奖励（作为收入）
 - 空投（作为收入）
@@ -197,18 +200,18 @@ echo "tx_*.beancount filter=git-crypt diff=git-crypt" >> .gitattributes
 
 ## 故障排除
 
-| 问题 | 解决方案 |
-|------|----------|
-| `bean-check` 错误 | 检查账户名称，确保交易平衡 |
-| 价格未显示 | 运行 `./prices.sh`，检查 `crypto_prices.beancount` |
-| 余额不匹配 | 查看所有交易，检查遗漏的费用 |
-| Fava 无法启动 | 检查端口 5002 是否被占用，尝试 `./run.sh -p 5003` |
-| Docker 问题 | 使用 `docker-compose logs` 查看日志 |
+| 问题              | 解决方案                                           |
+| ----------------- | -------------------------------------------------- |
+| `bean-check` 错误 | 检查账户名称，确保交易平衡                         |
+| 价格未显示        | 运行 `./prices.sh`，检查 `crypto_prices.beancount` |
+| 余额不匹配        | 查看所有交易，检查遗漏的费用                       |
+| Fava 无法启动     | 检查端口 5002 是否被占用，尝试 `./run.sh -p 5003`  |
+| Docker 问题       | 使用 `docker-compose logs` 查看日志                |
 
 ## 资源
 
-- 📦 [GitHub 存储库](https://github.com/qai-lab/coinbean)
-- 📋 [发布说明](https://github.com/qai-lab/coinbean/releases)
+- 📦 [GitHub 存储库](https://github.com/coinbean/coinbean)
+- 📋 [发布说明](https://github.com/coinbean/coinbean/releases)
 - 🌐 [Coinbean 网站](https://coinbean.org/)
 - 🐦 [在 X/Twitter 关注](https://x.com/CoinbeanAI)
 - 📚 [Beancount 文档](https://beancount.github.io/docs/)
@@ -217,9 +220,11 @@ echo "tx_*.beancount filter=git-crypt diff=git-crypt" >> .gitattributes
 ## 作者
 
 **创建者：**
+
 - **Boyuan Qian** - [@boyuanqian](https://github.com/boyuanqian) | [@boyuan_qian](https://x.com/boyuan_qian)
 
 **组织：**
+
 - **QAI Lab** - [qai.io](https://qai.io) | [@qai-lab](https://github.com/qai-lab) | [@qai_lab](https://x.com/qai_lab)
 
 ## 许可证

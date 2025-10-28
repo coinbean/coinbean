@@ -153,7 +153,7 @@ Coinbean is a structured Beancount ledger template designed for tracking cryptoc
 **Step 1: Clone and Setup**
 
 ```bash
-git clone https://github.com/qai-lab/coinbean.git
+git clone https://github.com/coinbean/coinbean.git
 cd coinbean
 ./setup.sh
 ```
@@ -303,7 +303,7 @@ Both versions include:
 
 ### Quick Links
 
-- 📦 [GitHub Repository](https://github.com/qai-lab/coinbean)
+- 📦 [GitHub Repository](https://github.com/coinbean/coinbean)
 - 🌐 [Official Website](https://coinbean.org/)
 - 🐦 [Follow on X/Twitter](https://x.com/CoinbeanAI)
 - 📚 [Beancount Documentation](https://beancount.github.io/docs/)
@@ -326,7 +326,7 @@ Both versions include:
 
   - 🌐 Website: [coinbean.org](https://coinbean.org/)
   - 🐦 X/Twitter: [@CoinbeanAI](https://x.com/CoinbeanAI)
-  - 📦 GitHub: [qai-lab/coinbean](https://github.com/qai-lab/coinbean)
+  - 📦 GitHub: [coinbean/coinbean](https://github.com/coinbean/coinbean)
 
 - **Boyuan Qian** (Creator)
 
@@ -339,8 +339,8 @@ Both versions include:
 
 ### Get Help
 
-- Report issues on [GitHub Issues](https://github.com/qai-lab/coinbean/issues)
-- Ask questions in [Discussions](https://github.com/qai-lab/coinbean/discussions)
+- Report issues on [GitHub Issues](https://github.com/coinbean/coinbean/issues)
+- Ask questions in [Discussions](https://github.com/coinbean/coinbean/discussions)
 - Follow for updates on [X/Twitter](https://x.com/CoinbeanAI)
 
 ---
@@ -355,7 +355,7 @@ We welcome contributions! Areas for improvement:
 - Documentation translations
 - Bug fixes and improvements
 
-See our [Contributing Guidelines](https://github.com/qai-lab/coinbean#contributing) for more information.
+See our [Contributing Guidelines](https://github.com/coinbean/coinbean#contributing) for more information.
 
 ---
 

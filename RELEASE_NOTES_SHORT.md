@@ -18,7 +18,7 @@ The first release of **Coinbean** - a comprehensive cryptocurrency portfolio tra
 ## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/qai-lab/coinbean.git
+git clone https://github.com/coinbean/coinbean.git
 cd coinbean
 ./setup.sh
 ./run.sh
@@ -40,15 +40,15 @@ Your feedback is invaluable! Please share your thoughts and suggestions.
 
 ## 📖 Documentation
 
-- **[README.md](https://github.com/qai-lab/coinbean/blob/main/README.md)** - Complete English documentation
-- **[README_zh.md](https://github.com/qai-lab/coinbean/blob/main/README_zh.md)** - 完整中文文档
-- **[crypto_examples.beancount](https://github.com/qai-lab/coinbean/blob/main/crypto_examples.beancount)** - 20+ transaction examples
+- **[README.md](https://github.com/coinbean/coinbean/blob/main/README.md)** - Complete English documentation
+- **[README_zh.md](https://github.com/coinbean/coinbean/blob/main/README_zh.md)** - 完整中文文档
+- **[crypto_examples.beancount](https://github.com/coinbean/coinbean/blob/main/crypto_examples.beancount)** - 20+ transaction examples
 
 ## 🌐 Links
 
 - 🌐 Website: [coinbean.org](https://coinbean.org/)
 - 🐦 Twitter/X: [@CoinbeanAI](https://x.com/CoinbeanAI)
-- 📦 GitHub: [qai-lab/coinbean](https://github.com/qai-lab/coinbean)
+- 📦 GitHub: [coinbean/coinbean](https://github.com/coinbean/coinbean)
 
 ## 👥 Team
 

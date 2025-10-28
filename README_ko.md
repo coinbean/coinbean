@@ -6,7 +6,7 @@
 
 [Beancount](https://github.com/beancount/beancount) 복식 부기 시스템을 기반으로 한 종합 암호화폐 포트폴리오 추적 시스템
 
-**제작: [Boyuan Qian](https://github.com/boyuanqian) @ [QAI Lab](https://github.com/qai-lab)**
+**제작: [Boyuan Qian](https://github.com/boyuanqian) @[QAI Lab](https://github.com/qai-lab)**
 
 [English](README.md) | [简体中文](README_zh.md) | [Français](README_fr.md) | 한국어 | [日本語](README_ja.md) | [Español](README_es.md)
 
@@ -44,6 +44,7 @@
 복식 부기를 사용하여 거래소, 지갑, DeFi, 스테이킹 및 NFT에서 암호화폐 포트폴리오를 추적합니다.
 
 **지원:**
+
 - 10+ 개 거래소 (Coinbase, Binance, Kraken 등)
 - 하드웨어/소프트웨어 지갑 (Ledger, MetaMask, Phantom)
 - DeFi 프로토콜 (Aave, Uniswap, Lido, Hyperliquid)
@@ -76,6 +77,7 @@ coinbean/
 ```
 
 **이 파일들을 편집하세요:**
+
 - `tx_2025.beancount` - 거래 추가
 - `exchanges.beancount` - 사용하는 거래소만 활성화
 - `chains.beancount` - 지갑 추가
@@ -154,18 +156,19 @@ include "chains.beancount"
 
 ## 명령어
 
-| 명령어 | 목적 |
-|--------|------|
-| `./run.sh` | Fava 시작 (대화형 메뉴) |
-| `./prices.sh` | 현재 암호화폐 가격 가져오기 |
-| `bean-check crypto_main.beancount` | 원장 검증 |
-| `bean-query crypto_main.beancount "SELECT..."` | 데이터 쿼리 |
-| `docker-compose up -d` | Docker로 시작 |
-| `docker-compose logs -f` | Docker 로그 보기 |
+| 명령어                                         | 목적                        |
+| ---------------------------------------------- | --------------------------- |
+| `./run.sh`                                     | Fava 시작 (대화형 메뉴)     |
+| `./prices.sh`                                  | 현재 암호화폐 가격 가져오기 |
+| `bean-check crypto_main.beancount`             | 원장 검증                   |
+| `bean-query crypto_main.beancount "SELECT..."` | 데이터 쿼리                 |
+| `docker-compose up -d`                         | Docker로 시작               |
+| `docker-compose logs -f`                       | Docker 로그 보기            |
 
 ## 세금 보고
 
 **자동으로 추적되는 과세 대상 이벤트:**
+
 - 자본 이득/손실 (암호화폐 판매, 스왑)
 - 스테이킹 보상 (소득)
 - 에어드롭 (소득)
@@ -201,18 +204,18 @@ echo "tx_*.beancount filter=git-crypt diff=git-crypt" >> .gitattributes
 
 ## 문제 해결
 
-| 문제 | 해결책 |
-|------|--------|
-| `bean-check` 오류 | 계정 이름 확인, 거래가 균형을 이루는지 확인 |
-| 가격이 표시되지 않음 | `./prices.sh` 실행, `crypto_prices.beancount` 확인 |
-| 잔액 불일치 | 모든 거래 검토, 누락된 수수료 확인 |
+| 문제                 | 해결책                                                |
+| -------------------- | ----------------------------------------------------- |
+| `bean-check` 오류    | 계정 이름 확인, 거래가 균형을 이루는지 확인           |
+| 가격이 표시되지 않음 | `./prices.sh` 실행, `crypto_prices.beancount` 확인    |
+| 잔액 불일치          | 모든 거래 검토, 누락된 수수료 확인                    |
 | Fava가 시작되지 않음 | 포트 5002가 사용 중인지 확인, `./run.sh -p 5003` 시도 |
-| Docker 문제 | `docker-compose logs`로 로그 확인 |
+| Docker 문제          | `docker-compose logs`로 로그 확인                     |
 
 ## 리소스
 
-- 📦 [GitHub 저장소](https://github.com/qai-lab/coinbean)
-- 📋 [릴리스 노트](https://github.com/qai-lab/coinbean/releases)
+- 📦 [GitHub 저장소](https://github.com/coinbean/coinbean)
+- 📋 [릴리스 노트](https://github.com/coinbean/coinbean/releases)
 - 🌐 [Coinbean 웹사이트](https://coinbean.org/)
 - 🐦 [X/Twitter 팔로우](https://x.com/CoinbeanAI)
 - 📚 [Beancount 문서](https://beancount.github.io/docs/)
@@ -221,9 +224,11 @@ echo "tx_*.beancount filter=git-crypt diff=git-crypt" >> .gitattributes
 ## 저자
 
 **제작자:**
+
 - **Boyuan Qian** - [@boyuanqian](https://github.com/boyuanqian) | [@boyuan_qian](https://x.com/boyuan_qian)
 
 **조직:**
+
 - **QAI Lab** - [qai.io](https://qai.io) | [@qai-lab](https://github.com/qai-lab) | [@qai_lab](https://x.com/qai_lab)
 
 ## 라이선스

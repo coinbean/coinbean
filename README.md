@@ -6,7 +6,7 @@
 
 A comprehensive cryptocurrency portfolio tracking system built on [Beancount](https://github.com/beancount/beancount), the double-entry accounting system.
 
-**Created by [Boyuan Qian](https://github.com/boyuanqian) @ [QAI Lab](https://github.com/qai-lab)**
+**Created by [Boyuan Qian](https://github.com/boyuanqian) @[QAI Lab](https://github.com/qai-lab)**
 
 English | [简体中文](README_zh.md) | [Français](README_fr.md) | [한국어](README_ko.md) | [日本語](README_ja.md) | [Español](README_es.md)
 
@@ -214,8 +214,8 @@ echo "tx_*.beancount filter=git-crypt diff=git-crypt" >> .gitattributes
 
 ## Resources
 
-- 📦 [GitHub Repository](https://github.com/qai-lab/coinbean)
-- 📋 [Release Notes](https://github.com/qai-lab/coinbean/releases)
+- 📦 [GitHub Repository](https://github.com/coinbean/coinbean)
+- 📋 [Release Notes](https://github.com/coinbean/coinbean/releases)
 - 🌐 [Coinbean Website](https://coinbean.org/)
 - 🐦 [Follow on X/Twitter](https://x.com/CoinbeanAI)
 - 📚 [Beancount Docs](https://beancount.github.io/docs/)

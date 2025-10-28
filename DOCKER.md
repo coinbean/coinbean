@@ -218,4 +218,4 @@ If you encounter issues with Docker:
 - Check the [main README](README.md) for general help
 - Review Docker logs: `docker-compose logs`
 - Check container status: `docker-compose ps`
-- Visit [GitHub Issues](https://github.com/qai-lab/coinbean/issues)
+- Visit [GitHub Issues](https://github.com/coinbean/coinbean/issues)
