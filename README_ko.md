@@ -4,15 +4,15 @@
 
 <div align="center">
 
-[Beancount](https://github.com/beancount/beancount) 복식 부기 시스템을 기반으로 한 종합 암호화폐 포트폴리오 추적 시스템
+Coinbean AI - 복식 부기를 활용한 종합 암호화폐 포트폴리오 추적 시스템
 
-**제작: [Boyuan Qian](https://github.com/boyuanqian) @[QAI Lab](https://github.com/qai-lab)**
+🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/CoinbeanAI](https://x.com/CoinbeanAI)
 
 [English](README.md) | [简体中文](README_zh.md) | [Français](README_fr.md) | 한국어 | [日本語](README_ja.md) | [Español](README_es.md)
 
 ---
 
-🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/CoinbeanAI](https://x.com/CoinbeanAI)
+**제작: [Boyuan Qian](https://github.com/boyuanqian) @[QAI Lab](https://github.com/qai-lab)**
 
 </div>
 

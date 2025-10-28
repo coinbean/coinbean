@@ -1,16 +1,20 @@
-# Coinbean
+<div align="center">
+  <img src="images/banner.png" alt="Coinbean 배너" width="100%">
+</div>
 
-基于 [Beancount](https://github.com/beancount/beancount) 复式记账系统构建的综合加密货币投资组合跟踪系统。
+<div align="center">
 
-**由 [Boyuan Qian](https://github.com/boyuanqian) @[QAI Lab](https://github.com/qai-lab) 创建**
+Coinbean AI - 复式记账、综合加密货币投资组合跟踪系统。
+
+🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/CoinbeanAI](https://x.com/CoinbeanAI)
 
 [English](README.md) | 简体中文 | [Français](README_fr.md) | [한국어](README_ko.md) | [日本語](README_ja.md) | [Español](README_es.md)
 
 ---
 
-🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/CoinbeanAI](https://x.com/CoinbeanAI)
+**由 [Boyuan Qian](https://github.com/boyuanqian) @[QAI Lab](https://github.com/qai-lab) 创建**
 
----
+</div>
 
 ## 🎥 演示视频
 

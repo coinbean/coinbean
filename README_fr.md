@@ -4,15 +4,15 @@
 
 <div align="center">
 
-Un système complet de suivi de portefeuille de cryptomonnaies basé sur [Beancount](https://github.com/beancount/beancount), le système de comptabilité en partie double.
+Coinbean AI - un système complet de suivi de portefeuille de cryptomonnaies, le système de comptabilité en partie double.
 
-**Créé par [Boyuan Qian](https://github.com/boyuanqian) @[QAI Lab](https://github.com/qai-lab)**
+🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/CoinbeanAI](https://x.com/CoinbeanAI)
 
 [English](README.md) | [简体中文](README_zh.md) | Français | [한국어](README_ko.md) | [日本語](README_ja.md) | [Español](README_es.md)
 
 ---
 
-🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/CoinbeanAI](https://x.com/CoinbeanAI)
+**Créé par [Boyuan Qian](https://github.com/boyuanqian) @[QAI Lab](https://github.com/qai-lab)**
 
 </div>
 

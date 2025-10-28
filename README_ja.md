@@ -4,15 +4,15 @@
 
 <div align="center">
 
-[Beancount](https://github.com/beancount/beancount)複式簿記システムを基盤とした包括的な暗号通貨ポートフォリオ追跡システム
+Coinbean AI - 複式簿記による包括的な暗号通貨ポートフォリオ追跡システム
 
-**制作: [Boyuan Qian](https://github.com/boyuanqian) @[QAI Lab](https://github.com/qai-lab)**
+🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/CoinbeanAI](https://x.com/CoinbeanAI)
 
 [English](README.md) | [简体中文](README_zh.md) | [Français](README_fr.md) | [한국어](README_ko.md) | 日本語 | [Español](README_es.md)
 
 ---
 
-🌐 [coinbean.org](https://coinbean.org) | 🐦 [x.com/CoinbeanAI](https://x.com/CoinbeanAI)
+**制作: [Boyuan Qian](https://github.com/boyuanqian) @[QAI Lab](https://github.com/qai-lab)**
 
 </div>
 
