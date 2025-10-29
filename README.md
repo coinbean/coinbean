@@ -22,19 +22,52 @@ English | [简体中文](README_zh.md) | [Français](README_fr.md) | [한국어]
 
 ## ⚡ Quick Start
 
-### Option 1: Docker (Recommended)
+**Setup Scripts:** Use `./setup.sh` for macOS, `./setup_linux.sh` for Linux, or `setup_windows.ps1` for Windows.
 
+### macOS
+
+**Option 1: Docker (Recommended)**
 ```bash
-./run.sh  # Select option 1 for Docker
-# Or: docker-compose up -d
+./setup.sh              # Choose Docker installation
+docker-compose up -d    # Start Fava
 ```
 
-### Option 2: Native Installation
-
+**Option 2: Native Python**
 ```bash
-./setup.sh              # Install dependencies
+./setup.sh              # Choose Python installation
 ./run.sh                # Start Fava web interface
 ./prices.sh             # Fetch current prices
+```
+
+### Linux
+
+**Option 1: Docker (Recommended)**
+```bash
+chmod +x setup_linux.sh
+./setup_linux.sh        # Choose Docker installation
+docker-compose up -d    # Start Fava
+```
+
+**Option 2: Native Python**
+```bash
+chmod +x setup_linux.sh
+./setup_linux.sh        # Choose Python installation
+./run.sh                # Start Fava web interface
+./prices.sh             # Fetch current prices
+```
+
+### Windows
+
+**Option 1: Docker (Recommended)**
+```powershell
+powershell -ExecutionPolicy Bypass -File setup_windows.ps1  # Choose Docker
+docker-compose up -d    # Start Fava
+```
+
+**Option 2: Native Python**
+```powershell
+powershell -ExecutionPolicy Bypass -File setup_windows.ps1  # Choose Python
+# Then run Fava: fava crypto_main.beancount
 ```
 
 Open http://localhost:5002 to view your portfolio.
@@ -72,8 +105,11 @@ coinbean/
 ├── crypto_prices.beancount     # Price data
 ├── tx_2025.beancount           # Your transactions
 ├── crypto_examples.beancount   # 20+ example transactions
-├── setup.sh / run.sh / prices.sh
-└── docker-compose.yml
+├── setup.sh                    # Setup script (macOS)
+├── setup_linux.sh              # Setup script (Linux)
+├── setup_windows.ps1           # Setup script (Windows)
+├── run.sh / prices.sh          # Utility scripts
+└── docker-compose.yml          # Docker configuration
 ```
 
 **Edit these files:**
