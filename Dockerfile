@@ -28,4 +28,4 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:5002/ || exit 1
 
 # Default command: validate ledger and start Fava
-CMD ["sh", "-c", "bean-check crypto_main.beancount && fava -H 0.0.0.0 -p 5002 crypto_main.beancount"]
+CMD ["sh", "-c", "bean-check crypto_main.beancount && fava -H 0.0.0.0 -p 5002 --poll-watcher crypto_main.beancount"]
